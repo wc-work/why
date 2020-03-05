@@ -1,13 +1,15 @@
+<?php $image = get_field('add_photo') ?>
+
 <div class="my-4 col-xs-12 col-md-6 col-lg-4 d-flex justify-content-center">
     <div class="card card-event">
-        <?php if( get_field('add_photo')): ?>
-            <img class="card-img-top card-img-event" src="<?php echo get_field('add_photo')['url'] ?>" alt="picture">
+        <?php if( !empty($image)): ?>
+            <img class="card-img-top card-img-event" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
         <?php endif; ?>
         <div class="card-body">
-            <h2>Card title</h2>
-            <h4>March 3 / 10:00 am</h4>
-            <h5>Heaton Elementary</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat rerum aspernatur assumenda quam repellendus inventore dolorum? Ea amet molestiae nobis. Sed nobis facere odit cupiditate, incidunt eveniet laudantium quia corrupti.</p>
+            <h2><?php echo get_field('event_title') ?></h2>
+            <h4><?php echo get_field('event_date') ?></h4>
+            <a href="<?php echo get_field('location_link') ?>"><h5><?php echo get_field('event_location') ?></h5></a>
+            <p class="card-text"><?php echo get_field('event_location') ?></p>
         </div>
     </div>
 </div>

@@ -113,9 +113,6 @@ function html5blank_header_scripts()
 
 		wp_register_script('popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', array('jquery'), '', true); // Popper.js
 		wp_enqueue_script('popper'); // Enqueue it!
-		
-		// wp_register_script('bootstrapjs', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js', array('jquery'), '', true); // Bootstrap.js
-		// wp_enqueue_script('bootstrapjs'); // Enqueue it!
         
         wp_register_script('scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0'); // Custom scripts
         wp_enqueue_script('scripts'); // Enqueue it!
@@ -379,6 +376,78 @@ add_filter('show_admin_bar', 'remove_admin_bar'); // Remove Admin bar
 /*------------------------------------*\
 	Custom Post Types
 \*------------------------------------*/
+
+function event_custom_post_type()
+{
+    register_taxonomy_for_object_type('category', 'events'); // Register Taxonomies for Category
+    register_post_type('events', // Register Custom Post Type
+        array(
+        'labels' => array(
+            'name' => __('Events', 'events'), // Rename these to suit
+            'singular_name' => __('Event', 'events'),
+            'add_new' => __('Add Event', 'events'),
+            'add_new_item' => __('Add New Event', 'events'),
+            'edit_item' => __('Edit Item', 'events'),
+            'new_item' => __('New Event', 'events'),
+            'view' => __('New Item', 'events'),
+            'view_item' => __('View Item', 'events'),
+            'search_items' => __('Search Events', 'events'),
+            'not_found' => __('No items found', 'events'),
+            'not_found_in_trash' => __('No items found in trash', 'events')
+        ),
+        'public' => true,
+        'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
+        'has_archive' => true,
+        'rewrite' => true,
+        'menu_icon' => 'dashicons-calendar-alt',
+        'supports' => array(
+            'title',
+            'revisions'
+        ), // Go to Dashboard Custom HTML5 Blank post for supports
+        'can_export' => true, // Allows export in Tools > Export
+        'taxonomies' => array(
+            'post_tag',
+            'category'
+        ), // Add Category and Post Tags support
+        'menu_position' => 5
+    ));
+
+    register_taxonomy_for_object_type('category', 'past-events'); // Register Taxonomies for Category
+    register_post_type('past-events', // Register Custom Post Type
+        array(
+        'labels' => array(
+            'name' => __('Past Events', 'past-events'), // Rename these to suit
+            'singular_name' => __('Past Event', 'past-events'),
+            'add_new' => __('Add Event', 'past-events'),
+            'add_new_item' => __('Add Past Event', 'past-events'),
+            'edit_item' => __('Edit Item', 'past-events'),
+            'new_item' => __('New Item', 'past-events'),
+            'view' => __('New Item', 'past-events'),
+            'view_item' => __('View Item', 'past-events'),
+            'search_items' => __('Search Events', 'past-events'),
+            'not_found' => __('No items found', 'past-events'),
+            'not_found_in_trash' => __('No items found in trash', 'past-events')
+        ),
+        'public' => true,
+        'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
+        'has_archive' => true,
+        'rewrite' => true,
+        'menu_icon' => 'dashicons-calendar',
+        'supports' => array(
+            'title',
+            'revisions'
+        ), // Go to Dashboard Custom HTML5 Blank post for supports
+        'can_export' => true, // Allows export in Tools > Export
+        'taxonomies' => array(
+            'post_tag',
+            'category'
+        ), // Add Category and Post Tags support
+        'menu_position' => 5
+    ));
+}
+
+add_action('init', 'event_custom_post_type');
+
 
 // Create 1 Custom Post type for a Demo, called HTML5-Blank
 // function create_post_type_html5()

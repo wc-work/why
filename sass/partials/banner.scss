@@ -14,27 +14,27 @@
   
   .darken-photo {
     position: relative;
+  
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: block;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+    h1 {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 50;
+      font-size: 3rem;
+      text-align: center;
+      color: white;
+      padding-top: 5rem;
+      position: relative;
+      z-index: 1;
+    }
   }
   
-  .darken-photo:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: block;
-    background-color: rgba(0, 0, 0, 0.6);
-  }
-  
-  .darken-photo h1 {
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 50;
-    font-size: 3rem;
-    text-align: center;
-    color: white;
-    padding-top: 10rem;
-    position: relative;
-    z-index: 1;
-  }
