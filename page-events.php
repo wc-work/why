@@ -4,21 +4,33 @@ Template Name: Events
 Template Post Type: page
 */
 
-$args1 = array(
+// Date Variable
+$today = date('m/d/Y');
+
+$args1 = array (
 	'post_type' => 'events',
-	'post_per_page' => '6', 
-	'orderby' => 'date',
-	'order' => 'DESC'
-); 
-$args2 = array(
-	'post_type' => 'past-events',
-	'post_per_page' => '10',
-	'orderby' => 'date',
-	'order' => 'DESC'
-);             
+	'posts_per_page' => -1,
+	'meta_key' => 'event_date',
+	'orderby' => 'meta_value',
+	'order' => 'ASC',
+	'meta_query' => array(
+		array(
+			'key' => 'event_date',
+			'compare' => '>=',
+			'value' => $today,
+			'type' => 'numeric'
+		)
+	)
+);
+// $args2 = array(
+// 	'post_type' => 'past-events',
+// 	'post_per_page' => '10',
+// 	'orderby' => 'date',
+// 	'order' => 'DESC'
+// );             
 
 $upcoming_event_query = new WP_Query( $args1 );
-$past_event_query = new WP_Query( $args2 );
+// $past_event_query = new WP_Query( $args2 );
 
 get_header(); ?>
 
@@ -26,6 +38,7 @@ get_header(); ?>
 		<!-- section -->
 		<section>
 
+		
 		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
             <!-- banner -->
             <?php get_template_part('./partials/partials-banner', 'banner-section'); ?>
@@ -51,16 +64,12 @@ get_header(); ?>
 			<article class="container">
                 <div class="row">
 
-				<?php if($past_event_query->have_posts() ) : while ( $past_event_query->have_posts() ) : $past_event_query->the_post(); ?>
-					<?php get_template_part('./partials/partials-events-bottom-card', 'bottom-card'); ?>
-				<?php endwhile; ?>
-				<?php else: ?>	
+				
 
 				</div>
 			</article>
 			<!-- /Past Events -->
-		<?php endif; ?>
-
+		
 		</section>
 		<!-- /section -->
 	</main>
