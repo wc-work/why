@@ -8,6 +8,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  color: #2C2C2C !important;
+}
+
 /**
  * modules/variables
  * ---
@@ -94,13 +98,21 @@
   position: relative;
   z-index: 1;
 }
+.darken-photo p {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 50;
+  text-align: center;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
 
 /**
  * partials/top-card
  * ---
  */
 .card-event {
-  width: 400px;
   border-radius: 35px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -111,21 +123,40 @@
 
 .card-body {
   text-align: center;
-  font-size: 16px;
 }
 
+/**
+ * partials/bottom-card
+ * ---
+ */
 .card-past-event {
-  width: 400px;
   border-radius: 35px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   background-position: center;
   background-size: cover;
+  text-decoration: none;
 }
 
-.card-body {
-  background-color: rgba(255, 255, 255, 0.5);
+.card-past-body {
   text-align: center;
-  font-size: 16px;
+  border-radius: 35px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.card-past-body:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: ease 1s;
+}
+
+.link {
+  color: #2C2C2C;
+}
+
+a {
+  height: 100%;
+  width: 100%;
+}
+a:hover {
+  text-decoration: none;
 }
 
 body {
