@@ -94,7 +94,7 @@ body {
   font-size: 3rem;
   text-align: center;
   color: white;
-  padding-top: 5rem;
+  top: 40%;
   position: relative;
   z-index: 1;
 }
@@ -119,6 +119,8 @@ body {
 
 .card-img-event {
   border-radius: 35px 35px 0 0;
+  max-height: 250px;
+  width: auto;
 }
 
 .card-body {
@@ -161,6 +163,10 @@ a:hover {
 
 body {
   background-color: #EFEFF2;
+}
+
+.gallery--title {
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */
