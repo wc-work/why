@@ -50,10 +50,8 @@ html {
  * partials/header
  * ---
  */
-.header {
-  width: 100%;
-  height: 75px;
-  background-color: mediumaquamarine;
+.custom-nav {
+  background-color: #5565A6;
 }
 
 /**
