@@ -1,0 +1,17 @@
+/**
+ * partials/gallery
+ * ---
+ */
+// .gallery-container {
+//     display: inline-block;
+// }
+
+ .list-photo {
+    list-style-type: none;
+
+     img {
+        border-radius: 35px; 
+        display: block;
+        margin: auto;
+     }
+ }

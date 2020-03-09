@@ -161,6 +161,19 @@ a:hover {
   text-decoration: none;
 }
 
+/**
+ * partials/gallery
+ * ---
+ */
+.list-photo {
+  list-style-type: none;
+}
+.list-photo img {
+  border-radius: 35px;
+  display: block;
+  margin: auto;
+}
+
 body {
   background-color: #EFEFF2;
 }
