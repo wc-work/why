@@ -7,11 +7,13 @@ Template Post Type: page
 // Date Variable
 $today = date('Ymd');
 
-$upcoming_event = new WP_Query( array (
+// Custom Query Arguments
+$args1 = array (
 	'post_type' => 'events',
-	'posts_per_page' => -1,
+	'posts_per_page' => 200,
 	'meta_key' => 'event_date',
 	'meta_type' => 'numeric',
+	'no_found_rows' => true,
 	'orderby' => 'meta_value_num',
 	'order' => 'ASC',
 	'meta_query' => array(
@@ -22,12 +24,13 @@ $upcoming_event = new WP_Query( array (
 			'type' => 'numeric'
 		)
 	)
-));
-$past_event = new WP_Query( array (
+);
+$args2 = array (
 	'post_type' => 'events',
-	'posts_per_page' => -1,
+	'posts_per_page' => 200,
 	'meta_key' => 'event_date',
 	'meta_type' => 'numeric',
+	'no_found_rows' => true,
 	'orderby' => 'meta_value_num',
 	'order' => 'ASC',
 	'meta_query' => array(
@@ -38,7 +41,11 @@ $past_event = new WP_Query( array (
 			'type' => 'numeric'
 		)
 	)
-));
+);
+
+// Custom Query Variables
+$upcoming_event = new WP_Query($args1);
+$past_event = new WP_Query($args2);
 
 get_header(); ?>
 
