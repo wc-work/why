@@ -29,21 +29,21 @@ get_header(); ?>
       <h1 class="our-story">Our Story</h1>
     </div>
     <!-- <div class="info-cards-wrapper"> -->
-      <div class="d-flex content centered">
-        <div class="col row-one box-one box">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6">
         <img class="team-photo" src="<?php echo get_field('our_story_photo')['url'] ?>">
         </div>
-        <div class="col row-one box-two box">
+        <div class="col-12 col-sm-6 row-one box-two box">
           <h2>History</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto explicabo, autem unde sint commodi rem iure repellat fugit minus non distinctio ipsum, voluptates ab. Eveniet, tempora vitae a amet odit fuga tempore. Minus, error, delectus excepturi molestiae laboriosam consectetur provident optio expedita laudantium earum laborum. Deleniti, eveniet quisquam?
           </p>
         </div>
-        <div class="col row-two box-three box">
+        <div class="col-12 col-sm-6 row-two box-three box">
           <h2>What We Do</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto explicabo, autem unde sint commodi rem iure repellat fugit minus non distinctio ipsum, voluptates ab. Eveniet, tempora vitae a amet odit fuga tempore. Minus, error, delectus excepturi molestiae laboriosam consectetur provident optio expedita laudantium earum laborum. Deleniti, eveniet quisquam?
           </p>
         </div>
-        <div class="col row-two box-four box">
+        <div class="col-12 col-sm-6 row-two box-four box">
           <h2>Why Give to W.H.Y.</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto explicabo, autem unde sint commodi rem iure repellat fugit minus non distinctio ipsum, voluptates ab. Eveniet, tempora vitae a amet odit fuga tempore. Minus, error, delectus excepturi molestiae laboriosam consectetur provident optio expedita laudantium earum laborum. Deleniti, eveniet quisquam?
           </p>
