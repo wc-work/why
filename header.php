@@ -34,18 +34,18 @@
 		<!-- header -->
 		<header class="header clear">
 
-			<nav class="navbar navbar-expand-md navbar-light custom-nav" role="navigation">
-				<div class="container">
+			<nav class="navbar navbar-expand-md navbar-light custom-nav p-0" role="navigation">
+				<div class="container-fluid">
 					<!-- logo -->
 					<div class="logo">
 						<a href="<?php echo home_url(); ?>">
 							<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/why-logo.png" alt="Logo" class="logo-img">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/why-logo.png" alt="Logo" class="logo--img">
 						</a>
 					</div>
 					<!-- /logo -->
 					<!-- Brand and toggle get grouped for better mobile display -->
-					<button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
+					<button class="navbar-toggler ml-auto mr-3" type="button" data-toggle="collapse"
 						data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1"
 						aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
