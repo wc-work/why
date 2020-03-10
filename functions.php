@@ -321,6 +321,38 @@ function enable_threaded_comments()
     }
 }
 
+/*------------------------------------*\
+	     Login Custom Styles
+\*------------------------------------*/
+
+add_filter( 'login_headerurl', 'namespace_login_headerurl' );
+/**
+ * Replaces the login header logo URL
+ *
+ * @param $url
+ */
+function namespace_login_headerurl( $url ) {
+    $url = home_url( '/' );
+    return $url;
+}
+
+add_filter( 'login_headertext', 'namespace_login_headertext' );
+/**
+ * Replaces the login header logo title
+ *
+ * @param $title
+ */
+function namespace_login_headertext( $title ) {
+    $title = get_bloginfo( 'name' );
+    return $title;
+}
+
+/**
+ * Replaces the login header logo
+ */
+function namespace_login_style() {
+    echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('template_url') . '/login/custom-login-style.scss"/>';
+}
 
 /*------------------------------------*\
 	Actions + Filters + ShortCodes
@@ -336,6 +368,7 @@ add_action('init', 'register_navwalker_menu'); // Add Navwalker for Bootstrap Me
 // add_action('init', 'create_post_type_html5'); // Add our HTML5 Blank Custom Post Type
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('init', 'html5wp_pagination'); // Add our HTML5 Pagination
+add_action( 'login_head', 'namespace_login_style' ); // Adds customization for login screen
 
 // Remove Actions
 // remove_action('wp_head', 'feed_links_extra', 3); // Display the links to the extra feeds such as category feeds

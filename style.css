@@ -52,6 +52,20 @@ html {
  */
 .custom-nav {
   background-color: #5565A6;
+  border-bottom: 1px solid #2C2C2C;
+  box-shadow: 2px 2px 5px #2C2C2C;
+}
+.custom-nav button {
+  background-color: #ABBAF7;
+}
+.custom-nav .container > .navbar-collapse > .navbar-nav > .menu-item > .nav-link {
+  color: #fff;
+  font-size: 2rem;
+}
+
+.logo-img {
+  height: 3rem;
+  width: auto;
 }
 
 /**
