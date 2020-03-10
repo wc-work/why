@@ -100,17 +100,44 @@ body{
 
   .box {
     border: 1px solid #000;
-    height: 300px;
-    background-color: maroon;
+    height: 500px;
+    background-color: #EFEFF2;
+    border-radius: 50px;
+    padding: 0px;
+    overflow: hidden;
+    margin-bottom: 3rem;
   }
+  
   .centered {
-    height: 50rem;
+    height: 96rem;
     width: 100%;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: 25px;
+  }
+
+  .team-photo {
+    max-width: 100%;
+    height: 100%;
+  }
+
+  .box h2, p{
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .box-two {
+    background-color: #BED563;
+  }
+
+  .box-three {
+    background-color: #FFC151;
   }
   
+  .box-four {
+    background-color: #F26B3A;
+  }
   
 }
   

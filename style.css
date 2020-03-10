@@ -8,10 +8,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-html {
-  font-size: 62.5%;
-}
-
 /**
  * modules/variables
  * ---
@@ -60,7 +56,7 @@ html {
 .header {
   width: 100%;
   height: 75px;
-  background-color: mediumaquamarine;
+  background-color: #5565A6;
 }
 
 /**
@@ -70,7 +66,7 @@ html {
 .footer {
   width: 100%;
   height: 200px;
-  background-color: tomato;
+  background-color: #707070;
 }
 
 body {
@@ -159,15 +155,37 @@ body {
 }
 .page-home .box {
   border: 1px solid #000;
-  height: 300px;
-  background-color: maroon;
+  height: 500px;
+  background-color: #EFEFF2;
+  border-radius: 50px;
+  padding: 0px;
+  overflow: hidden;
+  margin-bottom: 3rem;
 }
 .page-home .centered {
-  height: 50rem;
+  height: 96rem;
   width: 100%;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 25px;
+}
+.page-home .team-photo {
+  max-width: 100%;
+  height: 100%;
+}
+.page-home .box h2, .page-home p {
+  text-align: center;
+  margin-top: 1rem;
+}
+.page-home .box-two {
+  background-color: #BED563;
+}
+.page-home .box-three {
+  background-color: #FFC151;
+}
+.page-home .box-four {
+  background-color: #F26B3A;
 }
 
 /*# sourceMappingURL=style.css.map */
