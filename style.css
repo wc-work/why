@@ -71,7 +71,7 @@ html {
 }
 .logo--img {
   height: 3rem;
-  width: auto;
+  vertical-align: inherit;
 }
 
 /**

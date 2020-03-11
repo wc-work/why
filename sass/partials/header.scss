@@ -16,6 +16,7 @@
   .container-fluid>.navbar-collapse>.navbar-nav>.menu-item>.nav-link {
     font-size: 2rem;
   }
+
   li {
     background-color: #ABBAF7;
     border-top: 1px solid #999999;
@@ -27,7 +28,7 @@
 
   &--img {
     height: 3rem;
-    width: auto;
+    vertical-align: inherit;
   }
 }
 
