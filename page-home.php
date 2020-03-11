@@ -24,32 +24,30 @@ get_header(); ?>
 
   <!-------------------------- Our Story Content------------------------------------>
 
-  <section class="container home-content rounded">
+  <section class="container home-content">
     <div class="row d-flex justify-content-center mt-3">
       <h1 class="our-story">Our Story</h1>
     </div>
-    <!-- <div class="info-cards-wrapper"> -->
-      <div class="row">
-        <div class="col-xs-12 col-sm-6">
+      <div class="row no-gutters squares-container">
+        <div class="col-xs-12 col-md-6 box">
         <img class="team-photo" src="<?php echo get_field('our_story_photo')['url'] ?>">
         </div>
-        <div class="col-12 col-sm-6 row-one box-two box">
+        <div class="col-12 col-md-6 box-two box">
           <h2>History</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto explicabo, autem unde sint commodi rem iure repellat fugit minus non distinctio ipsum, voluptates ab. Eveniet, tempora vitae a amet odit fuga tempore. Minus, error, delectus excepturi molestiae laboriosam consectetur provident optio expedita laudantium earum laborum. Deleniti, eveniet quisquam?
           </p>
         </div>
-        <div class="col-12 col-sm-6 row-two box-three box">
+        <div class="col-12 col-md-6 box-three box">
           <h2>What We Do</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto explicabo, autem unde sint commodi rem iure repellat fugit minus non distinctio ipsum, voluptates ab. Eveniet, tempora vitae a amet odit fuga tempore. Minus, error, delectus excepturi molestiae laboriosam consectetur provident optio expedita laudantium earum laborum. Deleniti, eveniet quisquam?
           </p>
         </div>
-        <div class="col-12 col-sm-6 row-two box-four box">
+        <div class="col-12 col-md-6 box-four box">
           <h2>Why Give to W.H.Y.</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto explicabo, autem unde sint commodi rem iure repellat fugit minus non distinctio ipsum, voluptates ab. Eveniet, tempora vitae a amet odit fuga tempore. Minus, error, delectus excepturi molestiae laboriosam consectetur provident optio expedita laudantium earum laborum. Deleniti, eveniet quisquam?
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto explicabo, autem unde sint commodi rem iure repellat fugit minus non distinctio ipsum, voluptates ab. Eveniet, tempora vitae a amet odit fuga tempore. Minus, error, delectus excepturi molestiae laboriosam consectetur provident optio expedita laudantium earum laborum. Deleniti, eveniet quisquam? fugit minus non distinctio ipsum, voluptates ab. Eveniet, tempora vitae a amet odit fuga tempore. Minus, error, delectus excepturi molestiae laboriosam consectetur provident optio expedita laudantium earum laborum. Deleniti, eveniet quisquam?
           </p>
         </div>
       </div>
-    <!-- </div> -->
   </section>
 </main>
 

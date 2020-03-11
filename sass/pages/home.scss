@@ -91,53 +91,57 @@ body{
 
   // Home Content styles
 
-  .info-cards-wrapper{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
   .box {
     border: 1px solid #000;
-    height: 500px;
+    min-height: 300px;
     background-color: #EFEFF2;
     border-radius: 50px;
     padding: 0px;
-    overflow: hidden;
     margin-bottom: 3rem;
   }
-  
-  .centered {
-    height: 96rem;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 25px;
-  }
-
   .team-photo {
     max-width: 100%;
-    height: 500px;
+    height: auto;
+    border-radius: 50px;
+    overflow: hidden;
   }
-
   .box h2, p{
     text-align: center;
     margin-top: 1rem;
+    padding: 0 1.5rem;
   }
-
   .box-two {
     background-color: #BED563;
   }
-
   .box-three {
     background-color: #FFC151;
   }
-  
   .box-four {
     background-color: #F26B3A;
   }
-  
+// Media Queries
+  @media screen and (min-width: 576px) {
+    p{
+      padding: 0 2.5rem;
+    }
+    //daddy box
+    .squares-container {
+      max-width: 700px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .box{
+      max-width: 300px;
+      height: 475px;
+      overflow: scroll;
+    }
+    .home-content{
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
 }
   

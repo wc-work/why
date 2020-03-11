@@ -147,36 +147,24 @@ body {
   left: 47%;
   transform: translate(-50%, -50%) rotate(-45deg);
 }
-.page-home .info-cards-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 .page-home .box {
   border: 1px solid #000;
-  height: 500px;
+  min-height: 300px;
   background-color: #EFEFF2;
   border-radius: 50px;
   padding: 0px;
-  overflow: hidden;
   margin-bottom: 3rem;
-}
-.page-home .centered {
-  height: 96rem;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 25px;
 }
 .page-home .team-photo {
   max-width: 100%;
-  height: 500px;
+  height: auto;
+  border-radius: 50px;
+  overflow: hidden;
 }
 .page-home .box h2, .page-home p {
   text-align: center;
   margin-top: 1rem;
+  padding: 0 1.5rem;
 }
 .page-home .box-two {
   background-color: #BED563;
@@ -186,6 +174,28 @@ body {
 }
 .page-home .box-four {
   background-color: #F26B3A;
+}
+@media screen and (min-width: 576px) {
+  .page-home p {
+    padding: 0 2.5rem;
+  }
+  .page-home .squares-container {
+    max-width: 700px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .page-home .box {
+    max-width: 300px;
+    height: 475px;
+    overflow: scroll;
+  }
+  .page-home .home-content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
