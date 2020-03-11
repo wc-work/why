@@ -3,12 +3,11 @@
  * ---
  */
 
-
 // Header container
 .custom-nav {
   background-image: linear-gradient(to right, rgba(85, 101, 166, .3), rgba(85, 101, 166, 1));
-  height: 40px;
-  padding: 0px 25px;
+  height: 45px;
+  padding: 0;
 
   button {
     background-color: #ABBAF7;
@@ -24,6 +23,7 @@
     padding-left: 5px;
   }
 }
+
 .logo {
   margin: 5px 0 0 5px;
 
@@ -35,7 +35,6 @@
 
 @media only screen and (min-width: 768px) {
   .custom-nav {
-    padding: 0;
 
     li {
       background-color: transparent;
