@@ -39,8 +39,13 @@
 					<!-- logo -->
 					<div class="logo">
 						<a href="<?php echo home_url(); ?>">
-							<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/why-logo.png" alt="Logo" class="logo--img">
+							<!-- Dynamic Logo -->
+							<?php
+							$logo = get_field('main_logo');
+							if( !empty( $logo ) ):
+							?>
+							<img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>" class="logo--img">
+							<?php endif; ?>
 						</a>
 					</div>
 					<!-- /logo -->
