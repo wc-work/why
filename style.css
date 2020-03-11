@@ -53,6 +53,7 @@ html {
 .custom-nav {
   background-image: linear-gradient(to right, rgba(85, 101, 166, 0.3), #5565a6);
   height: 40px;
+  padding: 0px 25px;
 }
 .custom-nav button {
   background-color: #ABBAF7;
@@ -70,10 +71,33 @@ html {
   margin: 5px 0 0 5px;
 }
 .logo--img {
-  height: 3rem;
+  height: 30px;
   vertical-align: inherit;
 }
 
+@media only screen and (min-width: 768px) {
+  .custom-nav {
+    padding: 0;
+  }
+  .custom-nav li {
+    background-color: transparent;
+    border: none;
+  }
+  .custom-nav li:nth-last-child(1) {
+    background-color: #F26B3A;
+    border-radius: 35px;
+    height: 32px;
+    align-self: center;
+    padding: 0 2rem;
+  }
+  .custom-nav li:nth-last-child(n-1) {
+    padding-right: 2rem;
+  }
+  .custom-nav .container-fluid > .navbar-collapse > .navbar-nav > .menu-item > .nav-link {
+    color: #fff;
+    padding: 0 10px;
+  }
+}
 /**
  * partials/footer
  * ---

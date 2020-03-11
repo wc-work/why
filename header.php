@@ -34,7 +34,7 @@
 		<!-- header -->
 		<header class="header clear">
 
-			<nav class="navbar navbar-expand-md navbar-light custom-nav p-0" role="navigation">
+			<nav class="navbar navbar-expand-md navbar-light custom-nav" role="navigation">
 				<div class="container-fluid">
 					<!-- logo -->
 					<div class="logo">
