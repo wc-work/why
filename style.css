@@ -75,6 +75,14 @@ html {
   vertical-align: inherit;
 }
 
+.small {
+  display: block;
+}
+
+.large {
+  display: none;
+}
+
 @media only screen and (min-width: 768px) {
   .custom-nav li {
     background-color: transparent;
@@ -85,14 +93,20 @@ html {
     border-radius: 35px;
     height: 32px;
     align-self: center;
-    padding: 0 2rem;
+    padding: 0 1vw;
   }
   .custom-nav li:nth-last-child(n-1) {
-    padding-right: 2rem;
+    padding-right: 1rem;
+  }
+  .custom-nav .small {
+    display: none;
+  }
+  .custom-nav .large {
+    display: block;
   }
   .custom-nav .container-fluid > .navbar-collapse > .navbar-nav > .menu-item > .nav-link {
     color: #fff;
-    padding: 0 10px;
+    padding: 0 1vw;
   }
 }
 /**

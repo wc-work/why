@@ -42,9 +42,11 @@
 							<!-- Dynamic Logo -->
 							<?php
 							$logo = get_field('main_logo');
+							$mobileLogo = get_field('mobile_logo');
 							if( !empty( $logo ) ):
 							?>
-							<img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>" class="logo--img">
+							<img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>" class="logo--img large">
+							<img src="<?php echo esc_url($mobileLogo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>" class="logo--img small">
 							<?php endif; ?>
 						</a>
 					</div>
