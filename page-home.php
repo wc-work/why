@@ -17,10 +17,12 @@ get_header(); ?>
         
       <div class="carousel__button--next"></div>
       <div class="carousel__button--prev"></div>
+      <div class="overlay"></div>
+      <div class="title"><h1>We Hear You</h1></div>
     </div>
   </div>
 
-  <!-------------------------Carousel Text ------------------------>
+  
 
   <!-------------------------- Our Story Content------------------------------------>
 
