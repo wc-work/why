@@ -8,7 +8,7 @@
 			$(document).ready(function(){
 			
 			$(function() {
-			  var menu = $('#cssmenu > ul');
+			  var menu = $('.cssmenu > ul');
 			  menu.find('.has-sub > ul').hide();
 			
 			  menu.on('click', function(event) {

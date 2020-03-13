@@ -137,6 +137,11 @@ body {
   background-position: center;
   background-size: cover;
   text-decoration: none;
+  height: 100%;
+  width: 100%;
+}
+.card-past-event:hover {
+  text-decoration: none;
 }
 
 .card-past-body {
@@ -153,14 +158,6 @@ body {
   color: #2C2C2C;
 }
 
-a {
-  height: 100%;
-  width: 100%;
-}
-a:hover {
-  text-decoration: none;
-}
-
 /**
  * partials/gallery
  * ---
@@ -174,130 +171,93 @@ a:hover {
   margin: auto;
 }
 
-#cssmenu {
+.cssmenu {
   width: 250px;
   font-family: Roboto, Helvetica, sans-serif;
 }
-
-#cssmenu i {
-  margin-right: 5px;
-}
-
-#cssmenu ul {
+.cssmenu ul {
   display: block;
   margin: 0;
   padding: 0;
   list-style: none;
   line-height: 1;
 }
-
-#cssmenu ul li {
+.cssmenu ul li {
   position: relative;
   display: block;
 }
-
-#cssmenu ul li a {
+.cssmenu ul li h5 {
   display: block;
   text-decoration: none;
   position: relative;
+  margin: 0;
 }
-
-#cssmenu > ul {
-  border: 1px solid #cccccc;
-  border-radius: 3px;
+.cssmenu > ul {
+  border: 1px solid #2c2c2c;
+  border-radius: 15px;
   background: #ffffff;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
-
-#cssmenu > ul > li:first-child > a {
-  border-radius: 3px 3px 0 0;
+.cssmenu > ul > li {
+  border-bottom: 1px solid #2c2c2c;
 }
-
-#cssmenu > ul > li:last-child > a {
-  border-radius: 0 0 3px 3px;
+.cssmenu > ul > li:last-child {
+  border-radius: 15px;
 }
-
-#cssmenu > ul > li:not(:last-child) {
-  border-bottom: 1px solid #cccccc;
-}
-
-#cssmenu > ul > li.active > a {
+.cssmenu > ul > li.active > h5 {
   color: #777777;
   background-color: #e6e6e6;
 }
-
-#cssmenu > ul > li.has-sub > a::after {
-  content: "";
-  position: absolute;
-  display: block;
-  border: 5px solid transparent;
-  border-top-color: #888888;
-  right: 15px;
-  top: 17px;
-  transition: all 0.25s ease;
-  transform-origin: 0 25%;
-}
-
-#cssmenu > ul > li.has-sub.active > a::after {
-  transform: rotateX(180deg);
-  border-top-color: #777777;
-}
-
-#cssmenu > ul > li:hover > a::after {
-  border-top-color: #777777;
-}
-
-#cssmenu > ul > li > a {
-  padding: 12px 15px;
+.cssmenu > ul > li > h5 {
+  padding: 12px 0;
   color: #888888;
   transition: all 0.3s ease-out;
   font-size: 14px;
+  text-align: center;
 }
-
-#cssmenu > ul > li > a:hover {
+.cssmenu > ul > li:first-child > h5 {
+  border-radius: 15px 15px 0 0;
+}
+.cssmenu > ul > li:last-child > h5 {
+  border-radius: 0 0 15px 15px;
+}
+.cssmenu > ul > li > h5:hover {
   color: #777777;
   background-color: #e6e6e6;
 }
-
-#cssmenu ul ul li.active > a {
+.cssmenu ul ul li.active > h5 {
   background-color: #f2f2f2;
   color: #777777;
 }
-
-#cssmenu ul ul li.has-sub > a::after {
+.cssmenu ul ul li.has-sub > h5::after {
   content: "";
   position: absolute;
   display: block;
   border: 5px solid transparent;
-  border-top-color: #888888;
+  border-top-color: #2c2c2c;
   right: 15px;
   top: 15px;
   transition: all 0.25s ease;
   transform-origin: 0 25%;
 }
-
-#cssmenu ul ul li.has-sub.active > a::after {
+.cssmenu ul ul li.has-sub.active > h5::after {
   transform: rotateX(180deg);
-  border-top-color: #777777;
+  border-top-color: #2c2c2c;
 }
-
-#cssmenu ul ul li:hover > a::after {
-  border-top-color: #777777;
+.cssmenu ul ul li:hover > h5::after {
+  border-top-color: #2c2c2c;
 }
-
-#cssmenu ul ul li a {
+.cssmenu ul ul li h5 {
   padding: 10px 15px;
   font-size: 14px;
   color: #888888;
   transition: all 0.3s ease-out;
 }
-
-#cssmenu ul ul li a:hover {
+.cssmenu ul ul li h5:hover {
   background-color: #f2f2f2;
   color: #777777;
 }
-
-#cssmenu ul ul ul li a {
+.cssmenu ul ul ul li h5 {
   padding-left: 25px;
 }
 
