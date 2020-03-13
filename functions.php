@@ -62,25 +62,12 @@ if (function_exists('add_theme_support'))
 	Functions
 \*------------------------------------*/
 
-// Change dashboard Posts to Resources
-function cp_change_post_object() {
-    $get_post_type = get_post_type_object('post');
-    $labels = $get_post_type->labels;
-        $labels->name = 'Resources';
-        $labels->singular_name = 'Resource';
-        $labels->add_new = 'Add Resources';
-        $labels->add_new_item = 'Add Resources';
-        $labels->edit_item = 'Edit Resources';
-        $labels->new_item = 'Resources';
-        $labels->view_item = 'View Resources';
-        $labels->search_items = 'Search Resources';
-        $labels->not_found = 'No Resources found';
-        $labels->not_found_in_trash = 'No Resources found in Trash';
-        $labels->all_items = 'All Resources';
-        $labels->menu_name = 'Resources';
-        $labels->name_admin_bar = 'Resources';
+function post_remove ()      //creating functions post_remove for removing menu item
+{ 
+   remove_menu_page('edit.php');
 }
-add_action( 'init', 'cp_change_post_object' );
+
+add_action('admin_menu', 'post_remove');   //adding action for triggering function call
 
 // HTML5 Blank navigation
 function html5blank_nav()

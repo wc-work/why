@@ -1,9 +1,17 @@
 <?php
+
 // Check if Accordion has rows of data
-if( have_rows('accordion') ):while ( have_rows('accordion') ) : the_row();         
-?>
+
+
+if ( have_rows('resources') ):
+?> 
 <li class="active has-sub">
-   <h5><?php the_sub_field('resources'); ?></h5>
+   <h5><?php echo get_sub_field('resource_link'); ?></h5>
+<?php
+   while ( have_rows('resources') ) : the_row();
+
+?>
+
    <ul>
       <a href="#">
       <li>
@@ -14,5 +22,9 @@ if( have_rows('accordion') ):while ( have_rows('accordion') ) : the_row();
    </ul>
 </li>
 <?php 
+
    endwhile;
-    endif;
+   // No rows found
+endif;
+
+?>
