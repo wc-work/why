@@ -163,7 +163,8 @@ body {
   position: absolute;
   top: 0;
   height: 100%;
-  background-color: magenta;
+  padding: 2rem 0;
+  text-align: center;
 }
 .page-home .title {
   z-index: 1001;

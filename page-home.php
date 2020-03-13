@@ -23,7 +23,7 @@ get_header(); ?>
       <!-------------------- Carousel Text and Overlay ---------------------->
 
       <div class="overlay"></div>
-      <div class=" content-wrapper d-flex justify-content-center align-items-center flex-column">
+      <div class=" content-wrapper d-flex justify-content-around align-items-center flex-column">
         <div class="title">
           <h1>We Hear You!</h1>
         </div>
