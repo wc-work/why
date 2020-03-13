@@ -5,20 +5,38 @@ Template Post Type: page
 */
 
 get_header(); ?>
-
+<!---------------------------- Carousel --------------------------->
 <main class="page-home">
-  <div class="carousel-wrapper container-fluid home-slider">
+  <div class="carousel-wrapper container-fluid home-slider d-flex justify-content-center align-items-center">
     <div class="carousel">
       <img class="carousel__photo initial" src="<?php echo get_field('picture_1')['url'] ?>">
       <img class="carousel__photo" src="<?php echo get_field('picture_2')['url'] ?>">
       <img class="carousel__photo" src="<?php echo get_field('picture_3')['url'] ?>">
       <img class="carousel__photo" src="<?php echo get_field('picture_4')['url'] ?>">
       <img class="carousel__photo" src="<?php echo get_field('picture_5')['url'] ?>">
-        
+
+        <!----------------------- Carousel Buttons ------------------------->
+
       <div class="carousel__button--next"></div>
       <div class="carousel__button--prev"></div>
+
+      <!-------------------- Carousel Text and Overlay ---------------------->
+
       <div class="overlay"></div>
-      <div class="title"><h1>We Hear You</h1></div>
+      <div class=" content-wrapper d-flex justify-content-center align-items-center flex-column">
+        <div class="title">
+          <h1>We Hear You!</h1>
+        </div>
+        <div class="facts-ask">
+          <h2>Did You Know?</h2>
+        </div>
+        <div class="facts">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae minus ex adipisci deleniti in fugit, corporis doloremque. Ipsa soluta repudiandae accusantium assumenda.
+        </div>
+        <div class="slogan">
+          <h3>"Helping deaf children learn to listen and speak"</h3>
+        </div>
+     </div>
     </div>
   </div>
 

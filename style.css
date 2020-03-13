@@ -159,11 +159,29 @@ body {
   right: 0;
   bottom: 0;
 }
-.page-home .title {
+.page-home .content-wrapper {
   position: absolute;
-  top: 5%;
-  left: 40%;
+  top: 0;
+  height: 100%;
+  background-color: magenta;
+}
+.page-home .title {
   z-index: 1001;
+  color: #FFC151;
+}
+.page-home .facts-ask {
+  z-index: 1001;
+  color: #FFC151;
+}
+.page-home .facts {
+  z-index: 1001;
+  color: #FFC151;
+  width: 50%;
+}
+.page-home .slogan {
+  z-index: 1001;
+  color: #FFC151;
+  width: 50%;
 }
 .page-home .box {
   min-height: 300px;
