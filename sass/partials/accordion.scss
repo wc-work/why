@@ -13,7 +13,7 @@
     position: relative;
     display: block;
   }
-  ul li h5 {
+  ul li h4 {
     display: block;
     text-decoration: none;
     position: relative;
@@ -31,33 +31,39 @@
   & > ul > li:last-child {
     border-radius: 15px;
   }
-  & > ul > li.active > h5 {
+  & > ul > li.active > h4 {
     color: #777777;
     background-color: #e6e6e6;
   }
 
-  & > ul > li > h5 {
+  & > ul > li > h4 {
     padding: 12px 0;
     color: #888888;
     transition: all 0.3s ease-out;
-    font-size: 14px;
+    font-size: 18px;
     text-align: center;
   }
-  & > ul > li:first-child > h5 {
+  & > ul > li:first-child > h4 {
     border-radius: 15px 15px 0 0;
   }
-  & > ul > li:last-child > h5 {
+  & > ul > li:last-child > h4 {
     border-radius: 0 0 15px 15px;
   }
-  & > ul > li > h5:hover {
+  & > ul > li > h4:hover {
     color: #777777;
     background-color: #e6e6e6;
   }
-  ul ul li.active > h5 {
+  ul ul li > h5 {
+    padding: 12px 0px 0px 25px;
+    color: #888888;
+    transition: all 0.3s ease-out;
+    font-size: 14px;
+  }
+  ul ul li.active > h4 {
     background-color: #f2f2f2;
     color: #777777;
   }
-  ul ul li.has-sub > h5::after {
+  ul ul li.has-sub > h4::after {
     content: '';
     position: absolute;
     display: block;
@@ -68,24 +74,25 @@
     transition: all .25s ease;
     transform-origin: 0 25%;
   }
-  ul ul li.has-sub.active > h5::after {
+  ul ul li.has-sub.active > h4::after {
     transform: rotateX(180deg);
     border-top-color: #2c2c2c;
   }
-  ul ul li:hover > h5::after {
+  ul ul li:hover > h4::after {
     border-top-color: #2c2c2c;
   }
-  ul ul li h5 {
+  ul ul li h4 {
     padding: 10px 15px;
     font-size: 14px;
     color: #888888;
     transition: all 0.3s ease-out;
+    font-weight: bold;
   }
-  ul ul li h5:hover {
+  ul ul li h4:hover {
     background-color: #f2f2f2;
     color: #777777;
   }
-  ul ul ul li h5 {
+  ul ul ul li h4 {
     padding-left: 25px;
   }
 }

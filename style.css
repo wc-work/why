@@ -186,7 +186,7 @@ body {
   position: relative;
   display: block;
 }
-.cssmenu ul li h5 {
+.cssmenu ul li h4 {
   display: block;
   text-decoration: none;
   position: relative;
@@ -204,32 +204,38 @@ body {
 .cssmenu > ul > li:last-child {
   border-radius: 15px;
 }
-.cssmenu > ul > li.active > h5 {
+.cssmenu > ul > li.active > h4 {
   color: #777777;
   background-color: #e6e6e6;
 }
-.cssmenu > ul > li > h5 {
+.cssmenu > ul > li > h4 {
   padding: 12px 0;
   color: #888888;
   transition: all 0.3s ease-out;
-  font-size: 14px;
+  font-size: 18px;
   text-align: center;
 }
-.cssmenu > ul > li:first-child > h5 {
+.cssmenu > ul > li:first-child > h4 {
   border-radius: 15px 15px 0 0;
 }
-.cssmenu > ul > li:last-child > h5 {
+.cssmenu > ul > li:last-child > h4 {
   border-radius: 0 0 15px 15px;
 }
-.cssmenu > ul > li > h5:hover {
+.cssmenu > ul > li > h4:hover {
   color: #777777;
   background-color: #e6e6e6;
 }
-.cssmenu ul ul li.active > h5 {
+.cssmenu ul ul li > h5 {
+  padding: 12px 0px 0px 25px;
+  color: #888888;
+  transition: all 0.3s ease-out;
+  font-size: 14px;
+}
+.cssmenu ul ul li.active > h4 {
   background-color: #f2f2f2;
   color: #777777;
 }
-.cssmenu ul ul li.has-sub > h5::after {
+.cssmenu ul ul li.has-sub > h4::after {
   content: "";
   position: absolute;
   display: block;
@@ -240,24 +246,25 @@ body {
   transition: all 0.25s ease;
   transform-origin: 0 25%;
 }
-.cssmenu ul ul li.has-sub.active > h5::after {
+.cssmenu ul ul li.has-sub.active > h4::after {
   transform: rotateX(180deg);
   border-top-color: #2c2c2c;
 }
-.cssmenu ul ul li:hover > h5::after {
+.cssmenu ul ul li:hover > h4::after {
   border-top-color: #2c2c2c;
 }
-.cssmenu ul ul li h5 {
+.cssmenu ul ul li h4 {
   padding: 10px 15px;
   font-size: 14px;
   color: #888888;
   transition: all 0.3s ease-out;
+  font-weight: bold;
 }
-.cssmenu ul ul li h5:hover {
+.cssmenu ul ul li h4:hover {
   background-color: #f2f2f2;
   color: #777777;
 }
-.cssmenu ul ul ul li h5 {
+.cssmenu ul ul ul li h4 {
   padding-left: 25px;
 }
 
