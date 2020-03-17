@@ -1,6 +1,6 @@
 
-<li class="active has-sub links">
-   <h4>Resource Links</h4>
+<li class="active has-sub">
+   <h4 class="links">Resource Links</h4>
    <ul>
       <?php
       // Check if Accordion has rows of data (RESOURCE LINKS)

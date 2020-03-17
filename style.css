@@ -217,9 +217,17 @@ body {
 }
 .cssmenu > ul > li:first-child > h4 {
   border-radius: 15px 15px 0 0;
+  background-color: #5565A6;
+  color: #ffffff;
+}
+.cssmenu > ul > li:nth-child(2) > h4 {
+  background-color: #FFC151;
+  color: #ffffff;
 }
 .cssmenu > ul > li:last-child > h4 {
   border-radius: 0 0 15px 15px;
+  background-color: #F26B3A;
+  color: #ffffff;
 }
 .cssmenu > ul > li > h4:hover {
   color: #777777;
