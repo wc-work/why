@@ -1,6 +1,8 @@
 			<!-- footer -->
 			<footer class="footer" role="contentinfo">
 
+			<a href="#"><img class="social" src="assets/img/facebook-4-16.png"></a>
+
 				<!-- copyright -->
 				<p class="copyright">
 					&copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?>. <?php _e('Powered by', 'html5blank'); ?>
