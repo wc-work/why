@@ -1,13 +1,26 @@
 			<!-- footer -->
 			<footer class="footer" role="contentinfo">
-
-			<a href="#"><img class="social" src="assets/img/facebook-4-16.png"></a>
-
-				<!-- copyright -->
+			
+			<div class="container d-flex flex-column align-items-center">
+				<div class="row ">
+					<a href="#"><i class="fab fa-facebook fa-2x social"></i></a>
+				</div>
+				<div class="row footer-info">
+					<p>We Hear You</p>
+				</div>
+				<div class="row footer-info">
+					<p>7775 N Palm Ave Suite</p>
+				</div>
+				<div class="row footer-info">
+					<p>Fresno, CA 93711</p>
+				</div>
+				<div class="row footer-info">
+					<p>559-225-2665</p>
+				</div>
 				<p class="copyright">
-					&copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?>. <?php _e('Powered by', 'html5blank'); ?>
-					<a href="//wordpress.org" title="WordPress">WordPress</a> &amp; <a href="//html5blank.com" title="HTML5 Blank">HTML5 Blank</a>.
+					&copy; <?php echo date('Y'); ?> All Rights Reserved.
 				</p>
+			</div>
 				<!-- /copyright -->
 
 			</footer>
