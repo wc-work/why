@@ -11,7 +11,22 @@
 }
 .footer-info{
   color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
 }
 .copyright{
+  color: white;
+}
+.footer-align{
+  height: 250px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+}
+.social {
   color: white;
 }
