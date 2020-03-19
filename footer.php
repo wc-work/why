@@ -1,18 +1,18 @@
 			<!-- footer -->
 			<footer class="footer" role="contentinfo">
 			
-				<div class="container footer-align">
+				<div class="container-fluid footer-align">
 					<div class="row">
 						<a href="#"><i class="fab fa-facebook fa-2x social"></i></a>
 					</div>
 					<div class="row footer-info">
-							We Hear You Foundation
+							We Hear You Foundation |
 						<br>
-							7775 N Palm Ave Suite
+							  7775 N Palm Ave Suite |
 						<br>
-							Fresno, CA 93711
+							  Fresno, CA 93711 |
 						<br>
-							559-225-2665
+							  559-225-2665
 					</div>
 					<div class="copyright">
 						&copy; <?php echo date('Y'); ?> All Rights Reserved.
