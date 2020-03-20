@@ -20,22 +20,46 @@ get_header(); ?>
 		endif; ?>
 
             <!-- Accordion-->
-            <article class="container">
-				<div class="row">
-					<div class="col pt-4 d-flex justify-content-center">
-						<div class="cssmenu">
-							<ul>
-								<?php if(have_posts() ) : while ( have_posts() ) : the_post(); ?>
-									<?php get_template_part('./partials/partials-accordion', 'accordion-section'); ?>
-								<?php endwhile; 
-								wp_reset_postdata();
-								endif; ?>	
-								
-							</ul>
-						</div>
+            <article class="container my-5">
+				<div class="row pt-4 d-flex justify-content-around">
+					<div class="cssmenu small">
+						<ul>
+							<?php if(have_posts() ) : while ( have_posts() ) : the_post(); ?>
+								<?php get_template_part('./partials/partials-accordion', 'accordion-section'); ?>
+							<?php endwhile; 
+							wp_reset_postdata();
+							endif; ?>	
+							
+						</ul>
 					</div>
-				</div>	
-				
+					<div class="cssmenu full col">
+						<ul>
+							<?php if(have_posts() ) : while ( have_posts() ) : the_post(); ?>
+								<?php get_template_part('./partials/partials-resource-link-card', 'link-card-section'); ?>
+							<?php endwhile; 
+							wp_reset_postdata();
+							endif; ?>	
+						</ul>
+					</div>
+					<div class="cssmenu full col">
+						<ul>
+							<?php if(have_posts() ) : while ( have_posts() ) : the_post(); ?>
+								<?php get_template_part('./partials/partials-resource-document-card', 'document-card-section'); ?>
+							<?php endwhile; 
+							wp_reset_postdata();
+							endif; ?>
+						</ul>
+					</div>
+					<div class="cssmenu full col">
+						<ul>
+							<?php if(have_posts() ) : while ( have_posts() ) : the_post(); ?>
+								<?php get_template_part('./partials/partials-resource-brochure-card', 'brochure-card-section'); ?>
+							<?php endwhile; 
+							wp_reset_postdata();
+							endif; ?>
+						</ul>
+					</div>
+				</div>
 			</article>
 			<!-- Accordion -->
 		</section>

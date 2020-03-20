@@ -1,5 +1,5 @@
 .cssmenu {
-  width: 250px;
+  width: 65vw;
   font-family: Roboto, Helvetica, sans-serif;
 
   ul {
@@ -19,53 +19,67 @@
     position: relative;
     margin: 0;
   }
+  ul a {
+    text-decoration: none;
+    color: #2c2c2c;
+  }
+  ul > li > ul > li > ul:nth-child(even) {
+    background-color: #e1e1e2;
+  }
+
+  ul > a > li > p {
+    padding-left: 30px;
+    margin: 0;
+  }
+
   & > ul {
-    border: 1px solid #2c2c2c;
+    // border: 1px solid #2c2c2c;
     border-radius: 15px;
     background: #ffffff;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
   }
-  & > ul > li {
-    border-bottom: 1px solid #2c2c2c;
-  }
-  & > ul > li:last-child {
-    border-radius: 15px;
-  }
+
   & > ul > li.active > h4 {
     color: #777777;
-    background-color: #e6e6e6;
   }
 
   & > ul > li > h4 {
     padding: 12px 0;
     color: #888888;
     transition: all 0.3s ease-out;
-    font-size: 18px;
+    font-size: 22px;
     text-align: center;
+  }
+  .brochure {
+    background-color: #F26B3A;
+  }
+  .document {
+    background-color: #FFC151;
+  }
+  .link {
+    background-color: #5565A6;
   }
   & > ul > li:first-child > h4 {
     border-radius: 15px 15px 0 0;
-    background-color: #5565A6;
     color: #ffffff;
+    font-weight: bold;
   }
   & > ul > li:nth-child(2) > h4 {
-    background-color: #FFC151;
     color: #ffffff;
+    font-weight: bold;
   }
   & > ul > li:last-child > h4 {
-    border-radius: 0 0 15px 15px;
-    background-color: #F26B3A;
     color: #ffffff;
+    font-weight: bold;
   }
-  & > ul > li > h4:hover {
-    color: #777777;
-    background-color: #e6e6e6;
+  .curves {
+    border-radius: 0 0 15px 15px;
   }
   ul ul li > h5 {
     padding: 12px 0px 0px 25px;
     color: #888888;
     transition: all 0.3s ease-out;
-    font-size: 14px;
+    font-size: 18px;
   }
   ul ul li.active > h4 {
     background-color: #f2f2f2;
@@ -91,20 +105,31 @@
   }
   ul ul li h4 {
     padding: 10px 15px;
-    font-size: 14px;
+    font-size: 20px;
     color: #888888;
     transition: all 0.3s ease-out;
     font-weight: bold;
-  }
-  ul ul li h4:hover {
-    background-color: #f2f2f2;
-    color: #777777;
   }
   ul ul ul li h4 {
     padding-left: 25px;
   }
   
 }
-.links {
+
+@media only screen and (max-width: 768px) {
+  .full {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .small {
+    display: none;
+  }
+  .cssmenu {
+    & > ul > li:first-child > h4 {
+      border-radius: 15px;
+    }
     
   }
+}
