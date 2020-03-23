@@ -67,8 +67,12 @@
   width: 100%;
   height: 300px;
   background-color: #5565A6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.footer .footer-align {
+
+.footer-align {
   height: 250px;
   display: flex;
   align-items: center;
@@ -76,43 +80,51 @@
   justify-content: space-evenly;
   text-align: center;
 }
-.footer .footer-info {
+
+.footer-info {
   color: white;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: space-around;
 }
-.footer .copyright {
+
+.copyright {
   color: white;
 }
-.footer .social {
+
+.social {
   color: white;
 }
+
 @media screen and (min-width: 992px) {
-  .footer .footer-align {
-    height: 250px;
+  .footer-align {
+    height: 150px;
     display: flex;
     align-items: center;
     flex-direction: row;
     justify-content: space-evenly;
     text-align: center;
-    background-color: midnightblue;
   }
-  .footer .footer-info {
+
+  .footer-info {
     width: 700px;
     color: white;
     display: flex;
     align-items: center;
     flex-direction: row;
     justify-content: space-around;
-    background-color: tomato;
+    background-color: midnightblue;
   }
-  .footer br {
+
+  br {
     display: none;
   }
-}
 
+  .footer {
+    height: 150px;
+  }
+}
 body {
   background-color: #EFEFF2;
 }
@@ -251,10 +263,10 @@ body {
   background-color: #BED563;
 }
 .page-home .box-three {
-  background-color: #FFC151;
+  background-color: #F26B3A;
 }
 .page-home .box-four {
-  background-color: #F26B3A;
+  background-color: #FFC151;
 }
 @media screen and (min-width: 576px) {
   .page-home p {
@@ -268,7 +280,7 @@ body {
   }
   .page-home .box {
     max-width: 300px;
-    height: 475px;
+    height: 365px;
     overflow: scroll;
   }
   .page-home .home-content {
@@ -287,7 +299,7 @@ body {
   }
   .page-home .box {
     max-width: 300px;
-    height: 475px;
+    height: 365px;
     overflow: scroll;
   }
   .page-home .home-content {
