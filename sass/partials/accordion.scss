@@ -19,6 +19,9 @@
     position: relative;
     margin: 0;
   }
+  ul li:last-child h4 {
+    border-radius: 0 0 15px 15px;
+  }
   ul a {
     text-decoration: none;
     color: #2c2c2c;
@@ -36,7 +39,7 @@
     // border: 1px solid #2c2c2c;
     border-radius: 15px;
     background: #ffffff;
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.45);
   }
 
   & > ul > li.active > h4 {
@@ -113,7 +116,6 @@
   ul ul ul li h4 {
     padding-left: 25px;
   }
-  
 }
 
 @media only screen and (max-width: 768px) {

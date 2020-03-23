@@ -7,9 +7,10 @@ if ( have_rows('documents') ):
 <li class="active has-sub">
    <h4 class="document">Documents</h4>
    <ul>
-      <li>
-         <h5><?php echo get_sub_field('upload_document')['title']; ?></h5>
-      </li>
+      <a href="<?php echo get_sub_field('upload_document')['url']; ?>">
+         <li>
+            <h5><?php echo get_sub_field('upload_document')['title']; ?></h5>
+         </li>
       </a>
    </ul>
 </li>

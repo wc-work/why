@@ -7,9 +7,10 @@ if ( have_rows('brochures') ):
 <li class="active has-sub">
    <h4 id="toggle" class="curves brochure">Brochures</h4>
    <ul>
-      <li>
-         <h5><?php echo get_sub_field('upload_brochure')['title']; ?></h5>
-      </li>
+      <a href="<?php echo get_sub_field('upload_brochure')['url']; ?>">
+         <li>
+            <h5><?php echo get_sub_field('upload_brochure')['title']; ?></h5>
+         </li>
       </a>
    </ul>
 </li>
