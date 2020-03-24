@@ -3,12 +3,76 @@
  * ---
  */
 
-
 // Header container
-.header {
-  width: 100%;
-  height: 75px;
-  background-color: mediumaquamarine;
+.custom-nav {
+  background-image: linear-gradient(to right, rgba(85, 101, 166, .3), rgba(85, 101, 166, 1));
+  height: 45px;
+  padding: 0;
+
+  button {
+    background-color: #ABBAF7;
+  }
+
+  .container-fluid>.navbar-collapse>.navbar-nav>.menu-item>.nav-link {
+    font-size: 2rem;
+  }
+
+  li {
+    background-color: #ABBAF7;
+    border-top: 1px solid #999999;
+    padding-left: 5px;
+  }
 }
 
+.logo {
+  margin: 5px 0 0 5px;
 
+  &--img {
+    height: 30px;
+    vertical-align: inherit;
+  }
+}
+
+.small {
+  display: block;
+}
+
+.large {
+  display: none;
+}
+
+// Mobile friendly hamburger menu with small logo ability to change
+@media only screen and (min-width: 768px) {
+  .custom-nav {
+
+    li {
+      background-color: transparent;
+      border: none;
+
+      &:nth-last-child(1) {
+        background-color: #F26B3A;
+        border-radius: 35px;
+        height: 32px;
+        align-self: center;
+        padding: 0 1vw;
+      }
+
+      &:nth-last-child(n-1) {
+        padding-right: 1rem;
+      }
+    }
+
+    .small {
+      display: none;
+    }
+
+    .large {
+      display: block;
+    }
+  
+    .container-fluid>.navbar-collapse>.navbar-nav>.menu-item>.nav-link {
+      color: #fff;
+      padding: 0 1vw;
+    }
+  } 
+}
