@@ -7,8 +7,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-html {
-  font-size: 62.5%; //rem becomes 10px : 1rem, instead of 16px : 1rem. Easier to calculate.
+body {
+  color: #2C2C2C !important;
 }
 // Modules
 @import "modules/variables";
@@ -18,6 +18,11 @@ html {
 // Partials
 @import "partials/header";
 @import "partials/footer";
+@import "partials/banner";
+@import "partials/top-card";
+@import "partials/bottom-card";
+@import "partials/gallery";
 
 // Pages
-@import "pages/home.scss";
+@import "pages/home";
+@import "pages/events";

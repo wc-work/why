@@ -1,5 +1,12 @@
+			<?php
+			/*
+			* Bootstrap Modal
+			 */
+			?>
+			
 			<!-- footer -->
 			<footer class="footer" role="contentinfo">
+				
 
 				<!-- copyright -->
 				<p class="copyright">
