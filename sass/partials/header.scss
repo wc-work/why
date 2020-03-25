@@ -6,7 +6,7 @@
 // Header container
 .custom-nav {
   background-image: linear-gradient(to right, rgba(85, 101, 166, .3), rgba(85, 101, 166, 1));
-  height: 45px;
+  height: 55px;
   padding: 0;
 
   button {
@@ -14,7 +14,7 @@
   }
 
   .container-fluid>.navbar-collapse>.navbar-nav>.menu-item>.nav-link {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
 
   li {
@@ -52,9 +52,9 @@
       &:nth-last-child(1) {
         background-color: #F26B3A;
         border-radius: 35px;
-        height: 32px;
+        height: 40px;
         align-self: center;
-        padding: 0 1vw;
+        padding-left: 1vw;
       }
 
       &:nth-last-child(n-1) {
