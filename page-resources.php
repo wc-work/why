@@ -20,7 +20,7 @@ get_header(); ?>
 		endif; ?>
 
             <!-- Accordion-->
-            <article class="container my-5">
+            <article class="container-fluid my-5 px-5">
 				<div class="row pt-4 d-flex justify-content-around">
 					<div class="cssmenu small">
 						<ul>
