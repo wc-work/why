@@ -1,6 +1,6 @@
 <section>
 <?php 
-  $parent_post_id = 10;
+  $parent_post_id = wp_get_post_parent_id($post);
   $parent_post = get_post($parent_post_id);
   $parent_post_title = $parent_post->post_title;
 ?>

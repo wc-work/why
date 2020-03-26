@@ -1,5 +1,11 @@
 //Empty scss in anticpation for contact.php
-.contact_image_wrapper{
+
+.jumbotron{
     height: 300px;
     width: 100%;
+    background-color: teal;
+}
+.contact-form-wrapper{
+    display: flex;
+    justify-content: center;
 }
