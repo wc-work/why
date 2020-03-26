@@ -129,6 +129,7 @@ body {
 
 .darken-photo {
   position: relative;
+  background-color: #777777;
 }
 .darken-photo:after {
   content: "";
@@ -190,6 +191,11 @@ body {
   background-position: center;
   background-size: cover;
   text-decoration: none;
+  height: 100%;
+  width: 100%;
+}
+.card-past-event:hover {
+  text-decoration: none;
 }
 
 .card-past-body {
@@ -206,14 +212,6 @@ body {
   color: #2C2C2C;
 }
 
-a {
-  height: 100%;
-  width: 100%;
-}
-a:hover {
-  text-decoration: none;
-}
-
 /**
  * partials/gallery
  * ---
@@ -227,6 +225,142 @@ a:hover {
   margin: auto;
 }
 
+/**
+ * partials/resources
+ * ---
+ */
+.cssmenu {
+  width: 65vw;
+  font-family: Roboto, Helvetica, sans-serif;
+  color: #2c2c2c;
+}
+.cssmenu i {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
+.cssmenu ul {
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  line-height: 1;
+}
+.cssmenu ul li {
+  position: relative;
+  display: block;
+}
+.cssmenu ul > li > h4 {
+  display: block;
+  text-decoration: none;
+  position: relative;
+  margin: 0;
+}
+.cssmenu ul > li > ul > li:last-child > h4 {
+  border-radius: 0 0 15px 15px;
+}
+.cssmenu ul a {
+  text-decoration: none;
+  color: #2c2c2c;
+}
+.cssmenu ul > li > ul > li > ul:nth-child(even) {
+  background-color: #e1e1e2;
+}
+.cssmenu ul > a > li > p {
+  padding-left: 30px;
+  margin: 0;
+}
+.cssmenu > ul {
+  border-radius: 15px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.45);
+}
+.cssmenu > ul > li.active > h4 {
+  color: #777777;
+}
+.cssmenu > ul > li > h4 {
+  padding: 12px 0;
+  transition: all 0.3s ease-out;
+  font-size: 22px;
+  text-align: center;
+}
+.cssmenu .brochure {
+  background-color: #F26B3A;
+}
+.cssmenu .document {
+  background-color: #FFC151;
+}
+.cssmenu .link {
+  background-color: #5565A6;
+}
+.cssmenu > ul > li:first-child > h4 {
+  border-radius: 15px 15px 0 0;
+  color: #ffffff;
+  font-weight: bold;
+  text-shadow: #2c2c2c;
+}
+.cssmenu > ul > li:nth-child(2) > h4 {
+  color: #ffffff;
+  font-weight: bold;
+  text-shadow: #2c2c2c;
+}
+.cssmenu > ul > li:last-child > h4 {
+  color: #ffffff;
+  font-weight: bold;
+  text-shadow: 2px 1px 5px #2c2c2c;
+}
+.cssmenu .curves {
+  border-radius: 0 0 15px 15px;
+}
+.cssmenu ul > li h5 {
+  padding: 12px 0px 5px 25px;
+  transition: all 0.3s ease-out;
+  font-size: 18px;
+}
+.cssmenu ul ul li.active > h4 {
+  background-color: #f2f2f2;
+}
+.cssmenu ul ul li.has-sub > h4::after {
+  content: "";
+  position: absolute;
+  display: block;
+  border: 5px solid transparent;
+  border-top-color: #777777;
+  right: 15px;
+  top: 15px;
+  transition: all 0.25s ease;
+  transform-origin: 0 25%;
+}
+.cssmenu ul ul li.has-sub.active > h4::after {
+  transform: rotateX(180deg);
+  border-top-color: #777777;
+}
+.cssmenu ul ul li:hover > h4::after {
+  border-top-color: #777777;
+}
+.cssmenu ul > li > ul > li > h4 {
+  padding: 10px 15px;
+  font-size: 20px;
+  transition: all 0.3s ease-out;
+  font-weight: bold;
+}
+.cssmenu ul ul ul li h4 {
+  padding-left: 25px;
+}
+
+@media only screen and (max-width: 768px) {
+  .full {
+    display: none;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .small {
+    display: none;
+  }
+
+  .cssmenu > ul > li:first-child > h4 {
+    border-radius: 15px;
+  }
+}
 body {
   background-color: #EFEFF2;
 }
