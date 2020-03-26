@@ -113,21 +113,23 @@ function html5blank_header_scripts()
         wp_register_script('modal', 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap-modal/2.2.6/js/bootstrap-modal.min.js', array(), null, true ); // Bootstrap Modal
         wp_enqueue_script( 'modal'); // Enqueue it!
 
-    	wp_register_script('conditionizr', get_template_directory_uri() . '/js/lib/conditionizr-4.3.0.min.js', array(), '4.3.0'); // Conditionizr
+      	wp_register_script('conditionizr', get_template_directory_uri() . '/js/lib/conditionizr-4.3.0.min.js', array(), '4.3.0'); // Conditionizr
         wp_enqueue_script('conditionizr'); // Enqueue it!
 
         wp_register_script('modernizr', get_template_directory_uri() . '/js/lib/modernizr-2.7.1.min.js', array(), '2.7.1'); // Modernizr
         wp_enqueue_script('modernizr'); // Enqueue it!
 
         wp_register_script('jquery', 'https://code.jquery.com/jquery-3.2.1.slim.min.js', array('jquery'), '', true); // Jquery
-		wp_enqueue_script('jquery'); // Enqueue it! 
+        wp_enqueue_script('jquery'); // Enqueue it! 
 
-		wp_register_script('popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', array('jquery'), '', true); // Popper.js
-		wp_enqueue_script('popper'); // Enqueue it!
+        wp_register_script('popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', array('jquery'), '', true); // Popper.js
+        wp_enqueue_script('popper'); // Enqueue it!
         
         wp_register_script('scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0'); // Custom scripts
         wp_enqueue_script('scripts'); // Enqueue it!
-        
+
+        wp_register_script('script', get_template_directory_uri() . '/js/carousel.js', array('jquery'), '1.0.0'); // Custom scripts
+        wp_enqueue_script('script'); // Enqueue it!
     }
 }
 
@@ -399,6 +401,38 @@ function enable_threaded_comments()
     }
 }
 
+/*------------------------------------*\
+	     Login Custom Styles
+\*------------------------------------*/
+
+add_filter( 'login_headerurl', 'namespace_login_headerurl' );
+/**
+ * Replaces the login header logo URL
+ *
+ * @param $url
+ */
+function namespace_login_headerurl( $url ) {
+    $url = home_url( '/' );
+    return $url;
+}
+
+add_filter( 'login_headertext', 'namespace_login_headertext' );
+/**
+ * Replaces the login header logo title
+ *
+ * @param $title
+ */
+function namespace_login_headertext( $title ) {
+    $title = get_bloginfo( 'name' );
+    return $title;
+}
+
+/**
+ * Replaces the login header logo
+ */
+function namespace_login_style() {
+    echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('template_url') . '/login/custom-login-style.scss"/>';
+}
 
 /*------------------------------------*\
 	Actions + Filters + ShortCodes
@@ -414,6 +448,7 @@ add_action('init', 'register_navwalker_menu'); // Add Navwalker for Bootstrap Me
 // add_action('init', 'create_post_type_html5'); // Add our HTML5 Blank Custom Post Type
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('init', 'html5wp_pagination'); // Add our HTML5 Pagination
+add_action( 'login_head', 'namespace_login_style' ); // Adds customization for login screen
 
 // Remove Actions
 // remove_action('wp_head', 'feed_links_extra', 3); // Display the links to the extra feeds such as category feeds
