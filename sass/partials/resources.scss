@@ -13,6 +13,7 @@
     text-align: center;
     width: 100%;
   }
+
   ul {
     display: block;
     margin: 0;
@@ -20,84 +21,99 @@
     list-style: none;
     line-height: 1;
   }
+
   ul li {
     position: relative;
     display: block;
   }
-  ul > li > h4 {
+
+  ul>li>h4 {
     display: block;
     text-decoration: none;
     position: relative;
     margin: 0;
   }
-  ul > li > ul > li:last-child > h4 {
+
+  ul>li>ul>li:last-child>h4 {
     border-radius: 0 0 15px 15px;
   }
+
   ul a {
     text-decoration: none;
     color: #2c2c2c;
   }
-  ul > li > ul > li > ul:nth-child(even) {
+
+  ul>li>ul>li>ul:nth-child(even) {
     background-color: #e1e1e2;
   }
 
-  ul > a > li > p {
+  ul>a>li>p {
     padding-left: 30px;
     margin: 0;
   }
 
-  & > ul {
+  &>ul {
     border-radius: 15px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.45);
   }
 
-  & > ul > li.active > h4 {
+  &>ul>li.active>h4 {
     color: #777777;
   }
 
-  & > ul > li > h4 {
+  &>ul>li>h4 {
     padding: 12px 0;
     transition: all 0.3s ease-out;
     font-size: 22px;
     text-align: center;
   }
+
   .brochure {
     background-color: #F26B3A;
   }
+
   .document {
     background-color: #FFC151;
   }
+
   .link {
     background-color: #5565A6;
   }
-  & > ul > li:first-child > h4 {
+
+  &>ul>li:first-child>h4 {
     border-radius: 15px 15px 0 0;
     color: #ffffff;
     font-weight: bold;
     text-shadow: #2c2c2c;
   }
-  & > ul > li:nth-child(2) > h4 {
+
+  &>ul>li:nth-child(2)>h4 {
     color: #ffffff;
     font-weight: bold;
     text-shadow: #2c2c2c;
   }
-  & > ul > li:last-child > h4 {
+
+  &>ul>li:last-child>h4 {
     color: #ffffff;
     font-weight: bold;
     text-shadow: 2px 1px 5px #2c2c2c;
   }
+
   .curves {
     border-radius: 0 0 15px 15px;
   }
-  ul > li h5 {
+
+  ul>li h5 {
     padding: 12px 0px 5px 25px;
     transition: all 0.3s ease-out;
     font-size: 18px;
   }
-  ul ul li.active > h4 {
+
+  ul ul li.active>h4 {
     background-color: #f2f2f2;
   }
-  ul ul li.has-sub > h4::after {
+
+  ul ul li.has-sub>h4::after {
     content: '';
     position: absolute;
     display: block;
@@ -108,19 +124,23 @@
     transition: all .25s ease;
     transform-origin: 0 25%;
   }
-  ul ul li.has-sub.active > h4::after {
+
+  ul ul li.has-sub.active>h4::after {
     transform: rotateX(180deg);
     border-top-color: #777777;
   }
-  ul ul li:hover > h4::after {
+
+  ul ul li:hover>h4::after {
     border-top-color: #777777;
   }
-  ul > li > ul > li > h4 {
+
+  ul>li>ul>li>h4 {
     padding: 10px 15px;
     font-size: 20px;
     transition: all 0.3s ease-out;
     font-weight: bold;
   }
+
   ul ul ul li h4 {
     padding-left: 25px;
   }
@@ -136,10 +156,11 @@
   .small {
     display: none;
   }
+
   .cssmenu {
-    & > ul > li:first-child > h4 {
+    &>ul>li:first-child>h4 {
       border-radius: 15px;
     }
-    
+
   }
 }
