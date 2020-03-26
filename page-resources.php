@@ -21,7 +21,7 @@ get_header(); ?>
 
             <!-- Accordion-->
             <article class="container-fluid my-5 px-5">
-				<div class="row pt-4 d-flex justify-content-around">
+				<div class="row d-flex justify-content-around">
 					<div class="cssmenu small">
 						<ul>
 							<?php if(have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -33,6 +33,7 @@ get_header(); ?>
 						</ul>
 					</div>
 					<div class="cssmenu full col">
+						<i class="fas fa-4x fa-link pb-3"></i>
 						<ul>
 							<?php if(have_posts() ) : while ( have_posts() ) : the_post(); ?>
 								<?php get_template_part('./partials/partials-resource-link-card', 'link-card-section'); ?>
@@ -42,6 +43,7 @@ get_header(); ?>
 						</ul>
 					</div>
 					<div class="cssmenu full col">
+						<i class="far fa-4x fa-file-alt pb-3"></i>
 						<ul>
 							<?php if(have_posts() ) : while ( have_posts() ) : the_post(); ?>
 								<?php get_template_part('./partials/partials-resource-document-card', 'document-card-section'); ?>
@@ -51,6 +53,7 @@ get_header(); ?>
 						</ul>
 					</div>
 					<div class="cssmenu full col">
+						<i class="far fa-4x fa-file-pdf pb-3"></i>
 						<ul>
 							<?php if(have_posts() ) : while ( have_posts() ) : the_post(); ?>
 								<?php get_template_part('./partials/partials-resource-brochure-card', 'brochure-card-section'); ?>

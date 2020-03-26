@@ -106,6 +106,7 @@ add_action( 'after_setup_theme', 'register_navwalker' );
 function html5blank_header_scripts()
 {
     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
+        
         wp_register_script('bootstrapjs', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js', array('jquery'), '4.1.3'); // Bootstrap 4
         wp_enqueue_script('bootstrapjs'); // Enqueue it!
 
@@ -218,6 +219,7 @@ function html5blank_styles()
     wp_enqueue_style( 'bootstrap_css', '//stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css' );
     wp_register_style('style', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
     wp_enqueue_style('style'); // Enqueue it!
+    wp_enqueue_style('font-awesome', 'https://cdn.bootcss.com/font-awesome/5.12.1/css/all.min.css'); 
 }
 
 // Register HTML5 Blank Navigation
