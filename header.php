@@ -38,17 +38,12 @@
 				<div class="container-fluid">
 					<!-- logo -->
 					<div class="logo">
-						<a href="<?php echo home_url(); ?>">
-							<!-- Dynamic Logo -->
-							<?php
-							$logo = get_field('main_logo');
-							$mobileLogo = get_field('mobile_logo');
-							if( !empty( $logo ) ):
-							?>
-							<img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>" class="logo--img">
-							<img src="<?php echo esc_url($mobileLogo['url']); ?>" alt="<?php echo esc_attr($mobileLogo['alt']); ?>" class="logo--img">
-							<?php endif; ?>
-						</a>
+						<!-- Dynamic Logo -->
+						<?php
+						if ( function_exists( 'the_custom_logo' ) ) {
+							the_custom_logo(); 
+						}
+						?>
 					</div>
 					<!-- /logo -->
 					<!-- Brand and toggle get grouped for better mobile display -->

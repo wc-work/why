@@ -94,9 +94,20 @@ function html5blank_nav()
 	);
 }
 
-/**
- * Register Custom Navigation Walker
- */
+// Custom Nav Logo
+function themename_custom_logo_setup() {
+    $defaults = array(
+    'height'      => 100,
+    'width'       => 400,
+    'flex-height' => true,
+    'flex-width'  => true,
+    'header-text' => array( 'site-title', 'site-description' ),
+    );
+    add_theme_support( 'custom-logo', $defaults );
+   }
+   add_action( 'after_setup_theme', 'themename_custom_logo_setup' );
+
+// Register Custom Navigation Walker
 function register_navwalker(){
 	require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
 }
@@ -221,7 +232,7 @@ function html5blank_styles()
     wp_enqueue_style( 'bootstrap_css', '//stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css' );
     wp_register_style('style', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
     wp_enqueue_style('style'); // Enqueue it!
-    wp_enqueue_style('font-awesome', 'https://cdn.bootcss.com/font-awesome/5.12.1/css/all.min.css'); 
+    // wp_enqueue_style('font-awesome', 'https://cdn.bootcss.com/font-awesome/5.12.1/css/all.min.css'); 
 }
 
 // Register HTML5 Blank Navigation
