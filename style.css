@@ -46,15 +46,20 @@ body {
 */
 .custom-nav {
   background-image: linear-gradient(to right, rgba(85, 101, 166, 0.3), #5565a6);
-  height: 55px;
-  padding: 0;
+  z-index: 1;
+  overflow: hidden;
+  position: sticky;
 }
 .custom-nav button {
   background-color: #ABBAF7;
+  float: right;
 }
 .custom-nav .container-fluid > .navbar-collapse > .navbar-nav > .menu-item > .nav-link {
   font-size: 1.2rem;
   margin-top: 6px;
+}
+.custom-nav ul {
+  border: 1px solid #999999;
 }
 .custom-nav li {
   background-color: #ABBAF7;
@@ -77,6 +82,9 @@ body {
 }
 
 @media only screen and (min-width: 768px) {
+  .custom-nav ul {
+    border: none;
+  }
   .custom-nav li {
     background-color: transparent;
     border: none;
@@ -100,9 +108,10 @@ body {
   .custom-nav .large {
     display: block;
   }
-  .custom-nav .container-fluid > .navbar-collapse > .navbar-nav > .menu-item > .nav-link {
-    color: #fff;
+  .custom-nav .navbar-collapse > .navbar-nav > .menu-item > .nav-link {
+    color: #ffffff;
     padding: 0 0.8vw;
+    margin-top: 8px;
   }
 }
 /**

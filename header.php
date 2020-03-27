@@ -35,7 +35,6 @@
 		<header class="header clear">
 
 			<nav class="navbar navbar-expand-md navbar-light custom-nav" role="navigation">
-				<div class="container-fluid">
 					<!-- logo -->
 					<div class="logo">
 						<!-- Dynamic Logo -->
@@ -66,7 +65,6 @@
 							'walker'            => new WP_Bootstrap_Navwalker(),
 						) );
 						?>
-				</div>
 			</nav>
 			
 

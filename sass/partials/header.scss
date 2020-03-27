@@ -5,17 +5,22 @@
 // Header container
 .custom-nav {
   background-image: linear-gradient(to right, rgba(85, 101, 166, .3), rgba(85, 101, 166, 1));
-  height: 55px;
-  padding: 0;
-
+  z-index: 1;
+  overflow: hidden;
+  position: sticky;
 
   button {
     background-color: #ABBAF7;
+    float: right;
   }
 
   .container-fluid > .navbar-collapse > .navbar-nav > .menu-item > .nav-link {
     font-size: 1.2rem;
     margin-top: 6px;
+  }
+
+  ul {
+    border: 1px solid #999999;
   }
 
   li {
@@ -42,6 +47,10 @@
 // Mobile friendly hamburger menu with small logo ability to change
 @media only screen and (min-width: 768px) {
   .custom-nav {
+
+    ul {
+      border: none;
+    }
 
     li {
       background-color: transparent;
@@ -72,9 +81,10 @@
       display: block;
     }
   
-    .container-fluid>.navbar-collapse>.navbar-nav>.menu-item>.nav-link {
-      color: #fff;
+    .navbar-collapse > .navbar-nav > .menu-item > .nav-link {
+      color: #ffffff;
       padding: 0 .8vw;
+      margin-top: 8px;
     }
   } 
 }
