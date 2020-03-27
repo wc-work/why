@@ -1,7 +1,6 @@
-/**
+/*
  * partials/header
- * ---
- */
+*/
 
 // Header container
 .custom-nav {
@@ -9,23 +8,26 @@
   height: 55px;
   padding: 0;
 
+
   button {
     background-color: #ABBAF7;
   }
 
-  .container-fluid>.navbar-collapse>.navbar-nav>.menu-item>.nav-link {
-    font-size: 1.6rem;
+  .container-fluid > .navbar-collapse > .navbar-nav > .menu-item > .nav-link {
+    font-size: 1.2rem;
+    margin-top: 6px;
   }
 
   li {
     background-color: #ABBAF7;
     border-top: 1px solid #999999;
-    padding-left: 5px;
+    padding-left: 10px;
   }
 }
 
 .custom-logo {
-  height: 40px;
+  padding-left: 10px;
+  height: 34px;
   width: auto;
 }
 
@@ -54,8 +56,12 @@
       }
 
       &:nth-last-child(n-1) {
-        padding-right: 1rem;
+        padding-right: 1vw;
       }
+    }
+
+    .custom-logo {
+      padding-left: 0px;
     }
 
     .small {
@@ -68,7 +74,7 @@
   
     .container-fluid>.navbar-collapse>.navbar-nav>.menu-item>.nav-link {
       color: #fff;
-      padding: 0 1vw;
+      padding: 0 .8vw;
     }
   } 
 }
