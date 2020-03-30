@@ -7,7 +7,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+body {
+  color: #2C2C2C !important;
+}
 // Modules
 @import "modules/variables";
 @import "modules/mixins";
@@ -16,6 +18,12 @@
 // Partials
 @import "partials/header";
 @import "partials/footer";
+@import "partials/banner";
+@import "partials/top-card";
+@import "partials/bottom-card";
+@import "partials/gallery";
+@import "partials/resources";
 
 // Pages
-@import "pages/home.scss";
+@import "pages/home";
+@import "pages/events";

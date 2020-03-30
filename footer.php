@@ -1,3 +1,9 @@
+			<?php
+			/*
+			* Bootstrap Modal
+			 */
+			?>
+			
 			<!-- footer -->
 			<footer class="footer" role="contentinfo">
 			
