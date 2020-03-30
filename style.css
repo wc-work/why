@@ -322,15 +322,74 @@ body {
   text-align: center;
 }
 
-.jumbotron {
-  height: 300px;
-  width: 100%;
-  background-color: teal;
-}
-
 .contact-form-wrapper {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+}
+
+.wpcf7 {
+  background-color: #E3E2E2;
+  border: 5px solid #EAEAEA;
+  margin-top: 25px;
+}
+
+.wpcf7-form {
+  margin: 25px 25px 0px 25px;
+}
+
+.wpcf7-textarea {
+  height: 150px;
+}
+
+.wpcf7 label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.wpcf7-submit {
+  background-color: #5565A6;
+  height: 45px;
+  width: 9rem;
+  border-radius: 27px;
+  color: white;
+}
+
+p {
+  display: flex;
+  flex-direction: column;
+}
+
+p:nth-last-of-type(1) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+input[type=text],
+input[type=email],
+.wpcf7 textarea {
+  width: 100%;
+  padding: 10px;
+  resize: none;
+  font-size: 15px;
+  box-sizing: border-box;
+  border-radius: 6px;
+}
+
+input[type=submit],
+input[type=value] {
+  box-sizing: border-box;
+  border-radius: 6px;
+  padding: 16px 32px;
+  margin: 4px 2px;
+  font-size: 2rem;
+}
+
+.wpcf7 label {
+  font-size: 2rem;
 }
 
 /*# sourceMappingURL=style.css.map */

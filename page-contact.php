@@ -15,9 +15,11 @@ get_header(); ?>
 			wp_reset_postdata();
 		endif; ?>
     
-        <div class="contact-form-wrapper">
-            <?php echo do_shortcode( '[contact-form-7 id="60" title="Contact Us"]' ); ?>
+        <div class="form-wrapper form">
+                 <?php echo do_shortcode( '[contact-form-7 id="60" title="Contact Us"]' ); ?>
         </div>
+
+
     </section>
 
 </main>
