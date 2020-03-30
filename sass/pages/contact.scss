@@ -1,5 +1,9 @@
 //Empty scss in anticpation for contact.php
 
+body {
+    background-color: #E3E2E2;
+}
+
 .contact-form-wrapper {
     display: flex;
     justify-content: center;
@@ -8,13 +12,12 @@
 
 
 .wpcf7{
-	background-color: #E3E2E2;
-    border: 5px solid #EAEAEA;
-	margin-top: 25px;
+    background-color: #FAFAFA;
+    padding-top: 3rem;
 }
 
 .wpcf7-form {
-	margin: 25px 25px 0px 25px;
+	margin: 0px 25px 0px 25px;
 }
 
 .wpcf7-textarea {
@@ -31,9 +34,7 @@
 
 .wpcf7-submit {
     background-color: #5565A6;
-    height: 50px;
-    width: 9rem;
-    border-radius: 27px;
+    height: 52px;
     color: white;
 }
 
@@ -59,21 +60,24 @@ input[type="text"],
       box-sizing: border-box;
       border-radius: 6px;
     }
+
     input[type="submit"],
     input[type="value"] {
+      width: 11rem;
       box-sizing: border-box;
       border-radius: 25px;
       margin: 4px 2px;
       font-size: 2rem;
     }
+    
     .wpcf7 label {
       font-size: 2rem;
     }
 
     @media only screen and (min-width: 720px) {
         .wpcf7{
-            background-color: #E3E2E2;
-            border: 5px solid #EAEAEA;
+            background-color: #FAFAFA;
+            border-style: ridge;
             margin-top: 25px;
             display: flex;
             justify-content: center;
@@ -86,8 +90,8 @@ input[type="text"],
 
     @media only screen and (min-width: 992px) {
         .wpcf7{
-            background-color: #E3E2E2;
-            border: 5px solid #EAEAEA;
+            background-color: #FAFAFA;
+            border-style: ridge;
             margin-top: 25px;
             display: flex;
             justify-content: center;
