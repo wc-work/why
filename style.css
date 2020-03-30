@@ -10,6 +10,7 @@
 
 body {
   color: #2C2C2C !important;
+  background-color: #E2E2E2 !important;
 }
 
 /**
@@ -425,10 +426,6 @@ body {
     border-radius: 15px;
   }
 }
-body {
-  background-color: #EFEFF2;
-}
-
 .page-home .carousel-wrapper {
   overflow: hidden;
   width: 100%;
