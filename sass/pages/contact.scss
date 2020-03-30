@@ -1,6 +1,6 @@
 //Empty scss in anticpation for contact.php
 
-.contact-form-wrapper{
+.contact-form-wrapper {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -9,7 +9,7 @@
 
 .wpcf7{
 	background-color: #E3E2E2;
-	border: 5px solid #EAEAEA;
+    border: 5px solid #EAEAEA;
 	margin-top: 25px;
 }
 
@@ -31,7 +31,7 @@
 
 .wpcf7-submit {
     background-color: #5565A6;
-    height: 45px;
+    height: 50px;
     width: 9rem;
     border-radius: 27px;
     color: white;
@@ -57,19 +57,12 @@ input[type="text"],
       resize: none;
       font-size: 15px;
       box-sizing: border-box;
-    //   border: 2px solid $font-blue;
       border-radius: 6px;
-    //   background-color: $font-white;
-    //   color: $font-black;
     }
     input[type="submit"],
     input[type="value"] {
-    //   background-color: $font-blue;
       box-sizing: border-box;
-    //   border: 2px solid $font-blue;
-      border-radius: 6px;
-    //   color: $font-white;
-      padding: 16px 32px;
+      border-radius: 25px;
       margin: 4px 2px;
       font-size: 2rem;
     }
@@ -77,3 +70,31 @@ input[type="text"],
       font-size: 2rem;
     }
 
+    @media only screen and (min-width: 720px) {
+        .wpcf7{
+            background-color: #E3E2E2;
+            border: 5px solid #EAEAEA;
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 85%;
+            margin-right: auto;
+            margin-left: auto;
+        }
+    }
+
+    @media only screen and (min-width: 992px) {
+        .wpcf7{
+            background-color: #E3E2E2;
+            border: 5px solid #EAEAEA;
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 65%;
+            margin-right: auto;
+            margin-left: auto;
+        }
+    }
+            
