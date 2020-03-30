@@ -3,24 +3,27 @@
 */
 
 // Header container
+.header {
+  overflow: hidden;
+}
+
 .custom-nav {
   background-image: linear-gradient(to right, rgba(85, 101, 166, .3), rgba(85, 101, 166, 1));
   z-index: 1;
-  overflow: hidden;
-  position: sticky;
 
   button {
     background-color: #ABBAF7;
     float: right;
   }
 
-  .container-fluid > .navbar-collapse > .navbar-nav > .menu-item > .nav-link {
+  .navbar-collapse > .navbar-nav > .menu-item > .nav-link {
     font-size: 1.2rem;
     margin-top: 6px;
   }
 
   ul {
-    border: 1px solid #999999;
+    overflow: auto;
+    margin: 0 -16px -8px -16px;
   }
 
   li {
