@@ -1,31 +1,41 @@
-/**
+/*
  * partials/header
- * ---
- */
+*/
 
 // Header container
+.header {
+  overflow: hidden;
+}
+
 .custom-nav {
   background-image: linear-gradient(to right, rgba(85, 101, 166, .3), rgba(85, 101, 166, 1));
-  height: 55px;
-  padding: 0;
+  z-index: 1;
 
   button {
     background-color: #ABBAF7;
+    float: right;
   }
 
-  .container-fluid>.navbar-collapse>.navbar-nav>.menu-item>.nav-link {
-    font-size: 1.6rem;
+  .navbar-collapse > .navbar-nav > .menu-item > .nav-link {
+    font-size: 1.2rem;
+    margin-top: 6px;
+  }
+
+  ul {
+    overflow: auto;
+    margin: 0 -16px -8px -16px;
   }
 
   li {
     background-color: #ABBAF7;
     border-top: 1px solid #999999;
-    padding-left: 5px;
+    padding-left: 25px;
   }
 }
 
 .custom-logo {
-  height: 40px;
+  padding-left: 10px;
+  height: 34px;
   width: auto;
 }
 
@@ -37,13 +47,21 @@
   display: none;
 }
 
+
+
 // Mobile friendly hamburger menu with small logo ability to change
 @media only screen and (min-width: 768px) {
   .custom-nav {
 
+    ul {
+      border: none;
+      margin: 0;
+    }
+
     li {
       background-color: transparent;
       border: none;
+      padding-left: 0;
 
       &:nth-last-child(1) {
         background-color: #F26B3A;
@@ -54,8 +72,12 @@
       }
 
       &:nth-last-child(n-1) {
-        padding-right: 1rem;
+        padding-right: 1vw;
       }
+    }
+
+    .custom-logo {
+      padding-left: 0px;
     }
 
     .small {
@@ -65,10 +87,15 @@
     .large {
       display: block;
     }
-  
-    .container-fluid>.navbar-collapse>.navbar-nav>.menu-item>.nav-link {
-      color: #fff;
-      padding: 0 1vw;
+
+    .margin-left {
+      margin-left: auto;
+    }
+
+    .navbar-collapse > .navbar-nav > .menu-item > .nav-link {
+      color: #ffffff;
+      padding: 0 .8vw;
+      margin-top: 8px;
     }
   } 
 }
