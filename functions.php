@@ -232,7 +232,7 @@ function html5blank_styles()
     wp_enqueue_style( 'bootstrap_css', '//stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css' );
     wp_register_style('style', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
     wp_enqueue_style('style'); // Enqueue it!
-    // wp_enqueue_style('font-awesome', 'https://cdn.bootcss.com/font-awesome/5.12.1/css/all.min.css'); 
+    wp_enqueue_style('font-awesome', 'https://use.fontawesome.com/releases/v5.13.0/css/all.css'); 
 }
 
 // Register HTML5 Blank Navigation

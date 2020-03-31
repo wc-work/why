@@ -21,7 +21,7 @@
 
 						var targetParent = $(event.target).parent();
 						if (targetParent.hasClass('has-sub')) {
-							targetParent.toggleClass('active');
+							targetParent.toggleClass('active1');
 							targetParent.children('ul').slideToggle(250);
 						} 
 					})
