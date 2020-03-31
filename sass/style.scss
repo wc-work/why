@@ -9,6 +9,7 @@
 }
 body {
   color: #2C2C2C !important;
+  background-color: #E2E2E2 !important;
 }
 // Modules
 @import "modules/variables";
@@ -23,7 +24,9 @@ body {
 @import "partials/bottom-card";
 @import "partials/gallery";
 
+
 // Pages
 @import "pages/home";
 @import "pages/events";
 @import "pages/resources";
+@import "pages/contact"

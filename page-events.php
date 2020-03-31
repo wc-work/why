@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Events
+Template Name: Events-Page
 Template Post Type: page
 */
 

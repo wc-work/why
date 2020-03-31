@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Resources
+Template Name: Resources-Page
 Template Post Type: page
 */
 
