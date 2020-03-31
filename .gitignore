@@ -9,6 +9,8 @@
 #ignore specific files
 .DS_Store
 .bashrc
+style.css.map
+style.css
 
 # large/disallowed file types
 .mp4

@@ -232,7 +232,7 @@ function html5blank_styles()
     wp_enqueue_style( 'bootstrap_css', '//stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css' );
     wp_register_style('style', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
     wp_enqueue_style('style'); // Enqueue it!
-    // wp_enqueue_style('font-awesome', 'https://cdn.bootcss.com/font-awesome/5.12.1/css/all.min.css'); 
+    wp_enqueue_style('font-awesome', 'https://use.fontawesome.com/releases/v5.13.0/css/all.css'); 
 }
 
 // Register HTML5 Blank Navigation
@@ -289,6 +289,211 @@ function add_slug_to_body_class($classes)
 
     return $classes;
 }
+
+/* ACF Options Page */
+if( function_exists('acf_add_options_page') ) {
+    acf_add_options_page(array(
+        'page_title'    => 'Theme General Settings',
+        'menu_title'    => 'Theme Settings',
+        'menu_slug'     => 'theme-general-settings',
+        'capability'    => 'edit_posts',
+        'redirect'      => false
+    ));
+    acf_add_options_sub_page(array(
+        'page_title'    => 'Theme Footer Settings',
+        'menu_title'    => 'Footer',
+        'parent_slug'   => 'theme-general-settings',
+    ));
+}
+
+if( function_exists('acf_add_local_field_group') ):
+
+    acf_add_local_field_group(array(
+        'key' => 'group_5e826d1948d11',
+        'title' => 'Footer',
+        'fields' => array(
+            array(
+                'key' => 'field_5e82740fe0924',
+                'label' => 'Social Media Icons',
+                'name' => 'social_media_icons',
+                'type' => 'repeater',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'collapsed' => '',
+                'min' => 0,
+                'max' => 0,
+                'layout' => 'block',
+                'button_label' => '',
+                'sub_fields' => array(
+                    array(
+                        'key' => 'field_5e827460e0925',
+                        'label' => 'Icon',
+                        'name' => 'icon',
+                        'type' => 'image',
+                        'instructions' => '',
+                        'required' => 0,
+                        'conditional_logic' => 0,
+                        'wrapper' => array(
+                            'width' => '',
+                            'class' => '',
+                            'id' => '',
+                        ),
+                        'return_format' => 'url',
+                        'preview_size' => 'small',
+                        'library' => 'all',
+                        'min_width' => '',
+                        'min_height' => '',
+                        'min_size' => '',
+                        'max_width' => '',
+                        'max_height' => '',
+                        'max_size' => '',
+                        'mime_types' => '',
+                    ),
+                ),
+            ),
+            array(
+                'key' => 'field_5e826d21bbc75',
+                'label' => 'Contact Info',
+                'name' => 'contact_info',
+                'type' => 'repeater',
+                'instructions' => '',
+                'required' => 1,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '100',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'collapsed' => '',
+                'min' => 0,
+                'max' => 0,
+                'layout' => 'block',
+                'button_label' => '',
+                'sub_fields' => array(
+                    array(
+                        'key' => 'field_5e826d62bbc77',
+                        'label' => 'Contact Headline',
+                        'name' => 'contact_headline',
+                        'type' => 'text',
+                        'instructions' => '',
+                        'required' => 1,
+                        'conditional_logic' => 0,
+                        'wrapper' => array(
+                            'width' => '',
+                            'class' => '',
+                            'id' => '',
+                        ),
+                        'default_value' => '',
+                        'placeholder' => '',
+                        'prepend' => '',
+                        'append' => '',
+                        'maxlength' => '',
+                    ),
+                    array(
+                        'key' => 'field_5e826d9fbbc7a',
+                        'label' => 'Street Address',
+                        'name' => 'street_address',
+                        'type' => 'text',
+                        'instructions' => '',
+                        'required' => 1,
+                        'conditional_logic' => 0,
+                        'wrapper' => array(
+                            'width' => '',
+                            'class' => '',
+                            'id' => '',
+                        ),
+                        'default_value' => '',
+                        'placeholder' => '',
+                        'prepend' => '',
+                        'append' => '',
+                        'maxlength' => '',
+                    ),
+                    array(
+                        'key' => 'field_5e826db9bbc7b',
+                        'label' => 'City, State, Zip',
+                        'name' => 'city_state_zip',
+                        'type' => 'text',
+                        'instructions' => '',
+                        'required' => 1,
+                        'conditional_logic' => 0,
+                        'wrapper' => array(
+                            'width' => '',
+                            'class' => '',
+                            'id' => '',
+                        ),
+                        'default_value' => '',
+                        'placeholder' => '',
+                        'prepend' => '',
+                        'append' => '',
+                        'maxlength' => '',
+                    ),
+                    array(
+                        'key' => 'field_5e826d8ebbc79',
+                        'label' => 'Phone Number',
+                        'name' => 'phone_number',
+                        'type' => 'text',
+                        'instructions' => '',
+                        'required' => 1,
+                        'conditional_logic' => 0,
+                        'wrapper' => array(
+                            'width' => '',
+                            'class' => '',
+                            'id' => '',
+                        ),
+                        'default_value' => '',
+                        'placeholder' => '',
+                        'prepend' => '',
+                        'append' => '',
+                        'maxlength' => '',
+                    ),
+                    array(
+                        'key' => 'field_5e826d75bbc78',
+                        'label' => 'Email',
+                        'name' => 'email',
+                        'type' => 'text',
+                        'instructions' => '',
+                        'required' => 0,
+                        'conditional_logic' => 0,
+                        'wrapper' => array(
+                            'width' => '',
+                            'class' => '',
+                            'id' => '',
+                        ),
+                        'default_value' => '',
+                        'placeholder' => '',
+                        'prepend' => '',
+                        'append' => '',
+                        'maxlength' => '',
+                    ),
+                ),
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'options_page',
+                    'operator' => '==',
+                    'value' => 'acf-options-footer',
+                ),
+            ),
+        ),
+        'menu_order' => 0,
+        'position' => 'normal',
+        'style' => 'default',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
+        'hide_on_screen' => '',
+        'active' => true,
+        'description' => '',
+    ));
+    
+    endif;
 
 // If Dynamic Sidebar Exists
 if (function_exists('register_sidebar'))
