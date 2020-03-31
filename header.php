@@ -35,7 +35,6 @@
 		<header class="header clear">
 
 			<nav class="navbar navbar-expand-md navbar-light custom-nav" role="navigation">
-				<div class="container-fluid">
 					<!-- logo -->
 					<div class="logo">
 						<!-- Dynamic Logo -->
@@ -61,12 +60,11 @@
 							'container'         => 'div',
 							'container_class'   => 'collapse navbar-collapse',
 							'container_id'      => 'bs-example-navbar-collapse-1',
-							'menu_class'        => 'nav navbar-nav ml-auto',
+							'menu_class'        => 'nav navbar-nav',
 							'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
 							'walker'            => new WP_Bootstrap_Navwalker(),
 						) );
 						?>
-				</div>
 			</nav>
 			
 
