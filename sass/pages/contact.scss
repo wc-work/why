@@ -43,7 +43,7 @@ p {
     flex-direction: column;
 }
 
-p:nth-last-of-type(1) {
+form > p:nth-last-of-type(1) {
     display: flex;
     justify-content: center;
     align-items: center;

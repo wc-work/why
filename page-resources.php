@@ -19,9 +19,10 @@ get_header(); ?>
 			wp_reset_postdata();
 		endif; ?>
 
-            <!-- Accordion-->
+            
             <article class="container-fluid my-5 px-5">
 				<div class="row d-flex justify-content-around">
+					<!-- accordion single-->
 					<div class="cssmenu small">
 						<ul>
 							<?php if(have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -32,8 +33,10 @@ get_header(); ?>
 							
 						</ul>
 					</div>
+					<!-- /accordion single-->
+					<!-- accordions triple-->
 					<div class="cssmenu full col">
-						<i class="fas fa-4x fa-link pb-3"></i>
+						<i class="fas fa-4x fa-link pb-5"></i>
 						<ul>
 							<?php if(have_posts() ) : while ( have_posts() ) : the_post(); ?>
 								<?php get_template_part('./partials/partials-resource-link-card', 'link-card-section'); ?>
@@ -43,7 +46,7 @@ get_header(); ?>
 						</ul>
 					</div>
 					<div class="cssmenu full col">
-						<i class="far fa-4x fa-file-alt pb-3"></i>
+						<i class="far fa-4x fa-file-alt pb-5"></i>
 						<ul>
 							<?php if(have_posts() ) : while ( have_posts() ) : the_post(); ?>
 								<?php get_template_part('./partials/partials-resource-document-card', 'document-card-section'); ?>
@@ -53,7 +56,7 @@ get_header(); ?>
 						</ul>
 					</div>
 					<div class="cssmenu full col">
-						<i class="far fa-4x fa-file-pdf pb-3"></i>
+						<i class="far fa-4x fa-file-pdf pb-5"></i>
 						<ul>
 							<?php if(have_posts() ) : while ( have_posts() ) : the_post(); ?>
 								<?php get_template_part('./partials/partials-resource-brochure-card', 'brochure-card-section'); ?>
@@ -62,9 +65,10 @@ get_header(); ?>
 							endif; ?>
 						</ul>
 					</div>
+					<!-- /accordions triple-->
 				</div>
 			</article>
-			<!-- Accordion -->
+			
 		</section>
 		<!-- /section -->
 	</main>

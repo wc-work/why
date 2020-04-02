@@ -1,5 +1,5 @@
 (function ($, root, undefined) {
-	
+
 	$(function () {
         
         !(function(d){  
@@ -92,7 +92,10 @@
             setEventListeners();  // Set moving to false so that the carousel becomes interactive
             moving = false;
           }
+          if($('.page-home').length) {
             initCarousel();
+          }
+
           }(document));
 
 		'use strict';
