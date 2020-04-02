@@ -5,6 +5,7 @@
 
 .card-past-event {
     border-radius: 35px;
+    border: none;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background-position: center;
     background-size: cover;
@@ -19,11 +20,17 @@
 .card-past-body {
     text-align: center;
     border-radius: 35px;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.6);
+    width: 100%;
+    transition: ease .7s;
     &:hover {
         background-color: rgba(255, 255, 255, 0.1);
-        transition: ease 1s;
+        transition: ease .7s;
     }
+}
+
+a:hover {
+    text-decoration: none;
 }
 
 .link {

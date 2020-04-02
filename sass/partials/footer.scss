@@ -20,7 +20,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
     text-align: center;
   }
   .footer-info{
@@ -35,12 +35,14 @@
   }
   .social {
     color: white;
+    width: 50px;
+    border-radius: 50px;
   }
 
   @media screen and (min-width: 992px) {
-    height: 150px;
     h1, h2{
           padding: 0px 6px;
+          width: 20vw;
     }
     .copyright{
       width: 374px;
@@ -52,7 +54,6 @@
     .icon-width{
       width: 374px;
     }
-
     .footer-align{
       height: 150px;
       display: flex;

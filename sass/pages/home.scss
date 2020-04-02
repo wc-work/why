@@ -1,6 +1,7 @@
 //Empty scss in anticpation for page-home.php
 
 .page-home{
+  overflow: hidden;
   // --------------------- Carousel Styles -----------------
   .carousel-wrapper {
       overflow: hidden;
@@ -13,15 +14,14 @@
     
   .carousel {
       transform-style: preserve-3d;
+      overflow: hidden;
 
     &__photo {
         opacity: 0;
         position: absolute;
         top:0;
         width: 100%;
-        // max-width: 1180px;
         margin: auto;
-        // padding: 1rem 4rem;
         z-index: 100;
         transition: transform .5s, opacity .5s, z-index .5s;
     }
@@ -60,10 +60,10 @@
       border: 1px solid black;
     }
     &__button--prev {
-      left:0;
+      left: 15px;
     }
     &__button--next {
-      right:0;
+      right: 15px;
     }
     &__button--prev::after,
     &__button--next::after {
@@ -92,18 +92,20 @@
     background-color: black;
     height: 100%;
     width: 100%;
-    // max-width: 1180px;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+    overflow: hidden;
   }
   .content-wrapper{
     position: absolute;
     top: 0;
     height: 100%;
+    width: 100%;
     padding: 2rem 0;
     text-align: center;
+    overflow: hidden;
   }
   .title{
     z-index: 1001;
@@ -128,7 +130,6 @@
   // Home Content styles
 
   .box {
-    // border: 1px solid #000;
     min-height: 300px;
     background-color: #EFEFF2;
     border-radius: 50px;
@@ -160,9 +161,7 @@
     p{
       padding: 0 2.5rem;
     }
-    //daddy box
     .squares-container {
-      max-width: 700px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -170,7 +169,7 @@
     .box{
       max-width: 300px;
       height: 365px;
-      overflow: scroll;
+      // overflow: scroll;
     }
     .home-content{
       display: flex;
@@ -182,15 +181,12 @@
 
   @media screen and (min-width: 768px) {
     .squares-container {
-      max-width: 700px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
     .box{
-      max-width: 300px;
-      height: 365px;
-      overflow: scroll;
+      max-width: 500px;
     }
     .home-content{
       display: flex;
@@ -202,7 +198,7 @@
 
   @media screen and (max-width: 722px) {
       h1{
-        font-size: 1.5rem;
+        font-size: 2rem;
       }
       h2{
         font-size: 1rem;
@@ -220,10 +216,10 @@
 
   @media screen and (max-width: 599px) {
     h1{
-      font-size: 1rem;
+      font-size: 2rem;
     }
     h2{
-      font-size: .75rem;
+      font-size: 1.5rem;
     }
     h3{
       font-size: .5rem;

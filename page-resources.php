@@ -68,7 +68,7 @@ get_header(); ?>
 					<!-- /accordions triple-->
 				</div>
 			</article>
-			
+			<div class="space"></div>
 		</section>
 		<!-- /section -->
 	</main>

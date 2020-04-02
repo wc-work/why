@@ -23,7 +23,7 @@
   ul li {
     position: relative;
     display: block;
-    margin-bottom: 5px;
+    // margin-bottom: 5px;
   }
   ul li > h4 {
     display: block;
@@ -125,6 +125,10 @@
   ul ul ul li h4 {
     padding-left: 25px;
   }
+}
+
+.space {
+  height: 10vh;
 }
 
 @media only screen and (max-width: 768px) {
