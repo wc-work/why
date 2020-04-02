@@ -25,7 +25,7 @@ get_header(); ?>
       <div class="overlay"></div>
       <div class=" content-wrapper d-flex justify-content-around align-items-center flex-column">
         <div class="title">
-        <h2><?php the_field('carousel_text'); ?></h2>
+          <img class="logo-title" src="<?php echo get_field('carousel_header')['url'] ?>">
         </div>
         <div class="facts-ask">
           <h2><?php the_field('carousel_text_2'); ?></h2>
