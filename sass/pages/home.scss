@@ -1,6 +1,6 @@
 //Empty scss in anticpation for page-home.php
 
-.page-home{
+.page-home {
   // --------------------- Carousel Styles -----------------
   .carousel-wrapper {
       overflow: hidden;
@@ -84,7 +84,7 @@
 
   // Carousel Text and Overlay
 
-  .overlay{
+  .overlay {
     position: fixed;
     z-index: 1000;
     opacity: .7;
@@ -97,27 +97,27 @@
     right: 0;
     bottom: 0;
   }
-  .content-wrapper{
+  .content-wrapper {
     position: absolute;
     top: 0;
     height: 100%;
     padding: 2rem 0;
     text-align: center;
   }
-  .title{
+  .title {
     z-index: 1001;
     color: #FFC151;
   }
-  .facts-ask{
+  .facts-ask {
     z-index: 1001;
     color: #FFC151;
   }
-  .facts{
+  .facts {
     z-index: 1001;
     color: #FFC151;
     width: 50%;
   }
-  .slogan{
+  .slogan {
     z-index: 1001;
     color: #FFC151;
     width: 50%;
@@ -140,7 +140,7 @@
     border-radius: 50px;
     overflow: hidden;
   }
-  .box h2, p{
+  .box h2, p {
     text-align: center;
     margin-top: 1rem;
     padding: 0 1.5rem;
@@ -156,7 +156,7 @@
   }
 // Media Queries
   @media screen and (min-width: 576px) {
-    p{
+    p {
       padding: 0 2.5rem;
     }
     //daddy box
@@ -166,12 +166,12 @@
       justify-content: center;
       align-items: center;
     }
-    .box{
+    .box {
       max-width: 300px;
       height: 365px;
       overflow: scroll;
     }
-    .home-content{
+    .home-content {
       display: flex;
       justify-content: center;
       flex-direction: column;
@@ -186,12 +186,12 @@
       justify-content: space-between;
       align-items: center;
     }
-    .box{
+    .box {
       max-width: 300px;
       height: 365px;
       overflow: scroll;
     }
-    .home-content{
+    .home-content {
       display: flex;
       justify-content: center;
       flex-direction: column;
@@ -200,16 +200,16 @@
   }
 
   @media screen and (max-width: 722px) {
-      h1{
+      h1 { 
         font-size: 1.5rem;
       }
-      h2{
+      h2 {
         font-size: 1rem;
       }
-      h3{
+      h3 {
         font-size: .5rem;
       }
-    .facts{
+    .facts {
       z-index: 1001;
       color: #FFC151;
       width: 50%;
@@ -218,16 +218,16 @@
   }
 
   @media screen and (max-width: 599px) {
-    h1{
+    h1 {
       font-size: 1rem;
     }
-    h2{
+    h2 { 
       font-size: .75rem;
     }
-    h3{
+    h3 {
       font-size: .5rem;
     }
-  .facts{
+  .facts {
     z-index: 1001;
     color: #FFC151;
     width: 50%;
