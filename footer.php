@@ -9,21 +9,39 @@
 			
 				<div class="container-fluid footer-align">
 					<div class="row icon-width">
-						<a href="#"><i class="fab fa-facebook fa-2x social"></i></a>
+						<?php 
+							// Check if Social Media Icons section of footer has data
+							if ( have_rows('social_media_icons', 'option') ): 
+								while ( have_rows('social_media_icons', 'option') ) : the_row(); 
+						?>
+							<a href="<?php echo get_sub_field('link')['url']; ?>"><img class="social" src="<?php echo get_sub_field('icon')['url']; ?>" alt="<?php echo get_sub_field('icon')['alt']; ?>"></a>
+						<?php 
+						endwhile;
+						endif;
+						wp_reset_postdata();?>		
 					</div>
 					<div class="row footer-info">
-						<div class="center">
-								<h1>We Hear You Foundation</h1>
-							
-						
-								<h2>7775 N Palm Ave Suite</h2>
+						<div class="center pb-3">
+						<?php 
+							// Check if Contact Info section of footer has data
+						if ( have_rows('contact_info', 'option') ): while ( have_rows('contact_info', 'option') ) : the_row(); ?>
+							<h2><?php echo get_sub_field('contact_headline'); ?></h2>
 						</div>	
 						<div class="center">
-								<h2>Fresno, CA 93711</h2>
-							
-								<h2>559-225-2665</h2>
+							<h2><?php echo get_sub_field('street_address'); ?></h2>
+						</div>	
+						<div class="center">
+							<h2><?php echo get_sub_field('city_state_zip'); ?></h2>
+						</div>	
+						<div class="center">
+							<h2><?php echo get_sub_field('phone_number'); ?></h2>
 						</div>
 					</div>
+					<?php 
+								endwhile;
+								endif;
+								wp_reset_postdata();
+							?>
 					<div class="row copyright">
 						&copy; <?php echo date('Y'); ?> All Rights Reserved.
 					</div>

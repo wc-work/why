@@ -7,7 +7,7 @@ Template Post Type: page
 get_header(); ?>
 <!---------------------------- Carousel --------------------------->
 <main class="page-home">
-  <div class="carousel-wrapper container-fluid p-0 home-slider d-flex justify-content-center align-items-center">
+  <div class="carousel-wrapper container-fluid p-0 home-slider">
     <div class="carousel">
       <img class="carousel__photo initial" src="<?php echo get_field('picture_1')['url'] ?>">
       <img class="carousel__photo" src="<?php echo get_field('picture_2')['url'] ?>">

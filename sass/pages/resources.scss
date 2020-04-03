@@ -23,6 +23,7 @@
   ul li {
     position: relative;
     display: block;
+    // margin-bottom: 5px;
   }
   ul li > h4 {
     display: block;
@@ -37,8 +38,8 @@
     text-decoration: none;
     color: #2c2c2c;
   }
-  ul li > ul > li > ul:nth-child(even) {
-    background-color: #e1e1e2;
+  ul li ul li ul:nth-child(even) {
+    background-color: #dadada;
   }
 
   ul a > li > p {
@@ -124,6 +125,10 @@
   ul ul ul li h4 {
     padding-left: 25px;
   }
+}
+
+.space {
+  height: 10vh;
 }
 
 @media only screen and (max-width: 768px) {

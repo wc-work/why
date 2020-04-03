@@ -1,10 +1,11 @@
 //Empty scss in anticpation for page-home.php
 
-.page-home {
+.page-home{
+  overflow: hidden;
   // --------------------- Carousel Styles -----------------
   .carousel-wrapper {
       overflow: hidden;
-      width: 100%;
+      width: 100vw;
   }
 
   .carousel-wrapper * {
@@ -13,73 +14,73 @@
     
   .carousel {
       transform-style: preserve-3d;
-  }
+      overflow: hidden;
 
-  .carousel__photo {
-      opacity: 0;
+    &__photo {
+        opacity: 0;
+        position: absolute;
+        top:0;
+        width: 100%;
+        margin: auto;
+        z-index: 100;
+        transition: transform .5s, opacity .5s, z-index .5s;
+    }
+
+    &__photo.initial,
+    &__photo.active {
+      opacity: 1;
+      position: relative;
+      z-index: 900;
+    }
+
+    &__photo.prev,
+    &__photo.next {
+      z-index: 800;
+    }
+    &__photo.prev {
+      transform: translateX(-100%); /* Move 'prev' item to the left */
+    }
+    &__photo.next {
+      transform: translateX(100%); /* Move 'next' item to the right */
+    }
+
+    // --------------------- Carousel Button Styles -----------------
+
+    &__button--prev,
+    &__button--next {
       position: absolute;
-      top:0;
-      width: 100%;
-      max-width: 1180px;
-      margin: auto;
-      z-index: 100;
-      transition: transform .5s, opacity .5s, z-index .5s;
-  }
-
-  .carousel__photo.initial,
-  .carousel__photo.active {
-    opacity: 1;
-    position: relative;
-    z-index: 900;
-  }
-
-  .carousel__photo.prev,
-  .carousel__photo.next {
-    z-index: 800;
-  }
-  .carousel__photo.prev {
-    transform: translateX(-100%); /* Move 'prev' item to the left */
-  }
-  .carousel__photo.next {
-    transform: translateX(100%); /* Move 'next' item to the right */
-  }
-
-  // --------------------- Carousel Button Styles -----------------
-
-  .carousel__button--prev,
-  .carousel__button--next {
-    position: absolute;
-    top:50%;
-    width: 3rem;
-    height: 3rem;
-    background-color: #FFF;
-    transform: translateY(-50%);
-    border-radius: 50%;
-    cursor: pointer; 
-    z-index: 1001; /* Sit on top of everything */
-    border: 1px solid black;
-  }
-  .carousel__button--prev {
-    left:0;
-  }
-  .carousel__button--next {
-    right:0;
-  }
-  .carousel__button--prev::after,
-  .carousel__button--next::after {
-    content: " ";
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    top: 50%;
-    left: 54%;
-    border-right: 2px solid black;
-    border-bottom: 2px solid black;
-    transform: translate(-50%, -50%) rotate(135deg);
-  }
-  .carousel__button--next::after {
-    left: 47%;
-    transform: translate(-50%, -50%) rotate(-45deg);
+      top:50%;
+      width: 3rem;
+      height: 3rem;
+      background-color: #FFF;
+      transform: translateY(-50%);
+      border-radius: 50%;
+      cursor: pointer; 
+      z-index: 1001; /* Sit on top of everything */
+      border: 1px solid black;
+    }
+    &__button--prev {
+      left: 15px;
+    }
+    &__button--next {
+      right: 15px;
+    }
+    &__button--prev::after,
+    &__button--next::after {
+      content: " ";
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      top: 50%;
+      left: 54%;
+      border-right: 2px solid black;
+      border-bottom: 2px solid black;
+      transform: translate(-50%, -50%) rotate(135deg);
+    }
+    &__button--next::after {
+      left: 47%;
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
   }
 
   // Carousel Text and Overlay
@@ -91,11 +92,11 @@
     background-color: black;
     height: 100%;
     width: 100%;
-    max-width: 1180px;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+    overflow: hidden;
   }
   .logo-title {
     height: 3rem;
@@ -104,8 +105,10 @@
     position: absolute;
     top: 0;
     height: 100%;
+    width: 100%;
     padding: 2rem 0;
     text-align: center;
+    overflow: hidden;
   }
   .title {
     z-index: 1001;
@@ -130,7 +133,6 @@
   // Home Content styles
 
   .box {
-    // border: 1px solid #000;
     min-height: 300px;
     background-color: #EFEFF2;
     border-radius: 50px;
@@ -162,9 +164,7 @@
     p {
       padding: 0 2.5rem;
     }
-    //daddy box
     .squares-container {
-      max-width: 700px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -172,7 +172,7 @@
     .box {
       max-width: 300px;
       height: 365px;
-      overflow: scroll;
+      // overflow: scroll;
     }
     .home-content {
       display: flex;
@@ -187,15 +187,12 @@
 
   @media screen and (min-width: 768px) {
     .squares-container {
-      max-width: 700px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    .box {
-      max-width: 300px;
-      height: 365px;
-      overflow: scroll;
+    .box{
+      max-width: 500px;
     }
     .home-content {
       display: flex;
@@ -215,8 +212,8 @@
   }
 
   @media screen and (max-width: 722px) {
-      h1 { 
-        font-size: 1.5rem;
+      h1{
+        font-size: 2rem;
       }
       h2 {
         font-size: 1rem;
@@ -233,11 +230,11 @@
   }
 
   @media screen and (max-width: 599px) {
-    h1 {
-      font-size: 1rem;
+    h1{
+      font-size: 2rem;
     }
-    h2 { 
-      font-size: .75rem;
+    h2{
+      font-size: 1.5rem;
     }
     h3 {
       font-size: .5rem;
