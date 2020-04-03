@@ -1,6 +1,6 @@
 //Empty scss in anticpation for page-home.php
 
-.page-home{
+.page-home {
   // --------------------- Carousel Styles -----------------
   .carousel-wrapper {
       overflow: hidden;
@@ -22,7 +22,6 @@
       width: 100%;
       max-width: 1180px;
       margin: auto;
-      // padding: 1rem 4rem;
       z-index: 100;
       transition: transform .5s, opacity .5s, z-index .5s;
   }
@@ -85,7 +84,7 @@
 
   // Carousel Text and Overlay
 
-  .overlay{
+  .overlay {
     position: fixed;
     z-index: 1000;
     opacity: .7;
@@ -98,27 +97,30 @@
     right: 0;
     bottom: 0;
   }
-  .content-wrapper{
+  .logo-title {
+    height: 3rem;
+  }
+  .content-wrapper {
     position: absolute;
     top: 0;
     height: 100%;
     padding: 2rem 0;
     text-align: center;
   }
-  .title{
+  .title {
     z-index: 1001;
     color: #FFC151;
   }
-  .facts-ask{
+  .facts-ask {
     z-index: 1001;
     color: #FFC151;
   }
-  .facts{
+  .facts {
     z-index: 1001;
     color: #FFC151;
     width: 50%;
   }
-  .slogan{
+  .slogan {
     z-index: 1001;
     color: #FFC151;
     width: 50%;
@@ -141,7 +143,7 @@
     border-radius: 50px;
     overflow: hidden;
   }
-  .box h2, p{
+  .box h2, p {
     text-align: center;
     margin-top: 1rem;
     padding: 0 1.5rem;
@@ -157,7 +159,7 @@
   }
 // Media Queries
   @media screen and (min-width: 576px) {
-    p{
+    p {
       padding: 0 2.5rem;
     }
     //daddy box
@@ -167,16 +169,19 @@
       justify-content: center;
       align-items: center;
     }
-    .box{
+    .box {
       max-width: 300px;
       height: 365px;
       overflow: scroll;
     }
-    .home-content{
+    .home-content {
       display: flex;
       justify-content: center;
       flex-direction: column;
       align-items: center;
+    }
+    .logo-title {
+      height: 4rem;
     }
   }
 
@@ -187,30 +192,39 @@
       justify-content: space-between;
       align-items: center;
     }
-    .box{
+    .box {
       max-width: 300px;
       height: 365px;
       overflow: scroll;
     }
-    .home-content{
+    .home-content {
       display: flex;
       justify-content: center;
       flex-direction: column;
       align-items: center;
     }
+    .logo-title {
+      height: 6rem;
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    .logo-title {
+      height: 10rem;
+    }
   }
 
   @media screen and (max-width: 722px) {
-      h1{
+      h1 { 
         font-size: 1.5rem;
       }
-      h2{
+      h2 {
         font-size: 1rem;
       }
-      h3{
+      h3 {
         font-size: .5rem;
       }
-    .facts{
+    .facts {
       z-index: 1001;
       color: #FFC151;
       width: 50%;
@@ -219,16 +233,16 @@
   }
 
   @media screen and (max-width: 599px) {
-    h1{
+    h1 {
       font-size: 1rem;
     }
-    h2{
+    h2 { 
       font-size: .75rem;
     }
-    h3{
+    h3 {
       font-size: .5rem;
     }
-  .facts{
+  .facts {
     z-index: 1001;
     color: #FFC151;
     width: 50%;
