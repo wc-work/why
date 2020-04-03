@@ -25,16 +25,16 @@ get_header(); ?>
       <div class="overlay"></div>
       <div class=" content-wrapper d-flex justify-content-around align-items-center flex-column">
         <div class="title">
-          <h1>We Hear You!</h1>
+          <img class="logo-title" src="<?php echo get_field('carousel_header')['url'] ?>">
         </div>
         <div class="facts-ask">
-          <h2>Did You Know?</h2>
+          <h2><?php the_field('carousel_text_2'); ?></h2>
         </div>
         <div class="facts">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae minus ex adipisci deleniti in fugit, corporis doloremque. Ipsa soluta repudiandae accusantium assumenda.
+          <?php the_field('facts'); ?>
         </div>
         <div class="slogan">
-          <h3>"Helping deaf children learn to listen and speak"</h3>
+          <h3><?php the_field('carousel_text_3'); ?></h3>
         </div>
      </div>
     </div>
@@ -53,19 +53,16 @@ get_header(); ?>
         <img class="team-photo" src="<?php echo get_field('our_story_photo')['url'] ?>">
         </div>
         <div class="col-12 col-md-6 box-two box">
-          <h2>History</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto explicabo, autem unde sint commodi rem iure repellat fugit minus non distinctio ipsum, voluptates ab. Eveniet, tempora vitae a amet odit fuga tempore. Minus, error, delectus excepturi molestiae laboriosam consectetur provident optio expedita laudantium earum laborum. Deleniti, eveniet quisquam?
-          </p>
+          <h2><?php the_field('heading_1'); ?></h2>
+          <p><?php the_field('box_1'); ?></p>
         </div>
         <div class="col-12 col-md-6 box-three box">
-          <h2>What We Do</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto explicabo, autem unde sint commodi rem iure repellat fugit minus non distinctio ipsum, voluptates ab. Eveniet, tempora vitae a amet odit fuga tempore. Minus, error, delectus excepturi molestiae laboriosam consectetur provident optio expedita laudantium earum laborum. Deleniti, eveniet quisquam?
-          </p>
+          <h2><?php the_field('heading_2'); ?></h2>
+          <p><?php the_field('box_2'); ?></p>
         </div>
         <div class="col-12 col-md-6 box-four box">
-          <h2>Why Give to W.H.Y.</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto explicabo, autem unde sint commodi rem iure repellat fugit minus non distinctio ipsum, voluptates ab. Eveniet, tempora vitae a amet odit fuga tempore. Minus, error, delectus excepturi molestiae laboriosam consectetur provident optio expedita laudantium earum laborum. Deleniti, eveniet quisquam? fugit minus non distinctio ipsum, voluptates ab. Eveniet, tempora vitae a amet odit fuga tempore. Minus, error, delectus excepturi molestiae laboriosam consectetur provident optio expedita laudantium earum laborum. Deleniti, eveniet quisquam?
-          </p>
+          <h2><?php the_field('heading_3'); ?></h2>
+          <p><?php the_field('box_3'); ?></p>
         </div>
       </div>
   </section>
