@@ -32,7 +32,7 @@
 	<div class="wrapper">
 
 		<!-- header -->
-		<header class="header clear">
+		<header class="header clear sticky-top">
 
 			<nav class="navbar navbar-expand-md navbar-light custom-nav" role="navigation">
 					<!-- logo -->

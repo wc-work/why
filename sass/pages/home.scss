@@ -99,14 +99,13 @@
     overflow: hidden;
   }
   .logo-title {
-    height: 3rem;
+    height: 3.5rem;
   }
   .content-wrapper {
     position: absolute;
     top: 0;
     height: 100%;
     width: 100%;
-    padding: 2rem 0;
     text-align: center;
     overflow: hidden;
   }
@@ -183,6 +182,9 @@
     .logo-title {
       height: 4rem;
     }
+    h2 {
+      font-size: 1rem;
+    }
   }
 
   @media screen and (min-width: 768px) {
@@ -203,11 +205,17 @@
     .logo-title {
       height: 6rem;
     }
+    h2 {
+      font-size: 1.5rem;
+    }
   }
 
   @media screen and (min-width: 992px) {
     .logo-title {
-      height: 10rem;
+      height: 9rem;
+    }
+    h2 {
+      font-size: 2rem;
     }
   }
 
@@ -229,21 +237,28 @@
     }
   }
 
-  @media screen and (max-width: 599px) {
+  @media screen and (max-width: 576px) {
     h1{
       font-size: 2rem;
     }
     h2{
-      font-size: 1.5rem;
+      font-size: .7rem;
     }
     h3 {
       font-size: .5rem;
     }
-  .facts {
-    z-index: 1001;
-    color: #FFC151;
-    width: 50%;
-    font-size: .5rem;
+    .facts {
+      z-index: 1001;
+      color: #FFC151;
+      width: 50%;
+      font-size: .5rem;
+      }
+    .carousel{
+      &__button--prev,
+      &__button--next {
+        width: 2rem;
+        height: 2rem;
+      }
     }
   }
 } 

@@ -9,12 +9,18 @@ get_header(); ?>
 <main class="page-home">
   <div class="carousel-wrapper container-fluid p-0 home-slider">
     <div class="carousel">
-      <img class="carousel__photo initial" src="<?php echo get_field('picture_1')['url'] ?>">
-      <img class="carousel__photo" src="<?php echo get_field('picture_2')['url'] ?>">
-      <img class="carousel__photo" src="<?php echo get_field('picture_3')['url'] ?>">
-      <img class="carousel__photo" src="<?php echo get_field('picture_4')['url'] ?>">
-      <img class="carousel__photo" src="<?php echo get_field('picture_5')['url'] ?>">
-
+    <img class="carousel__photo initial" src="<?php echo get_field('carousel_photo_1')['url'] ?>">
+    <?php
+      // Check if pictures ACF has rows of data (CAROUSEL)
+       if ( have_rows('pictures') ):
+         while ( have_rows('pictures') ) : the_row();
+    ?>
+      <img class="carousel__photo" src="<?php echo get_sub_field('carousel_photo')['url'] ?>">
+    <?php 
+      endwhile;
+      // No rows found
+    endif;
+    ?>
         <!----------------------- Carousel Buttons ------------------------->
 
       <div class="carousel__button--next"></div>
@@ -25,18 +31,24 @@ get_header(); ?>
       <div class="overlay"></div>
       <div class=" content-wrapper d-flex justify-content-around align-items-center flex-column">
         <div class="title">
-          <img class="logo-title" src="<?php echo get_field('carousel_header')['url'] ?>">
+          <img class="logo-title" src="<?php echo get_field('main_logo')['url'] ?>">
         </div>
         <div class="facts-ask">
-          <h2><?php the_field('carousel_text_2'); ?></h2>
+          <h2><?php the_field('carousel_heading'); ?></h2>
         </div>
         <div class="facts">
-          <?php the_field('facts'); ?>
+            <?php
+              // Check if pictures ACF has rows of data (CAROUSEL)
+              if ( have_rows('pictures') ):
+                while ( have_rows('pictures') ) : the_row();
+            ?>
+          <p class="carousel__text" ><?php echo get_sub_field('carousel_text'); ?></p>
+            <?php 
+              endwhile;
+             endif;
+            ?>
         </div>
-        <div class="slogan">
-          <h3><?php the_field('carousel_text_3'); ?></h3>
-        </div>
-     </div>
+      </div>
     </div>
   </div>
 

@@ -63,7 +63,7 @@
                   newNext = slide + 1,
                   oldPrevious = slide - 2,
                   oldNext = slide + 2;    // Test if carousel has more than three items
-              if ((totalItems - 1) > 3) {      // Checks and updates if the new slides are out of bounds
+              if ((totalItems - 1) >= 2) {      // Checks and updates if the new slides are out of bounds
                 if (newPrevious <= 0) {
                   oldPrevious = (totalItems - 1);
                 } else if (newNext >= (totalItems - 1)){
