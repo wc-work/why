@@ -147,12 +147,6 @@ function html5blank_header_scripts()
 /*------------------------------------*\
 	     Custom Accordion Menu
 \*------------------------------------*/
-function cssmenumaker_scripts_styles() {  
-   wp_enqueue_style( 'cssmenu-styles', get_template_directory_uri() . '/cssmenu/styles.css');
-   wp_enqueue_script('cssmenu-scripts', get_template_directory_uri() . '/cssmenu/script.js');
-}
-
-add_action('wp_enqueue_scripts', 'cssmenumaker_scripts_styles' );
 
 class CSS_Menu_Maker_Walker extends Walker {
 
@@ -229,6 +223,49 @@ if( function_exists('acf_add_options_page') ) {
         'parent_slug'   => 'theme-general-settings',
     ));
 }
+
+// ============ Remove All Comments ============= //
+add_action('admin_init', function () {
+    // Redirect any user trying to access comments page
+    global $pagenow;
+    
+    if ($pagenow === 'edit-comments.php') {
+        wp_redirect(admin_url());
+        exit;
+    }
+
+    // Remove comments metabox from dashboard
+    remove_meta_box('dashboard_recent_comments', 'dashboard', 'normal');
+
+    // Disable support for comments and trackbacks in post types
+    foreach (get_post_types() as $post_type) {
+        if (post_type_supports($post_type, 'comments')) {
+            remove_post_type_support($post_type, 'comments');
+            remove_post_type_support($post_type, 'trackbacks');
+        }
+    }
+});
+
+// Close comments on the front-end
+add_filter('comments_open', '__return_false', 20, 2);
+add_filter('pings_open', '__return_false', 20, 2);
+
+// Hide existing comments
+add_filter('comments_array', '__return_empty_array', 10, 2);
+
+// Remove comments page in menu
+add_action('admin_menu', function () {
+    remove_menu_page('edit-comments.php');
+});
+
+// Remove comments links from admin bar
+add_action('init', function () {
+    if (is_admin_bar_showing()) {
+        remove_action('admin_bar_menu', 'wp_admin_bar_comments_menu', 60);
+        remove_action('admin_bar_menu', 'wp_admin_bar_logbook_menu');
+
+    }
+});
 
 // Load HTML5 Blank conditional scripts
 // function html5blank_conditional_scripts()

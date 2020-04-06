@@ -36,6 +36,11 @@
 						<div class="center">
 							<h2><?php echo get_sub_field('phone_number'); ?></h2>
 						</div>
+						<?php if(get_field('email')): ?>
+							<div class="center">
+								<h2><?php echo get_sub_field('email'); ?></h2>
+							</div>
+						<?php endif; ?>
 					</div>
 					<?php 
 								endwhile;

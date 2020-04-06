@@ -99,6 +99,7 @@
     overflow: hidden;
   }
   .logo-title {
+    z-index: 1001;
     height: 3.5rem;
   }
   .content-wrapper {
@@ -108,16 +109,16 @@
     width: 100%;
     text-align: center;
     overflow: hidden;
+    margin-top: 1rem;
   }
-  .title {
+  .carousel-heading {
     z-index: 1001;
     color: #FFC151;
+    h2 {
+      font-size: 1rem;
+    }
   }
-  .facts-ask {
-    z-index: 1001;
-    color: #FFC151;
-  }
-  .facts {
+  .carousel-subheading {
     z-index: 1001;
     color: #FFC151;
     width: 50%;
@@ -131,81 +132,73 @@
 
   // Home Content styles
 
-  .box {
-    min-height: 300px;
-    background-color: #EFEFF2;
-    border-radius: 50px;
-    padding: 0px;
-    margin-bottom: 3rem;
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 50px repeat(2, auto);
+    grid-template-areas: "heading heading"
+                         "box-one box-two"
+                         "box-three box-four";
+    grid-gap: 2rem;
+    .heading {
+      grid-area: heading;
+      justify-self: center;
+    }
+    .grid-box {
+      border-radius: 35px;
+      text-align: center;
+      text-shadow: 2px 2px 15px #fff;
+    }
+    .box-one {
+      width: 100%;
+      grid-area: box-one;
+      padding: 0;
+    }
+    .box-two {
+      grid-area: box-two;
+      background-color: #BED563;
+      padding: 20px;
+    }
+    .box-three {
+      grid-area: box-three;
+      background-color: #f26b3a;
+      padding: 20px;
+    }
+    .box-four {
+      grid-area: box-four;
+      background-color: #FFC151;
+      padding: 20px;
+    }
   }
-  .team-photo {
-    max-width: 100%;
-    height: inherit;
-    border-radius: 50px;
-    overflow: hidden;
+  @media screen and (max-width: 768px) {
+    .grid-container {
+      grid-template-columns: 1fr;
+      grid-template-rows: 30px repeat(4, auto);
+      grid-template-areas: "heading"
+                           "box-one"
+                           "box-two"
+                           "box-three"
+                           "box-four";
+    }
+    h1{
+      font-size: 2rem;
+    }
   }
-  .box h2, p {
-    text-align: center;
-    margin-top: 1rem;
-    padding: 0 1.5rem;
-  }
-  .box-two {
-    background-color: #BED563;
-  }
-  .box-three {
-    background-color: #F26B3A;
-  }
-  .box-four {
-    background-color: #FFC151;
-  }
-// Media Queries
+  
   @media screen and (min-width: 576px) {
-    p {
-      padding: 0 2.5rem;
-    }
-    .squares-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .box {
-      max-width: 300px;
-      height: 365px;
-      // overflow: scroll;
-    }
-    .home-content {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      align-items: center;
-    }
     .logo-title {
       height: 4rem;
     }
-    h2 {
+    .carousel-heading h2 {
       font-size: 1rem;
     }
   }
 
   @media screen and (min-width: 768px) {
-    .squares-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .box{
-      max-width: 500px;
-    }
-    .home-content {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      align-items: center;
-    }
     .logo-title {
       height: 6rem;
     }
-    h2 {
+    .carousel-heading {
       font-size: 1.5rem;
     }
   }
@@ -219,38 +212,14 @@
     }
   }
 
-  @media screen and (max-width: 722px) {
-      h1{
-        font-size: 2rem;
-      }
-      h2 {
-        font-size: 1rem;
-      }
-      h3 {
-        font-size: .5rem;
-      }
-    .facts {
-      z-index: 1001;
-      color: #FFC151;
-      width: 50%;
-      font-size: .75rem;
-    }
-  }
-
   @media screen and (max-width: 576px) {
     h1{
       font-size: 2rem;
     }
-    h2{
-      font-size: .7rem;
-    }
     h3 {
       font-size: .5rem;
     }
-    .facts {
-      z-index: 1001;
-      color: #FFC151;
-      width: 50%;
+    .carousel-subheading {
       font-size: .5rem;
       }
     .carousel{

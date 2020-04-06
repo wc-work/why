@@ -29,14 +29,12 @@ get_header(); ?>
       <!-------------------- Carousel Text and Overlay ---------------------->
 
       <div class="overlay"></div>
-      <div class=" content-wrapper d-flex justify-content-around align-items-center flex-column">
-        <div class="title">
-          <img class="logo-title" src="<?php echo get_field('main_logo')['url'] ?>">
-        </div>
-        <div class="facts-ask">
+      <div class="content-wrapper d-flex justify-content-around align-items-center flex-column">
+        <img class="logo-title" src="<?php echo get_field('main_logo')['url'] ?>">
+        <div class="carousel-heading">
           <h2><?php the_field('carousel_heading'); ?></h2>
         </div>
-        <div class="facts">
+        <div class="carousel-subheading">
             <?php
               // Check if pictures ACF has rows of data (CAROUSEL)
               if ( have_rows('pictures') ):
@@ -54,33 +52,30 @@ get_header(); ?>
 
   
 
-  <!-------------------------- Our Story Content------------------------------------>
+  <!-------------------------- Main Section Content------------------------------------>
 
-  <section class="container home-content">
-    <div class="row d-flex justify-content-center mt-3">
-      <h1 class="our-story">Our Story</h1>
+  <section class="container grid-container my-5">
+    <div class="heading">
+      <h1><?php the_field('main_heading') ?></h1>
     </div>
-      <div class="row no-gutters squares-container">
-        <div class="col-xs-12 col-md-6 box">
-        <img class="team-photo" src="<?php echo get_field('our_story_photo')['url'] ?>">
-        </div>
-        <div class="col-12 col-md-6 box-two box">
-          <h2><?php the_field('heading_1'); ?></h2>
-          <p><?php the_field('box_1'); ?></p>
-        </div>
-        <div class="col-12 col-md-6 box-three box">
-          <h2><?php the_field('heading_2'); ?></h2>
-          <p><?php the_field('box_2'); ?></p>
-        </div>
-        <div class="col-12 col-md-6 box-four box">
-          <h2><?php the_field('heading_3'); ?></h2>
-          <p><?php the_field('box_3'); ?></p>
-        </div>
-      </div>
+    <!-- Box 1 Image -->
+    <img class="grid-box box-one" src="<?php echo get_field('box_1_image')['url'] ?>" alt="<?php echo get_field('box_1_image')['alt'] ?>">
+    <!-- Box 2 Content -->
+    <div class="grid-box box-two">
+      <h2 class="box-heading"><?php the_field('box_2_header'); ?></h2>
+      <p><?php the_field('box_2_text'); ?></p>
+    </div>
+    <!-- Box 3 Content -->
+    <div class="grid-box box-three">
+      <h2><?php the_field('box_3_header'); ?></h2>
+      <p><?php the_field('box_3_text'); ?></p>
+    </div>
+    <!-- Box 4 Content -->
+    <div class="grid-box box-four">
+      <h2 class="box-heading"><?php the_field('box_4_header'); ?></h2>
+      <p><?php the_field('box_4_text'); ?></p>
+    </div>
   </section>
 </main>
-
-
-
 
 <?php get_footer(); ?>
