@@ -39,9 +39,11 @@ get_header(); ?>
               // Check if pictures ACF has rows of data (CAROUSEL)
               if ( have_rows('pictures') ):
                 while ( have_rows('pictures') ) : the_row();
+                if(get_sub_field('carousel_text')):
             ?>
           <p class="carousel__text" ><?php echo get_sub_field('carousel_text'); ?></p>
             <?php 
+                endif;
               endwhile;
              endif;
             ?>
@@ -74,6 +76,9 @@ get_header(); ?>
     <div class="grid-box box-four">
       <h2 class="box-heading"><?php the_field('box_4_header'); ?></h2>
       <p><?php the_field('box_4_text'); ?></p>
+      <?php if(get_field('box_4_button')): ?>
+      <a href=""><button class="donate-button">Donate</button></a>
+      <?php endif; ?>
     </div>
   </section>
 </main>

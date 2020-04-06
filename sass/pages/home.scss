@@ -102,6 +102,9 @@
     z-index: 1001;
     height: 3.5rem;
   }
+  h1{
+    font-size: 1.5rem;
+  }
   .content-wrapper {
     position: absolute;
     top: 0;
@@ -135,7 +138,7 @@
   .grid-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 50px repeat(2, auto);
+    grid-template-rows: repeat(3, auto);
     grid-template-areas: "heading heading"
                          "box-one box-two"
                          "box-three box-four";
@@ -168,12 +171,62 @@
       grid-area: box-four;
       background-color: #FFC151;
       padding: 20px;
+      .donate-button {
+        background-color: #f26b3a;
+        border-radius: 20px;
+        border: none;
+        color: #ffffff;
+        padding: 5px 20px;
+      }
+    }
+  }
+  
+  @media screen and (min-width: 576px) {
+    .logo-title {
+      height: 5rem;
+    }
+    .carousel-heading h2 {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .logo-title {
+      height: 6rem;
+    }
+    .carousel-heading h2 {
+      font-size: 2rem;
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    .logo-title {
+      height: 9rem;
+    }
+    .carousel-heading h2 {
+      font-size: 2.5rem;
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    h1{
+      font-size: 1.5rem;
+    }
+    .carousel-subheading {
+      font-size: .6rem;
+    }
+    .carousel{
+      &__button--prev,
+      &__button--next {
+        width: 2rem;
+        height: 2rem;
+      }
     }
   }
   @media screen and (max-width: 768px) {
     .grid-container {
       grid-template-columns: 1fr;
-      grid-template-rows: 30px repeat(4, auto);
+      grid-template-rows: repeat(5, auto);
       grid-template-areas: "heading"
                            "box-one"
                            "box-two"
@@ -182,52 +235,7 @@
     }
     h1{
       font-size: 2rem;
-    }
-  }
-  
-  @media screen and (min-width: 576px) {
-    .logo-title {
-      height: 4rem;
-    }
-    .carousel-heading h2 {
-      font-size: 1rem;
-    }
-  }
-
-  @media screen and (min-width: 768px) {
-    .logo-title {
-      height: 6rem;
-    }
-    .carousel-heading {
-      font-size: 1.5rem;
-    }
-  }
-
-  @media screen and (min-width: 992px) {
-    .logo-title {
-      height: 9rem;
-    }
-    h2 {
-      font-size: 2rem;
-    }
-  }
-
-  @media screen and (max-width: 576px) {
-    h1{
-      font-size: 2rem;
-    }
-    h3 {
-      font-size: .5rem;
-    }
-    .carousel-subheading {
-      font-size: .5rem;
-      }
-    .carousel{
-      &__button--prev,
-      &__button--next {
-        width: 2rem;
-        height: 2rem;
-      }
+      text-align: center;
     }
   }
 } 
