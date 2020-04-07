@@ -7,55 +7,27 @@ Template Post Type: page
 get_header(); ?>
 <!---------------------------- Carousel --------------------------->
 <main class="page-home">
-  <div class="carousel-wrapper container-fluid p-0 home-slider">
-    <div class="carousel">
-    <img class="carousel__photo initial" src="<?php echo get_field('carousel_photo_1')['url'] ?>">
-    <?php
-      // Check if pictures ACF has rows of data (CAROUSEL)
-       if ( have_rows('pictures') ):
-         while ( have_rows('pictures') ) : the_row();
-    ?>
-      <img class="carousel__photo" src="<?php echo get_sub_field('carousel_photo')['url'] ?>">
-    <?php 
-      endwhile;
-      // No rows found
-    endif;
-    ?>
-        <!----------------------- Carousel Buttons ------------------------->
+  <div class="carousel-wrapper">
+    <?php if (have_posts()): 
+      while (have_posts()) : the_post(); ?>
+      <?php the_content(); ?>
 
-      <div class="carousel__button--next"></div>
-      <div class="carousel__button--prev"></div>
-
-      <!-------------------- Carousel Text and Overlay ---------------------->
-
-      <div class="overlay"></div>
-      <div class="content-wrapper d-flex justify-content-around align-items-center flex-column">
-        <img class="logo-title" src="<?php echo get_field('main_logo')['url'] ?>">
-        <div class="carousel-heading">
-          <h2><?php the_field('carousel_heading'); ?></h2>
-        </div>
-        <div class="carousel-subheading">
-            <?php
-              // Check if pictures ACF has rows of data (CAROUSEL)
-              if ( have_rows('pictures') ):
-                while ( have_rows('pictures') ) : the_row();
-                if(get_sub_field('carousel_text')):
-            ?>
-          <p class="carousel__text" ><?php echo get_sub_field('carousel_text'); ?></p>
-            <?php 
-                endif;
-              endwhile;
-             endif;
-            ?>
-        </div>
+      <?php 
+      endwhile; 
+    endif; ?>
+  </div>
+    <!-------------------- Carousel Text and Overlay ---------------------->
+    
+    <div class="content-wrapper d-flex justify-content-around align-items-center flex-column">
+      <!-- Logo -->
+      <img class="logo-title" src="<?php echo get_field('main_logo')['url'] ?>">
+      <!-- Carousel Heading -->
+      <div class="carousel-heading">
+        <h2><?php the_field('carousel_heading'); ?></h2>
       </div>
     </div>
-  </div>
-
   
-
   <!-------------------------- Main Section Content------------------------------------>
-
   <section class="container grid-container my-5">
     <div class="heading">
       <h1><?php the_field('main_heading') ?></h1>

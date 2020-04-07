@@ -3,91 +3,30 @@
 .page-home{
   overflow: hidden;
   // --------------------- Carousel Styles -----------------
+
   .carousel-wrapper {
-      overflow: hidden;
-      width: 100vw;
-  }
-
-  .carousel-wrapper * {
-      box-sizing: border-box;
-  }
-    
-  .carousel {
+      box-sizing: border-box;      
       transform-style: preserve-3d;
-      overflow: hidden;
-
-    &__photo {
-        opacity: 0;
-        position: absolute;
-        top:0;
-        width: 100%;
-        margin: auto;
-        z-index: 100;
-        transition: transform .5s, opacity .5s, z-index .5s;
+  }
+  .carousel-slider {
+    &__caption {
+      .caption {
+        position: relative;
+        z-index: 20;
+      }
     }
-
-    &__photo.initial,
-    &__photo.active {
-      opacity: 1;
-      position: relative;
-      z-index: 900;
-    }
-
-    &__photo.prev,
-    &__photo.next {
-      z-index: 800;
-    }
-    &__photo.prev {
-      transform: translateX(-100%); /* Move 'prev' item to the left */
-    }
-    &__photo.next {
-      transform: translateX(100%); /* Move 'next' item to the right */
-    }
-
-    // --------------------- Carousel Button Styles -----------------
-
-    &__button--prev,
-    &__button--next {
+    .owl-nav .owl-prev {
       position: absolute;
-      top:50%;
-      width: 3rem;
-      height: 3rem;
-      background-color: #FFF;
-      transform: translateY(-50%);
-      border-radius: 50%;
-      cursor: pointer; 
-      z-index: 1001; /* Sit on top of everything */
-      border: 1px solid black;
-    }
-    &__button--prev {
-      left: 15px;
-    }
-    &__button--next {
-      right: 15px;
-    }
-    &__button--prev::after,
-    &__button--next::after {
-      content: " ";
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      top: 50%;
-      left: 54%;
-      border-right: 2px solid black;
-      border-bottom: 2px solid black;
-      transform: translate(-50%, -50%) rotate(135deg);
-    }
-    &__button--next::after {
-      left: 47%;
-      transform: translate(-50%, -50%) rotate(-45deg);
+      z-index: 20 !important;
     }
   }
-
   // Carousel Text and Overlay
 
-  .overlay {
-    position: fixed;
-    z-index: 1000;
+  .carousel-wrapper::after {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 2;
     opacity: .7;
     background-color: black;
     height: 100%;
@@ -99,7 +38,7 @@
     overflow: hidden;
   }
   .logo-title {
-    z-index: 1001;
+    z-index: 20;
     height: 3.5rem;
   }
   h1{
@@ -112,25 +51,20 @@
     width: 100%;
     text-align: center;
     overflow: hidden;
-    margin-top: 1rem;
   }
   .carousel-heading {
-    z-index: 1001;
+    z-index: 20;
     color: #FFC151;
     h2 {
       font-size: 1rem;
     }
   }
   .carousel-subheading {
-    z-index: 1001;
+    z-index: 20;
     color: #FFC151;
     width: 50%;
   }
-  .slogan {
-    z-index: 1001;
-    color: #FFC151;
-    width: 50%;
-  }
+  
   // End of Carousel Text
 
   // Home Content styles
