@@ -28,7 +28,9 @@
         transition: ease .7s;
     }
 }
-
+div > div > a {
+    width: 100%;
+}
 a:hover {
     text-decoration: none;
 }

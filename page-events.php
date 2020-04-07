@@ -65,7 +65,7 @@ get_header(); ?>
 					<h2>Upcoming Events</h2>
 				</div>
 			</div>
-			<div class="row">
+			<div class="row d-flex justify-content-around">
 				<?php if($upcoming_event->have_posts() ) : while ( $upcoming_event->have_posts() ) : $upcoming_event->the_post(); ?>
 				<?php get_template_part('./partials/partials-events-top-card', 'top-card'); ?>
 				<?php endwhile; 
