@@ -57,9 +57,9 @@ get_header(); ?>
 	<?php endwhile; 
 			wp_reset_postdata();
 		endif; ?>
-	<section>
+	<section class=container-fluid>
 		<!-- Upcoming Events -->
-		<article class="container">
+		<article>
 			<div class="row">
 				<div class="col pt-4 d-flex justify-content-center">
 					<h2>Upcoming Events</h2>
@@ -77,13 +77,13 @@ get_header(); ?>
 		<!-- /Upcoming Events -->
 
 		<!-- Past Events -->
-		<article class="container">
+		<article>
 			<div class="row">
 				<div class="col pt-4 d-flex justify-content-center">
 					<h2>Past Events</h2>
 				</div>
 			</div>
-			<div class="row">
+			<div class="row d-flex justify-content-around">
 				<?php if($past_event->have_posts() ) : while ( $past_event->have_posts() ) : $past_event->the_post(); ?>
 				<?php get_template_part('./partials/partials-events-bottom-card', 'bottom-card'); ?>
 				<?php endwhile; 

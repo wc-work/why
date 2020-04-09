@@ -1,48 +1,22 @@
-//Empty scss in anticpation for page-home.php
+// Variables
+$color-gold: #FFC151;
+$color-orange: #F26B3A;
+$color-limeGreen: #BED563;
 
 .page-home{
   overflow: hidden;
-  // --------------------- Carousel Styles -----------------
-
-  .carousel-wrapper {
-      box-sizing: border-box;      
-      transform-style: preserve-3d;
+  // --------------------- Carousel Styles --------------------
+  .overlay {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.7);
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
   }
-  .carousel-slider {
-    &__caption {
-      .caption {
-        position: relative;
-        z-index: 20;
-      }
-    }
-    .owl-nav .owl-prev {
-      position: absolute;
-      z-index: 20 !important;
-    }
-  }
-  // Carousel Text and Overlay
-
-  // .owl-stage-outer::after {
-  //   content: "";
-  //   display: block;
-  //   position: absolute;
-  //   z-index: 2;
-  //   opacity: .7;
-  //   background-color: black;
-  //   height: 100%;
-  //   width: 100%;
-  //   top: 0;
-  //   left: 0;
-  //   right: 0;
-  //   bottom: 0;
-  //   overflow: hidden;
-  // }
   .logo-title {
     z-index: 20;
-    height: 3.5rem;
-  }
-  h1{
-    font-size: 1.5rem;
+    height: 7rem;
   }
   .content-wrapper {
     position: absolute;
@@ -54,18 +28,33 @@
   }
   .carousel-heading {
     z-index: 20;
-    color: #FFC151;
+    color: $color-gold;
+
     h2 {
-      font-size: 1rem;
+      font-size: 1.5rem;
     }
   }
-  .carousel-subheading {
-    z-index: 20;
-    color: #FFC151;
-    width: 50%;
+  .carousel-control-prev {
+    z-index: 4;
+    &:hover {
+      color: $color-gold;
+    }
   }
-  
-  // End of Carousel Text
+  .carousel-control-next {
+    z-index: 4;
+    &:hover {
+      color: $color-gold;
+    }
+  }
+  .carousel-inner > .carousel-item > img {
+    min-height: 60vh;
+    object-fit: cover;
+  }
+  .carousel-inner > .carousel-item > .carousel-caption > p {
+    margin-bottom: 7rem;
+    color: $color-gold;
+  }
+  // End of Carousel 
 
   // Home Content styles
 
@@ -77,6 +66,9 @@
                          "box-one box-two"
                          "box-three box-four";
     grid-gap: 2rem;
+    h1{
+      font-size: 1.5rem;
+    }
     .heading {
       grid-area: heading;
       justify-self: center;
@@ -93,20 +85,20 @@
     }
     .box-two {
       grid-area: box-two;
-      background-color: #BED563;
+      background-color: $color-limeGreen;
       padding: 20px;
     }
     .box-three {
       grid-area: box-three;
-      background-color: #f26b3a;
+      background-color: $color-orange;
       padding: 20px;
     }
     .box-four {
       grid-area: box-four;
-      background-color: #FFC151;
+      background-color: $color-gold;
       padding: 20px;
       .donate-button {
-        background-color: #f26b3a;
+        background-color: $color-orange;
         border-radius: 20px;
         border: none;
         color: #ffffff;
@@ -117,7 +109,7 @@
   
   @media screen and (min-width: 576px) {
     .logo-title {
-      height: 5rem;
+      height: 8rem;
     }
     .carousel-heading h2 {
       font-size: 1.5rem;
@@ -126,7 +118,7 @@
 
   @media screen and (min-width: 768px) {
     .logo-title {
-      height: 6rem;
+      height: 9rem;
     }
     .carousel-heading h2 {
       font-size: 2rem;
@@ -138,7 +130,7 @@
 
   @media screen and (min-width: 992px) {
     .logo-title {
-      height: 9rem;
+      height: 10rem;
     }
     .carousel-heading h2 {
       font-size: 2.5rem;
@@ -148,6 +140,9 @@
   @media screen and (max-width: 576px) {
     section > div > h1{
       font-size: 1.5rem;
+    }
+    .carousel-inner > .carousel-item > img {
+      min-height: 40vh;
     }
     .carousel-subheading {
       font-size: .6rem;
@@ -161,6 +156,9 @@
     }
   }
   @media screen and (max-width: 768px) {
+    .carousel-inner > .carousel-item > img {
+      min-height: 50vh;
+    }
     .grid-container {
       grid-template-columns: 1fr;
       grid-template-rows: repeat(5, auto);

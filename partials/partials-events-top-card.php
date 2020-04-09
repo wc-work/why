@@ -2,7 +2,7 @@
       $eventDate = new DateTime(get_field('event_date'));
 ?>
 
-<div class="my-4 col-xs-12 col-md-6 col-lg-4">
+<div class="my-4 col-sm-12 col-md-6 col-lg-4 d-flex justify-content-center">
     <div class="card card-event">
         <?php if( !empty($image)): ?>
             <img class="card-img-top card-img-event" data-src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" src="<?php echo esc_url($image['url']); ?>">
