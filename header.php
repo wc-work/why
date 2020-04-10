@@ -32,9 +32,9 @@
 	<div class="wrapper">
 
 		<!-- header -->
-		<header class="header clear sticky-top">
+		<header class="header clear">
 
-			<nav class="navbar navbar-expand-md navbar-light custom-nav" role="navigation">
+			<nav class="navbar navbar-expand-md navbar-light custom-nav py-3" role="navigation">
 					<!-- logo -->
 					<div class="logo">
 						<!-- Dynamic Logo -->

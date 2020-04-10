@@ -47,16 +47,16 @@ $color-limeGreen: #BED563;
     }
   }
   .carousel-inner > .carousel-item > img {
-    min-height: 60vh;
+    min-height: 67vh;
     object-fit: cover;
   }
   .carousel-inner > .carousel-item > .carousel-caption > p {
-    margin-bottom: 7rem;
+    margin-bottom: 3rem;
     color: $color-gold;
   }
-  // End of Carousel 
+  // --------------------- /End Carousel Styles --------------------
 
-  // Home Content styles
+  // --------------------- Home Content styles --------------------
 
   .grid-container {
     display: grid;
@@ -99,10 +99,11 @@ $color-limeGreen: #BED563;
       padding: 20px;
       .donate-button {
         background-color: $color-orange;
-        border-radius: 20px;
+        border-radius: 35px;
+        font-size: 1.2rem;
         border: none;
         color: #ffffff;
-        padding: 5px 20px;
+        padding: 8px 30px;
       }
     }
   }
@@ -114,6 +115,10 @@ $color-limeGreen: #BED563;
     .carousel-heading h2 {
       font-size: 1.5rem;
     }
+    .carousel-inner > .carousel-item > .carousel-caption > p {
+      margin-bottom: 5rem;
+      font-size: 1.1rem;
+    }
   }
 
   @media screen and (min-width: 768px) {
@@ -123,8 +128,12 @@ $color-limeGreen: #BED563;
     .carousel-heading h2 {
       font-size: 2rem;
     }
-    h1 {
+    .grid-container h1 {
       font-size: 2.5rem;
+    }
+    .carousel-inner > .carousel-item > .carousel-caption > p {
+      margin-bottom: 7rem;
+      font-size: 1.3rem;
     }
   }
 
@@ -135,6 +144,10 @@ $color-limeGreen: #BED563;
     .carousel-heading h2 {
       font-size: 2.5rem;
     }
+    .carousel-inner > .carousel-item > .carousel-caption > p {
+      margin-bottom: 9rem;
+      font-size: 1.4rem;
+    }
   }
 
   @media screen and (max-width: 576px) {
@@ -143,9 +156,6 @@ $color-limeGreen: #BED563;
     }
     .carousel-inner > .carousel-item > img {
       min-height: 40vh;
-    }
-    .carousel-subheading {
-      font-size: .6rem;
     }
     .carousel{
       &__button--prev,
@@ -174,3 +184,4 @@ $color-limeGreen: #BED563;
     }
   }
 } 
+// --------------------- /End Home Content styles --------------------

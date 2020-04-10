@@ -7,50 +7,72 @@ Template Post Type: page
 get_header(); ?>
 
 <main class="page-home">
-  <!----------------------------------- Carousel ----------------------------------------->
+  <!----------------------------------- Carousel Background (Optional) ----------------------------------------->
+  
   <?php if(get_field('carousel_image_starter')): ?>
-  <div id="carouselWeHearYou" class="carousel slide" data-keyboard="true" data-touch="true">
-    <div class="carousel-inner">
-      <div class="content-wrapper d-flex align-items-center flex-column">
-        <!-- Logo -->
-        <img class="logo-title pt-5" src="<?php echo get_field('main_logo')['url'] ?>">
-        <!-- Carousel Heading -->
-        <div class="carousel-heading pt-4">
-          <h2><?php the_field('carousel_heading'); ?></h2>
+  <section>  
+    <div id="carouselWeHearYou" class="carousel slide" data-keyboard="true" data-touch="true">
+      <div class="carousel-inner">
+        <div class="content-wrapper d-flex align-items-center flex-column">
+          <!-- Logo -->
+          <img class="logo-title pt-5" src="<?php echo get_field('main_logo')['url']; ?>" alt="<?php echo get_field('main_logo')['alt']; ?>">
+          <!-- Carousel Heading -->
+          <div class="carousel-heading pt-4">
+            <h2><?php the_field('carousel_heading'); ?></h2>
+          </div>
         </div>
-      </div>
-      <div class="carousel-item active">
-        <div class="overlay"></div>
-        <img src="<?php echo get_field('carousel_image_starter')['url']; ?>" class="d-block w-100" alt="<?php echo get_field('carousel_image_starter')['alt']; ?>">
-        <div class="carousel-caption d-block">
-          <p><?php the_field('carousel_text_starter'); ?></p>
+        <div class="carousel-item active">
+          <div class="overlay"></div>
+          <img src="<?php echo get_field('carousel_image_starter')['url']; ?>" class="d-block w-100" alt="<?php echo get_field('carousel_image_starter')['alt']; ?>">
+          <div class="carousel-caption d-block">
+            <p><?php the_field('carousel_text_starter'); ?></p>
+          </div>
         </div>
+        <?php 
+          if(have_posts() ) : 
+            while ( have_posts() ) : the_post(); ?>
+              <?php get_template_part('./partials/partials-carousel', 'carousel-section'); ?>
+        <?php 
+            endwhile; 
+              wp_reset_postdata();
+          endif; ?>	
       </div>
-      <?php 
-        if(have_posts() ) : 
-          while ( have_posts() ) : the_post(); ?>
-						<?php get_template_part('./partials/partials-carousel', 'carousel-section'); ?>
-      <?php 
-          endwhile; 
-						wp_reset_postdata();
-        endif; ?>	
+      <a class="carousel-control-prev" href="#carouselWeHearYou" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselWeHearYou" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
-    <a class="carousel-control-prev" href="#carouselWeHearYou" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselWeHearYou" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
+  </section>
   <?php endif; ?>
 
-  <!------------------------------ End Carousel ------------------------------------>
+  <!------------------------------ End Carousel Background ------------------------------------>
     
+  <!------------------------------ Video Background (Optional) -------------------------------->
+  <?php $video = get_field('video')['url'];
+  
+  $attr = array(
+    'mp4' => $video
+  );
+  ?>
+  <section>
+    <div id="big-video">
+      <!-- <div class="overlay"></div> -->
+
+
+      <?php echo do_shortcode(['video width="560" height="320" src="<?php echo $video ?>"']); ?>
+
   
   
-  <!-------------------------- Main Section Content------------------------------------>
+    </div>
+  </section>
+  
+  <!------------------------------ End Video Background -------------------------------->
+  
+  <!-------------------------- Main Section Content ------------------------------------>
   <section class="container grid-container my-5">
     <div class="heading">
       <h1><?php the_field('main_heading') ?></h1>
