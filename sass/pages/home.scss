@@ -47,12 +47,21 @@ $color-limeGreen: #BED563;
     }
   }
   .carousel-inner > .carousel-item > img {
-    min-height: 67vh;
+    min-height: 100vh;
     object-fit: cover;
+  }
+  .carousel-inner > .placeholder > img {
+    min-height: 100vh;
+    object-fit: cover;
+    width: 100%
   }
   .carousel-inner > .carousel-item > .carousel-caption > p {
     margin-bottom: 3rem;
     color: $color-gold;
+  }
+
+  .carousel-inner > .mov > .wp-block-video {
+    margin-bottom: -5px;
   }
   // --------------------- /End Carousel Styles --------------------
 
@@ -107,6 +116,12 @@ $color-limeGreen: #BED563;
       }
     }
   }
+  .mov {
+    display: none;
+  }
+  .placeholder {
+    display: block;
+  }
   
   @media screen and (min-width: 576px) {
     .logo-title {
@@ -116,8 +131,14 @@ $color-limeGreen: #BED563;
       font-size: 1.5rem;
     }
     .carousel-inner > .carousel-item > .carousel-caption > p {
-      margin-bottom: 5rem;
+      margin-bottom: 3rem;
       font-size: 1.1rem;
+    }
+    .mov {
+      display: block;
+    }
+    .placeholder {
+      display: none;
     }
   }
 
@@ -157,6 +178,9 @@ $color-limeGreen: #BED563;
     .carousel-inner > .carousel-item > img {
       min-height: 40vh;
     }
+    .carousel-inner > .placeholder > img {
+      height: 40vh;
+    }
     .carousel{
       &__button--prev,
       &__button--next {
@@ -168,6 +192,9 @@ $color-limeGreen: #BED563;
   @media screen and (max-width: 768px) {
     .carousel-inner > .carousel-item > img {
       min-height: 50vh;
+    }
+    .carousel-inner > .placeholder > img {
+      min-height: 40vh;
     }
     .grid-container {
       grid-template-columns: 1fr;

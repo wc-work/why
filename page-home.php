@@ -7,9 +7,8 @@ Template Post Type: page
 get_header(); ?>
 
 <main class="page-home">
-  <!----------------------------------- Carousel Background (Optional) ----------------------------------------->
   
-  <?php if(get_field('carousel_image_starter')): ?>
+  <!----------------------------------- Carousel Background (Optional) ----------------------------------------->
   <section>  
     <div id="carouselWeHearYou" class="carousel slide" data-keyboard="true" data-touch="true">
       <div class="carousel-inner">
@@ -21,9 +20,23 @@ get_header(); ?>
             <h2><?php the_field('carousel_heading'); ?></h2>
           </div>
         </div>
+        <?php if (have_posts($post) ) : 
+            while ( have_posts($post) ) : the_post($post); ?>
+              <div class="overlay"></div>
+              <div class="mov">
+                <?php the_content(); ?>
+              </div>
+              <div class="placeholder">
+                <?php echo get_the_post_thumbnail(); ?>
+              </div>
+        <?php endwhile; 
+              wp_reset_postdata(); ?>	
+        
         <div class="carousel-item active">
           <div class="overlay"></div>
-          <img src="<?php echo get_field('carousel_image_starter')['url']; ?>" class="d-block w-100" alt="<?php echo get_field('carousel_image_starter')['alt']; ?>">
+          <?php elseif (get_field('carousel_image_starter')): ?>
+            <img src="<?php echo get_field('carousel_image_starter')['url']; ?>" class="d-block w-100" alt="<?php echo get_field('carousel_image_starter')['alt']; ?>">
+          <?php endif; ?>	
           <div class="carousel-caption d-block">
             <p><?php the_field('carousel_text_starter'); ?></p>
           </div>
@@ -47,31 +60,8 @@ get_header(); ?>
       </a>
     </div>
   </section>
-  <?php endif; ?>
-
   <!------------------------------ End Carousel Background ------------------------------------>
-    
-  <!------------------------------ Video Background (Optional) -------------------------------->
-  <?php $video = get_field('video')['url'];
-  
-  $attr = array(
-    'mp4' => $video
-  );
-  ?>
-  <section>
-    <div id="big-video">
-      <!-- <div class="overlay"></div> -->
 
-
-      <?php echo do_shortcode(['video width="560" height="320" src="<?php echo $video ?>"']); ?>
-
-  
-  
-    </div>
-  </section>
-  
-  <!------------------------------ End Video Background -------------------------------->
-  
   <!-------------------------- Main Section Content ------------------------------------>
   <section class="container grid-container my-5">
     <div class="heading">
@@ -79,16 +69,24 @@ get_header(); ?>
     </div>
     <!-- Box 1 Image -->
     <img class="grid-box box-one" src="<?php echo get_field('box_1_image')['url'] ?>" alt="<?php echo get_field('box_1_image')['alt'] ?>">
+    
+    <?php if(get_field('box_2_header')): ?>
     <!-- Box 2 Content -->
     <div class="grid-box box-two">
       <h2 class="box-heading"><?php the_field('box_2_header'); ?></h2>
       <p><?php the_field('box_2_text'); ?></p>
     </div>
+    <?php endif; ?>
+
+    <?php if(get_field('box_3_header')): ?>
     <!-- Box 3 Content -->
     <div class="grid-box box-three">
       <h2><?php the_field('box_3_header'); ?></h2>
       <p><?php the_field('box_3_text'); ?></p>
     </div>
+    <?php endif; ?>
+
+    <?php if(get_field('box_4_header')): ?>
     <!-- Box 4 Content -->
     <div class="grid-box box-four">
       <h2 class="box-heading"><?php the_field('box_4_header'); ?></h2>
@@ -97,6 +95,8 @@ get_header(); ?>
       <a href=""><button class="donate-button">Donate</button></a>
       <?php endif; ?>
     </div>
+    <?php endif; ?>
+
   </section>
 </main>
 
