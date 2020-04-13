@@ -1,207 +1,160 @@
-//Empty scss in anticpation for page-home.php
+// Variables
+$color-gold: #FFC151;
+$color-orange: #F26B3A;
+$color-limeGreen: #BED563;
 
 .page-home{
   overflow: hidden;
-  // --------------------- Carousel Styles -----------------
-  .carousel-wrapper {
-      overflow: hidden;
-      width: 100vw;
-  }
-
-  .carousel-wrapper * {
-      box-sizing: border-box;
-  }
-    
-  .carousel {
-      transform-style: preserve-3d;
-      overflow: hidden;
-
-    &__photo {
-        opacity: 0;
-        position: absolute;
-        top:0;
-        width: 100%;
-        margin: auto;
-        z-index: 100;
-        transition: transform .5s, opacity .5s, z-index .5s;
-    }
-
-    &__photo.initial,
-    &__photo.active {
-      opacity: 1;
-      position: relative;
-      z-index: 900;
-    }
-
-    &__photo.prev,
-    &__photo.next {
-      z-index: 800;
-    }
-    &__photo.prev {
-      transform: translateX(-100%); /* Move 'prev' item to the left */
-    }
-    &__photo.next {
-      transform: translateX(100%); /* Move 'next' item to the right */
-    }
-
-    // --------------------- Carousel Button Styles -----------------
-
-    &__button--prev,
-    &__button--next {
-      position: absolute;
-      top:50%;
-      width: 3rem;
-      height: 3rem;
-      background-color: #FFF;
-      transform: translateY(-50%);
-      border-radius: 50%;
-      cursor: pointer; 
-      z-index: 1001; /* Sit on top of everything */
-      border: 1px solid black;
-    }
-    &__button--prev {
-      left: 15px;
-    }
-    &__button--next {
-      right: 15px;
-    }
-    &__button--prev::after,
-    &__button--next::after {
-      content: " ";
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      top: 50%;
-      left: 54%;
-      border-right: 2px solid black;
-      border-bottom: 2px solid black;
-      transform: translate(-50%, -50%) rotate(135deg);
-    }
-    &__button--next::after {
-      left: 47%;
-      transform: translate(-50%, -50%) rotate(-45deg);
-    }
-  }
-
-  // Carousel Text and Overlay
-
+  // --------------------- Carousel Styles --------------------
   .overlay {
-    position: fixed;
-    z-index: 1000;
-    opacity: .7;
-    background-color: black;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.7);
     height: 100%;
     width: 100%;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    overflow: hidden;
   }
   .logo-title {
-    height: 3rem;
+    z-index: 20;
+    height: 7rem;
   }
   .content-wrapper {
     position: absolute;
     top: 0;
     height: 100%;
     width: 100%;
-    padding: 2rem 0;
     text-align: center;
     overflow: hidden;
   }
-  .title {
-    z-index: 1001;
-    color: #FFC151;
-  }
-  .facts-ask {
-    z-index: 1001;
-    color: #FFC151;
-  }
-  .facts {
-    z-index: 1001;
-    color: #FFC151;
-    width: 50%;
-  }
-  .slogan {
-    z-index: 1001;
-    color: #FFC151;
-    width: 50%;
-  }
-  // End of Carousel Text
+  .carousel-heading {
+    z-index: 20;
+    color: $color-gold;
 
-  // Home Content styles
-
-  .box {
-    min-height: 300px;
-    background-color: #EFEFF2;
-    border-radius: 50px;
-    padding: 0px;
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+  .carousel-control-prev {
+    z-index: 4;
+    &:hover {
+      color: $color-gold;
+    }
+  }
+  .carousel-control-next {
+    z-index: 4;
+    &:hover {
+      color: $color-gold;
+    }
+  }
+  .carousel-inner > .carousel-item > img {
+    min-height: 100vh;
+    object-fit: cover;
+  }
+  .carousel-inner > .placeholder > img {
+    min-height: 100vh;
+    object-fit: cover;
+    width: 100%
+  }
+  .carousel-inner > .carousel-item > .carousel-caption > p {
     margin-bottom: 3rem;
+    color: $color-gold;
   }
-  .team-photo {
-    max-width: 100%;
-    height: inherit;
-    border-radius: 50px;
-    overflow: hidden;
+
+  .carousel-inner > .mov > .wp-block-video {
+    margin-bottom: -5px;
   }
-  .box h2, p {
-    text-align: center;
-    margin-top: 1rem;
-    padding: 0 1.5rem;
+  // --------------------- /End Carousel Styles --------------------
+
+  // --------------------- Home Content styles --------------------
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: "heading heading"
+                         "box-one box-two"
+                         "box-three box-four";
+    grid-gap: 2rem;
+    h1{
+      font-size: 1.5rem;
+    }
+    .heading {
+      grid-area: heading;
+      justify-self: center;
+    }
+    .grid-box {
+      border-radius: 35px;
+      text-align: center;
+      text-shadow: 2px 2px 15px #fff;
+    }
+    .box-one {
+      width: 100%;
+      grid-area: box-one;
+      padding: 0;
+    }
+    .box-two {
+      grid-area: box-two;
+      background-color: $color-limeGreen;
+      padding: 20px;
+    }
+    .box-three {
+      grid-area: box-three;
+      background-color: $color-orange;
+      padding: 20px;
+    }
+    .box-four {
+      grid-area: box-four;
+      background-color: $color-gold;
+      padding: 20px;
+      .donate-button {
+        background-color: $color-orange;
+        border-radius: 35px;
+        font-size: 1.2rem;
+        border: none;
+        color: #ffffff;
+        padding: 8px 30px;
+      }
+    }
   }
-  .box-two {
-    background-color: #BED563;
+  .mov {
+    display: none;
   }
-  .box-three {
-    background-color: #F26B3A;
+  .placeholder {
+    display: block;
   }
-  .box-four {
-    background-color: #FFC151;
-  }
-// Media Queries
+  
   @media screen and (min-width: 576px) {
-    p {
-      padding: 0 2.5rem;
-    }
-    .squares-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .box {
-      max-width: 300px;
-      height: 365px;
-      // overflow: scroll;
-    }
-    .home-content {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      align-items: center;
-    }
     .logo-title {
-      height: 4rem;
+      height: 8rem;
+    }
+    .carousel-heading h2 {
+      font-size: 1.5rem;
+    }
+    .carousel-inner > .carousel-item > .carousel-caption > p {
+      margin-bottom: 3rem;
+      font-size: 1.1rem;
+    }
+    .mov {
+      display: block;
+    }
+    .placeholder {
+      display: none;
     }
   }
 
   @media screen and (min-width: 768px) {
-    .squares-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .box{
-      max-width: 500px;
-    }
-    .home-content {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      align-items: center;
-    }
     .logo-title {
-      height: 6rem;
+      height: 9rem;
+    }
+    .carousel-heading h2 {
+      font-size: 2rem;
+    }
+    .grid-container h1 {
+      font-size: 2.5rem;
+    }
+    .carousel-inner > .carousel-item > .carousel-caption > p {
+      margin-bottom: 7rem;
+      font-size: 1.3rem;
     }
   }
 
@@ -209,41 +162,53 @@
     .logo-title {
       height: 10rem;
     }
-  }
-
-  @media screen and (max-width: 722px) {
-      h1{
-        font-size: 2rem;
-      }
-      h2 {
-        font-size: 1rem;
-      }
-      h3 {
-        font-size: .5rem;
-      }
-    .facts {
-      z-index: 1001;
-      color: #FFC151;
-      width: 50%;
-      font-size: .75rem;
+    .carousel-heading h2 {
+      font-size: 2.5rem;
+    }
+    .carousel-inner > .carousel-item > .carousel-caption > p {
+      margin-bottom: 9rem;
+      font-size: 1.4rem;
     }
   }
 
-  @media screen and (max-width: 599px) {
-    h1{
-      font-size: 2rem;
-    }
-    h2{
+  @media screen and (max-width: 576px) {
+    section > div > h1{
       font-size: 1.5rem;
     }
-    h3 {
-      font-size: .5rem;
+    .carousel-inner > .carousel-item > img {
+      min-height: 40vh;
     }
-  .facts {
-    z-index: 1001;
-    color: #FFC151;
-    width: 50%;
-    font-size: .5rem;
+    .carousel-inner > .placeholder > img {
+      height: 40vh;
+    }
+    .carousel{
+      &__button--prev,
+      &__button--next {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .carousel-inner > .carousel-item > img {
+      min-height: 50vh;
+    }
+    .carousel-inner > .placeholder > img {
+      min-height: 40vh;
+    }
+    .grid-container {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(5, auto);
+      grid-template-areas: "heading"
+                           "box-one"
+                           "box-two"
+                           "box-three"
+                           "box-four";
+    }
+    h1{
+      font-size: 2rem;
+      text-align: center;
     }
   }
 } 
+// --------------------- /End Home Content styles --------------------

@@ -12,6 +12,7 @@
     text-decoration: none;
     height: 100%;
     width: 100%;
+    max-width: 350px;
     &:hover {
         text-decoration: none;
     }
@@ -28,7 +29,9 @@
         transition: ease .7s;
     }
 }
-
+div > div > a {
+    width: 100%;
+}
 a:hover {
     text-decoration: none;
 }

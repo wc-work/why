@@ -5,70 +5,99 @@ Template Post Type: page
 */
 
 get_header(); ?>
-<!---------------------------- Carousel --------------------------->
+
 <main class="page-home">
-  <div class="carousel-wrapper container-fluid p-0 home-slider">
-    <div class="carousel">
-      <img class="carousel__photo initial" src="<?php echo get_field('picture_1')['url'] ?>">
-      <img class="carousel__photo" src="<?php echo get_field('picture_2')['url'] ?>">
-      <img class="carousel__photo" src="<?php echo get_field('picture_3')['url'] ?>">
-      <img class="carousel__photo" src="<?php echo get_field('picture_4')['url'] ?>">
-      <img class="carousel__photo" src="<?php echo get_field('picture_5')['url'] ?>">
-
-        <!----------------------- Carousel Buttons ------------------------->
-
-      <div class="carousel__button--next"></div>
-      <div class="carousel__button--prev"></div>
-
-      <!-------------------- Carousel Text and Overlay ---------------------->
-
-      <div class="overlay"></div>
-      <div class=" content-wrapper d-flex justify-content-around align-items-center flex-column">
-        <div class="title">
-          <img class="logo-title" src="<?php echo get_field('carousel_header')['url'] ?>">
-        </div>
-        <div class="facts-ask">
-          <h2><?php the_field('carousel_text_2'); ?></h2>
-        </div>
-        <div class="facts">
-          <?php the_field('facts'); ?>
-        </div>
-        <div class="slogan">
-          <h3><?php the_field('carousel_text_3'); ?></h3>
-        </div>
-     </div>
-    </div>
-  </div>
-
   
-
-  <!-------------------------- Our Story Content------------------------------------>
-
-  <section class="container home-content">
-    <div class="row d-flex justify-content-center mt-3">
-      <h1 class="our-story">Our Story</h1>
-    </div>
-      <div class="row no-gutters squares-container">
-        <div class="col-xs-12 col-md-6 box">
-        <img class="team-photo" src="<?php echo get_field('our_story_photo')['url'] ?>">
+  <!----------------------------------- Carousel Background (Optional) ----------------------------------------->
+  <section>  
+    <div id="carouselWeHearYou" class="carousel slide" data-keyboard="true" data-touch="true">
+      <div class="carousel-inner">
+        <div class="content-wrapper d-flex align-items-center flex-column">
+          <!-- Logo -->
+          <img class="logo-title pt-5" src="<?php echo get_field('main_logo')['url']; ?>" alt="<?php echo get_field('main_logo')['alt']; ?>">
+          <!-- Carousel Heading -->
+          <div class="carousel-heading pt-4">
+            <h2><?php the_field('carousel_heading'); ?></h2>
+          </div>
         </div>
-        <div class="col-12 col-md-6 box-two box">
-          <h2><?php the_field('heading_1'); ?></h2>
-          <p><?php the_field('box_1'); ?></p>
+        <?php if (have_posts($post) ) : 
+            while ( have_posts($post) ) : the_post($post); ?>
+              <div class="overlay"></div>
+              <div class="mov">
+                <?php the_content(); ?>
+              </div>
+              <div class="placeholder">
+                <?php echo get_the_post_thumbnail(); ?>
+              </div>
+        <?php endwhile; 
+              wp_reset_postdata(); ?>	
+        
+        <div class="carousel-item active">
+          <div class="overlay"></div>
+          <?php elseif (get_field('carousel_image_starter')): ?>
+            <img src="<?php echo get_field('carousel_image_starter')['url']; ?>" class="d-block w-100" alt="<?php echo get_field('carousel_image_starter')['alt']; ?>">
+          <?php endif; ?>	
+          <div class="carousel-caption d-block">
+            <p><?php the_field('carousel_text_starter'); ?></p>
+          </div>
         </div>
-        <div class="col-12 col-md-6 box-three box">
-          <h2><?php the_field('heading_2'); ?></h2>
-          <p><?php the_field('box_2'); ?></p>
-        </div>
-        <div class="col-12 col-md-6 box-four box">
-          <h2><?php the_field('heading_3'); ?></h2>
-          <p><?php the_field('box_3'); ?></p>
-        </div>
+        <?php 
+          if(have_posts() ) : 
+            while ( have_posts() ) : the_post(); ?>
+              <?php get_template_part('./partials/partials-carousel', 'carousel-section'); ?>
+        <?php 
+            endwhile; 
+              wp_reset_postdata();
+          endif; ?>	
       </div>
+      <a class="carousel-control-prev" href="#carouselWeHearYou" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselWeHearYou" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </section>
+  <!------------------------------ End Carousel Background ------------------------------------>
+
+  <!-------------------------- Main Section Content ------------------------------------>
+  <section class="container grid-container my-5">
+    <div class="heading">
+      <h1><?php the_field('main_heading') ?></h1>
+    </div>
+    <!-- Box 1 Image -->
+    <img class="grid-box box-one" src="<?php echo get_field('box_1_image')['url'] ?>" alt="<?php echo get_field('box_1_image')['alt'] ?>">
+    
+    <?php if(get_field('box_2_header')): ?>
+    <!-- Box 2 Content -->
+    <div class="grid-box box-two">
+      <h2 class="box-heading"><?php the_field('box_2_header'); ?></h2>
+      <p><?php the_field('box_2_text'); ?></p>
+    </div>
+    <?php endif; ?>
+
+    <?php if(get_field('box_3_header')): ?>
+    <!-- Box 3 Content -->
+    <div class="grid-box box-three">
+      <h2><?php the_field('box_3_header'); ?></h2>
+      <p><?php the_field('box_3_text'); ?></p>
+    </div>
+    <?php endif; ?>
+
+    <?php if(get_field('box_4_header')): ?>
+    <!-- Box 4 Content -->
+    <div class="grid-box box-four">
+      <h2 class="box-heading"><?php the_field('box_4_header'); ?></h2>
+      <p><?php the_field('box_4_text'); ?></p>
+      <?php if(get_field('box_4_button')): ?>
+      <a href=""><button class="donate-button">Donate</button></a>
+      <?php endif; ?>
+    </div>
+    <?php endif; ?>
+
   </section>
 </main>
-
-
-
 
 <?php get_footer(); ?>

@@ -34,7 +34,7 @@
 		<!-- header -->
 		<header class="header clear">
 
-			<nav class="navbar navbar-expand-md navbar-light custom-nav" role="navigation">
+			<nav class="navbar navbar-expand-md navbar-light custom-nav py-3" role="navigation">
 					<!-- logo -->
 					<div class="logo">
 						<!-- Dynamic Logo -->
