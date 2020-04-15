@@ -1,13 +1,57 @@
+			<?php
+			/*
+			* Bootstrap Modal
+			 */
+			?>
+			
 			<!-- footer -->
 			<footer class="footer" role="contentinfo">
-
-				<!-- copyright -->
-				<p class="copyright">
-					&copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?>. <?php _e('Powered by', 'html5blank'); ?>
-					<a href="//wordpress.org" title="WordPress">WordPress</a> &amp; <a href="//html5blank.com" title="HTML5 Blank">HTML5 Blank</a>.
-				</p>
-				<!-- /copyright -->
-
+			
+				<div class="container-fluid footer-align">
+					<div class="row icon-width">
+						<?php 
+							// Check if Social Media Icons section of footer has data
+							if ( have_rows('social_media_icons', 'option') ): 
+								while ( have_rows('social_media_icons', 'option') ) : the_row(); 
+						?>
+							<a href="<?php echo get_sub_field('link')['url']; ?>"><img class="social" src="<?php echo get_sub_field('icon')['url']; ?>" alt="<?php echo get_sub_field('icon')['alt']; ?>"></a>
+						<?php 
+						endwhile;
+						endif;
+						wp_reset_postdata();?>		
+					</div>
+					<div class="row footer-info">
+						<div class="center pb-3">
+						<?php 
+							// Check if Contact Info section of footer has data
+						if ( have_rows('contact_info', 'option') ): while ( have_rows('contact_info', 'option') ) : the_row(); ?>
+							<h2><?php echo get_sub_field('contact_headline'); ?></h2>
+						</div>	
+						<div class="center">
+							<h2><?php echo get_sub_field('street_address'); ?></h2>
+						</div>	
+						<div class="center">
+							<h2><?php echo get_sub_field('city_state_zip'); ?></h2>
+						</div>	
+						<div class="center">
+							<h2><?php echo get_sub_field('phone_number'); ?></h2>
+						</div>
+						<?php if(get_field('email')): ?>
+							<div class="center">
+								<h2><?php echo get_sub_field('email'); ?></h2>
+							</div>
+						<?php endif; ?>
+					</div>
+					<?php 
+								endwhile;
+								endif;
+								wp_reset_postdata();
+							?>
+					<div class="row copyright">
+						&copy; <?php echo date('Y'); ?> All Rights Reserved.
+					</div>
+					<!-- /copyright -->
+				</div>
 			</footer>
 			<!-- /footer -->
 

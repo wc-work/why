@@ -62,6 +62,13 @@ if (function_exists('add_theme_support'))
 	Functions
 \*------------------------------------*/
 
+function post_remove ()      //creating functions post_remove for removing menu item
+{ 
+   remove_menu_page('edit.php');
+}
+
+add_action('admin_menu', 'post_remove');   //adding action for triggering function call
+
 // HTML5 Blank navigation
 function html5blank_nav()
 {
@@ -87,9 +94,20 @@ function html5blank_nav()
 	);
 }
 
-/**
- * Register Custom Navigation Walker
- */
+// Custom Nav Logo
+function themename_custom_logo_setup() {
+    $defaults = array(
+    'height'      => 100,
+    'width'       => 400,
+    'flex-height' => true,
+    'flex-width'  => true,
+    'header-text' => array( 'site-title', 'site-description' ),
+    );
+    add_theme_support( 'custom-logo', $defaults );
+   }
+   add_action( 'after_setup_theme', 'themename_custom_logo_setup' );
+
+// Register Custom Navigation Walker
 function register_navwalker(){
 	require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
 }
@@ -99,31 +117,152 @@ add_action( 'after_setup_theme', 'register_navwalker' );
 function html5blank_header_scripts()
 {
     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
-        wp_register_script('bootstrapjs', '//stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js', array('jquery'), '4.1.3'); // Bootstrap 4
+        
+        wp_register_script('bootstrapjs', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js', array('jquery'), '4.1.3'); // Bootstrap 4
         wp_enqueue_script('bootstrapjs'); // Enqueue it!
 
-    	wp_register_script('conditionizr', get_template_directory_uri() . '/js/lib/conditionizr-4.3.0.min.js', array(), '4.3.0'); // Conditionizr
+        wp_register_script('modal', 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap-modal/2.2.6/js/bootstrap-modal.min.js', array(), null, true ); // Bootstrap Modal
+        wp_enqueue_script( 'modal'); // Enqueue it!
+
+      	wp_register_script('conditionizr', get_template_directory_uri() . '/js/lib/conditionizr-4.3.0.min.js', array(), '4.3.0'); // Conditionizr
         wp_enqueue_script('conditionizr'); // Enqueue it!
 
         wp_register_script('modernizr', get_template_directory_uri() . '/js/lib/modernizr-2.7.1.min.js', array(), '2.7.1'); // Modernizr
         wp_enqueue_script('modernizr'); // Enqueue it!
 
         wp_register_script('jquery', 'https://code.jquery.com/jquery-3.2.1.slim.min.js', array('jquery'), '', true); // Jquery
-		wp_enqueue_script('jquery'); // Enqueue it! 
+        wp_enqueue_script('jquery'); // Enqueue it! 
 
-		wp_register_script('popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', array('jquery'), '', true); // Popper.js
-		wp_enqueue_script('popper'); // Enqueue it!
-		
-		wp_register_script('bootstrapjs', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js', array('jquery'), '', true); // Bootstrap.js
-		wp_enqueue_script('bootstrapjs'); // Enqueue it!
+        wp_register_script('popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', array('jquery'), '', true); // Popper.js
+        wp_enqueue_script('popper'); // Enqueue it!
         
         wp_register_script('scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0'); // Custom scripts
         wp_enqueue_script('scripts'); // Enqueue it!
-
-        wp_register_script('script', get_template_directory_uri() . '/js/carousel.js', array('jquery'), '1.0.0'); // Custom scripts
-        wp_enqueue_script('script'); // Enqueue it!
     }
 }
+
+/*------------------------------------*\
+	     Custom Accordion Menu
+\*------------------------------------*/
+
+class CSS_Menu_Maker_Walker extends Walker {
+
+    var $db_fields = array( 'parent' => 'menu_item_parent', 'id' => 'db_id' );
+  
+    function start_lvl( &$output, $depth = 0, $args = array() ) {
+      $indent = str_repeat("\t", $depth);
+      $output .= "\n$indent<ul>\n";
+    }
+  
+    function end_lvl( &$output, $depth = 0, $args = array() ) {
+      $indent = str_repeat("\t", $depth);
+      $output .= "$indent</ul>\n";
+    }
+  
+    function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+  
+      global $wp_query;
+      $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
+      $class_names = $value = '';        
+      $classes = empty( $item->classes ) ? array() : (array) $item->classes;
+  
+      /* Add active class */
+      if(in_array('current-menu-item', $classes)) {
+        $classes[] = 'active';
+        unset($classes['current-menu-item']);
+      }
+  
+      /* Check for children */
+      $children = get_posts(array('post_type' => 'nav_menu_item', 'nopaging' => true, 'numberposts' => 1, 'meta_key' => '_menu_item_menu_item_parent', 'meta_value' => $item->ID));
+      if (!empty($children)) {
+        $classes[] = 'has-sub';
+      }
+  
+      $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
+      $class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
+  
+      $id = apply_filters( 'nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args );
+      $id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
+  
+      $output .= $indent . '<li' . $id . $value . $class_names .'>';
+  
+      $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
+      $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
+      $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
+      $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
+  
+      $item_output = $args->before;
+      $item_output .= '<a'. $attributes .'><span>';
+      $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
+      $item_output .= '</span></a>';
+      $item_output .= $args->after;
+  
+      $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+    }
+  
+    function end_el( &$output, $item, $depth = 0, $args = array() ) {
+      $output .= "</li>\n";
+    }
+  }
+  
+  /* ACF Options Page */
+if( function_exists('acf_add_options_page') ) {
+    acf_add_options_page(array(
+        'page_title'    => 'Theme General Settings',
+        'menu_title'    => 'Theme Settings',
+        'menu_slug'     => 'theme-general-settings',
+        'capability'    => 'edit_posts',
+        'redirect'      => false
+    ));
+    acf_add_options_sub_page(array(
+        'page_title'    => 'Theme Footer Settings',
+        'menu_title'    => 'Footer',
+        'parent_slug'   => 'theme-general-settings',
+    ));
+}
+
+// ============ Remove All Comments ============= //
+add_action('admin_init', function () {
+    // Redirect any user trying to access comments page
+    global $pagenow;
+    
+    if ($pagenow === 'edit-comments.php') {
+        wp_redirect(admin_url());
+        exit;
+    }
+
+    // Remove comments metabox from dashboard
+    remove_meta_box('dashboard_recent_comments', 'dashboard', 'normal');
+
+    // Disable support for comments and trackbacks in post types
+    foreach (get_post_types() as $post_type) {
+        if (post_type_supports($post_type, 'comments')) {
+            remove_post_type_support($post_type, 'comments');
+            remove_post_type_support($post_type, 'trackbacks');
+        }
+    }
+});
+
+// Close comments on the front-end
+add_filter('comments_open', '__return_false', 20, 2);
+add_filter('pings_open', '__return_false', 20, 2);
+
+// Hide existing comments
+add_filter('comments_array', '__return_empty_array', 10, 2);
+
+// Remove comments page in menu
+add_action('admin_menu', function () {
+    remove_menu_page('edit-comments.php');
+});
+
+// Remove comments links from admin bar
+add_action('init', function () {
+    if (is_admin_bar_showing()) {
+        remove_action('admin_bar_menu', 'wp_admin_bar_comments_menu', 60);
+        remove_action('admin_bar_menu', 'wp_admin_bar_logbook_menu');
+
+    }
+});
 
 // Load HTML5 Blank conditional scripts
 // function html5blank_conditional_scripts()
@@ -142,6 +281,7 @@ function html5blank_styles()
     wp_enqueue_style( 'bootstrap_css', '//stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css' );
     wp_register_style('style', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
     wp_enqueue_style('style'); // Enqueue it!
+    wp_enqueue_style('font-awesome', 'https://use.fontawesome.com/releases/v5.13.0/css/all.css'); 
 }
 
 // Register HTML5 Blank Navigation
@@ -321,6 +461,38 @@ function enable_threaded_comments()
     }
 }
 
+/*------------------------------------*\
+	     Login Custom Styles
+\*------------------------------------*/
+
+add_filter( 'login_headerurl', 'namespace_login_headerurl' );
+/**
+ * Replaces the login header logo URL
+ *
+ * @param $url
+ */
+function namespace_login_headerurl( $url ) {
+    $url = home_url( '/' );
+    return $url;
+}
+
+add_filter( 'login_headertext', 'namespace_login_headertext' );
+/**
+ * Replaces the login header logo title
+ *
+ * @param $title
+ */
+function namespace_login_headertext( $title ) {
+    $title = get_bloginfo( 'name' );
+    return $title;
+}
+
+/**
+ * Replaces the login header logo
+ */
+function namespace_login_style() {
+    echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('template_url') . '/login/custom-login-style.scss"/>';
+}
 
 /*------------------------------------*\
 	Actions + Filters + ShortCodes
@@ -336,6 +508,7 @@ add_action('init', 'register_navwalker_menu'); // Add Navwalker for Bootstrap Me
 // add_action('init', 'create_post_type_html5'); // Add our HTML5 Blank Custom Post Type
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('init', 'html5wp_pagination'); // Add our HTML5 Pagination
+add_action( 'login_head', 'namespace_login_style' ); // Adds customization for login screen
 
 // Remove Actions
 // remove_action('wp_head', 'feed_links_extra', 3); // Display the links to the extra feeds such as category feeds
@@ -382,6 +555,7 @@ add_filter('show_admin_bar', 'remove_admin_bar'); // Remove Admin bar
 /*------------------------------------*\
 	Custom Post Types
 \*------------------------------------*/
+
 
 // Create 1 Custom Post type for a Demo, called HTML5-Blank
 // function create_post_type_html5()

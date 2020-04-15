@@ -1,84 +1,214 @@
-//Empty scss in anticpation for page-home.php
-body{
-    background-color: #EFEFF2;
-}
-// --------------------- Carousel Styles -----------------
-.carousel-wrapper {
-    overflow: hidden;
-    width: 90%;
-}
+// Variables
+$color-gold: #FFC151;
+$color-orange: #F26B3A;
+$color-limeGreen: #BED563;
 
-.carousel-wrapper * {
-    box-sizing: border-box;
-}
-  
-.carousel {
-    transform-style: preserve-3d;
-}
-
-.carousel__photo {
-    opacity: 0;
+.page-home{
+  overflow: hidden;
+  // --------------------- Carousel Styles --------------------
+  .overlay {
     position: absolute;
-    top:0;
+    background: rgba(0, 0, 0, 0.7);
+    height: 100%;
     width: 100%;
-    margin: auto;
-    padding: 1rem 4rem;
-    z-index: 100;
-    transition: transform .5s, opacity .5s, z-index .5s;
-}
+    top: 0;
+    left: 0;
+  }
+  .logo-title {
+    z-index: 20;
+    height: 7rem;
+  }
+  .content-wrapper {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+  }
+  .carousel-heading {
+    z-index: 20;
+    color: $color-gold;
 
-.carousel__photo.initial,
-.carousel__photo.active {
-  opacity: 1;
-  position: relative;
-  z-index: 900;
-}
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+  .carousel-control-prev {
+    z-index: 4;
+    &:hover {
+      color: $color-gold;
+    }
+  }
+  .carousel-control-next {
+    z-index: 4;
+    &:hover {
+      color: $color-gold;
+    }
+  }
+  .carousel-inner > .carousel-item > img {
+    min-height: 100vh;
+    object-fit: cover;
+  }
+  .carousel-inner > .placeholder > img {
+    min-height: 100vh;
+    object-fit: cover;
+    width: 100%
+  }
+  .carousel-inner > .carousel-item > .carousel-caption > p {
+    margin-bottom: 3rem;
+    color: $color-gold;
+  }
 
-.carousel__photo.prev,
-.carousel__photo.next {
-  z-index: 800;
-}
-.carousel__photo.prev {
-  transform: translateX(-100%); /* Move 'prev' item to the left */
-}
-.carousel__photo.next {
-  transform: translateX(100%); /* Move 'next' item to the right */
-}
+  .carousel-inner > .mov > .wp-block-video {
+    margin-bottom: -5px;
+  }
+  // --------------------- /End Carousel Styles --------------------
 
-// --------------------- Carousel Button Styles -----------------
+  // --------------------- Home Content styles --------------------
 
-.carousel__button--prev,
-.carousel__button--next {
-  position: absolute;
-  top:50%;
-  width: 3rem;
-  height: 3rem;
-  background-color: #FFF;
-  transform: translateY(-50%);
-  border-radius: 50%;
-  cursor: pointer; 
-  z-index: 1001; /* Sit on top of everything */
-  border: 1px solid black;
-}
-.carousel__button--prev {
-  left:0;
-}
-.carousel__button--next {
-  right:0;
-}
-.carousel__button--prev::after,
-.carousel__button--next::after {
-  content: " ";
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  top: 50%;
-  left: 54%;
-  border-right: 2px solid black;
-  border-bottom: 2px solid black;
-  transform: translate(-50%, -50%) rotate(135deg);
-}
-.carousel__button--next::after {
-  left: 47%;
-  transform: translate(-50%, -50%) rotate(-45deg);
-}
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: "heading heading"
+                         "box-one box-two"
+                         "box-three box-four";
+    grid-gap: 2rem;
+    h1{
+      font-size: 1.5rem;
+    }
+    .heading {
+      grid-area: heading;
+      justify-self: center;
+    }
+    .grid-box {
+      border-radius: 35px;
+      text-align: center;
+      text-shadow: 2px 2px 15px #fff;
+    }
+    .box-one {
+      width: 100%;
+      grid-area: box-one;
+      padding: 0;
+    }
+    .box-two {
+      grid-area: box-two;
+      background-color: $color-limeGreen;
+      padding: 20px;
+    }
+    .box-three {
+      grid-area: box-three;
+      background-color: $color-orange;
+      padding: 20px;
+    }
+    .box-four {
+      grid-area: box-four;
+      background-color: $color-gold;
+      padding: 20px;
+      .donate-button {
+        background-color: $color-orange;
+        border-radius: 35px;
+        font-size: 1.2rem;
+        border: none;
+        color: #ffffff;
+        padding: 8px 30px;
+      }
+    }
+  }
+  .mov {
+    display: none;
+  }
+  .placeholder {
+    display: block;
+  }
+  
+  @media screen and (min-width: 576px) {
+    .logo-title {
+      height: 8rem;
+    }
+    .carousel-heading h2 {
+      font-size: 1.5rem;
+    }
+    .carousel-inner > .carousel-item > .carousel-caption > p {
+      margin-bottom: 3rem;
+      font-size: 1.1rem;
+    }
+    .mov {
+      display: block;
+    }
+    .placeholder {
+      display: none;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .logo-title {
+      height: 9rem;
+    }
+    .carousel-heading h2 {
+      font-size: 2rem;
+    }
+    .grid-container h1 {
+      font-size: 2.5rem;
+    }
+    .carousel-inner > .carousel-item > .carousel-caption > p {
+      margin-bottom: 7rem;
+      font-size: 1.3rem;
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    .logo-title {
+      height: 10rem;
+    }
+    .carousel-heading h2 {
+      font-size: 2.5rem;
+    }
+    .carousel-inner > .carousel-item > .carousel-caption > p {
+      margin-bottom: 9rem;
+      font-size: 1.4rem;
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    section > div > h1{
+      font-size: 1.5rem;
+    }
+    .carousel-inner > .carousel-item > img {
+      min-height: 40vh;
+    }
+    .carousel-inner > .placeholder > img {
+      height: 40vh;
+    }
+    .carousel{
+      &__button--prev,
+      &__button--next {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .carousel-inner > .carousel-item > img {
+      min-height: 50vh;
+    }
+    .carousel-inner > .placeholder > img {
+      min-height: 40vh;
+    }
+    .grid-container {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(5, auto);
+      grid-template-areas: "heading"
+                           "box-one"
+                           "box-two"
+                           "box-three"
+                           "box-four";
+    }
+    h1{
+      font-size: 2rem;
+      text-align: center;
+    }
+  }
+} 
+// --------------------- /End Home Content styles --------------------

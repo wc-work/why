@@ -1,0 +1,23 @@
+/**
+ * partials/top-card
+ * ---
+ */
+
+.card-event {
+    border-radius: 35px;
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 100%;
+    max-width: 350px;
+}
+  
+.card-img-event {
+    border-radius: 35px 35px 0 0;
+    border: none;
+    width: auto;
+    height: 250px;
+}
+  
+.card-body {
+    text-align: center;
+}
