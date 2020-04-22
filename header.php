@@ -29,44 +29,45 @@
 <body <?php body_class(); ?>>
 
 	<!-- wrapper -->
-	<div class="wrapper">
+	<div class="wrapper container-fluid">
 
 		<!-- header -->
 		<header class="header clear">
-
-			<nav class="navbar navbar-expand-md navbar-light custom-nav py-3" role="navigation">
-					<!-- logo -->
-					<div class="logo">
-						<!-- Dynamic Logo -->
-						<?php
-						if ( function_exists( 'the_custom_logo' ) ) {
-							the_custom_logo(); 
-						}
-						?>
-					</div>
-					<!-- /logo -->
-					<!-- Brand and toggle get grouped for better mobile display -->
-					<button class="navbar-toggler ml-auto mr-3" type="button" data-toggle="collapse"
-						data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1"
-						aria-expanded="false" aria-label="Toggle navigation">
-						<span class="navbar-toggler-icon"></span>
-					</button>
-					
-					
+			<div class="custom-logo-big">
+				<!-- Dynamic Logo -->
+				<?php
+				if ( function_exists( 'the_custom_logo' ) ) {
+					the_custom_logo(); 
+				}
+				?>
+			</div>
+			<nav class="navbar navbar-expand-md navbar-light custom-nav" role="navigation">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="custom-logo-small">
+					<!-- Dynamic Logo -->
 					<?php
-						wp_nav_menu( array(
-							'theme_location'    => 'primary',
-							'depth'             => 1,
-							'container'         => 'div',
-							'container_class'   => 'collapse navbar-collapse',
-							'container_id'      => 'bs-example-navbar-collapse-1',
-							'menu_class'        => 'nav navbar-nav margin-left',
-							'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
-							'walker'            => new WP_Bootstrap_Navwalker(),
-						) );
-						?>
+					if ( function_exists( 'the_custom_logo' ) ) {
+						the_custom_logo(); 
+					}
+					?>
+				</div>
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbar-collapse-1" aria-controls="navbar-collapse-1"
+					aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<?php
+					wp_nav_menu( array(
+						'theme_location'    => 'primary',
+						'depth'             => 1,
+						'container'         => 'div',
+						'container_class'   => 'collapse navbar-collapse',
+						'container_id'      => 'navbar-collapse-1',
+						'menu_class'        => 'navbar-nav',
+						'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+						'walker'            => new WP_Bootstrap_Navwalker(),
+					) );
+				?>
 			</nav>
-			
-
 		</header>
 		<!-- /header -->

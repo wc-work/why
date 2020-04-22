@@ -13,8 +13,6 @@ get_header(); ?>
     <div id="carouselWeHearYou" class="carousel slide" data-keyboard="true" data-touch="true">
       <div class="carousel-inner">
         <div class="content-wrapper d-flex align-items-center flex-column">
-          <!-- Logo -->
-          <img class="logo-title pt-5" src="<?php echo get_field('main_logo')['url']; ?>" alt="<?php echo get_field('main_logo')['alt']; ?>">
           <!-- Carousel Heading -->
           <div class="carousel-heading pt-4">
             <h2><?php the_field('carousel_heading'); ?></h2>
@@ -30,11 +28,12 @@ get_header(); ?>
                 <?php echo get_the_post_thumbnail(); ?>
               </div>
         <?php endwhile; 
-              wp_reset_postdata(); ?>	
+              wp_reset_postdata(); 
+        endif;?>	
         
         <div class="carousel-item active">
           <div class="overlay"></div>
-          <?php elseif (get_field('carousel_image_starter')): ?>
+          <?php if (get_field('carousel_image_starter')): ?>
             <img src="<?php echo get_field('carousel_image_starter')['url']; ?>" class="d-block w-100" alt="<?php echo get_field('carousel_image_starter')['alt']; ?>">
           <?php endif; ?>	
           <div class="carousel-caption d-block">
@@ -42,8 +41,8 @@ get_header(); ?>
           </div>
         </div>
         <?php 
-          if(have_posts() ) : 
-            while ( have_posts() ) : the_post(); ?>
+          if(have_posts($post) ) : 
+            while ( have_posts($post) ) : the_post($post); ?>
               <?php get_template_part('./partials/partials-carousel', 'carousel-section'); ?>
         <?php 
             endwhile; 
@@ -63,7 +62,7 @@ get_header(); ?>
   <!------------------------------ End Carousel Background ------------------------------------>
 
   <!-------------------------- Main Section Content ------------------------------------>
-  <section class="container grid-container my-5">
+  <section class="container grid-container py-5">
     <div class="heading">
       <h1><?php the_field('main_heading') ?></h1>
     </div>
@@ -96,7 +95,21 @@ get_header(); ?>
       <?php endif; ?>
     </div>
     <?php endif; ?>
-
+  </section>
+  <!-- Bubble Animation -->
+  <section>
+    <ul class="bg-pulse">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
   </section>
 </main>
 
