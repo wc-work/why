@@ -7,7 +7,6 @@
   width: 65vw;
   font-family: Roboto, Helvetica, sans-serif;
   color: #2c2c2c;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.45);
 
   i {
     display: inline-block;
@@ -80,6 +79,7 @@
     color: #ffffff;
     font-weight: bold;
     text-shadow: 2px 1px 5px #2c2c2c;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.45);
   }
   & > ul > li:nth-child(2) > h4 {
     color: #ffffff;
