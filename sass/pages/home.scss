@@ -118,28 +118,17 @@ $color-limeGreen: #BED563;
     .logo-title {
       height: 9rem;
     }
-    .carousel-heading h2 {
-      font-size: 2rem;
-    }
     .grid-container-2 h1 {
       font-size: 2.5rem;
     }
-    .carousel-inner > .carousel-item > .carousel-caption > p {
-      margin-bottom: 7rem;
-      font-size: 1.3rem;
+    .bg-pulse {
+      height: 300%;
     }
   }
 
   @media screen and (min-width: 992px) {
     .logo-title {
       height: 10rem;
-    }
-    .carousel-heading h2 {
-      font-size: 2.5rem;
-    }
-    .carousel-inner > .carousel-item > .carousel-caption > p {
-      margin-bottom: 9rem;
-      font-size: 1.4rem;
     }
   }
 
@@ -148,30 +137,14 @@ $color-limeGreen: #BED563;
       font-size: 2rem;
     }
     .bg-pulse {
-      display: none;
-    }
-    .carousel-inner > .carousel-item > img {
-      min-height: 40vh;
-    }
-    .carousel-inner > .placeholder > img {
-      height: 40vh;
-    }
-    .carousel{
-      &__button--prev,
-      &__button--next {
-        width: 2rem;
-        height: 2rem;
+      height: 450%;
+
+      li{ 
+        bottom: -50px;
       }
     }
   }
   @media screen and (max-width: 768px) {
-    .carousel-inner > .carousel-item > img {
-      min-height: 50vh;
-      border-radius: 25px;
-    }
-    .carousel-inner > .placeholder > img {
-      min-height: 40vh;
-    }
     .grid-container-1 {
       grid-template-columns: 1fr;
       grid-template-rows: repeat(4, auto);
@@ -204,8 +177,9 @@ $color-limeGreen: #BED563;
   top:0;
   left:0;
   width:100%;
-  height:100%;
+  height:470%;
   padding: 0;
+  overflow: hidden;
 }
 .bg-pulse li{ 
   position:absolute;
@@ -214,7 +188,7 @@ $color-limeGreen: #BED563;
   height:20px;
   background:rgba(255,255,255,.2);
   animation: animate 25s linear infinite;
-  bottom:-150px;
+  bottom:0px;
 }
 .bg-pulse li:nth-child(1){
   left:25%;
@@ -284,12 +258,12 @@ $color-limeGreen: #BED563;
 
 @keyframes animate{
   0%{
-    transform:translateY(180vh) rotate(0deg);
+    transform:translateY(0px) rotate(0deg);
     opacity:0.85;
     border-radius:0;
   }
   100%{
-    transform:translateY(-600px) rotate(720deg);
+    transform:translateY(-2200px) rotate(720deg);
     opacity:0;
     border-radius:100%;
   }
