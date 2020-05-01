@@ -7,6 +7,9 @@ $color-limeGreen: #BED563;
   background-color: #5565A6;
   
   // --------------------- Home Content styles --------------------
+  .sliderTX_effect1 {
+    box-shadow: none;
+  }
   .grid-container-1 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
