@@ -5,6 +5,9 @@ if ( have_rows('documents') ):
    while ( have_rows('documents') ) : the_row();
 ?>
 <li class="active has-sub">
+   <?php if(get_field('image_2')): ?>
+      <img src="<?php echo get_field('image_2')['url']; ?>" alt="<?php echo get_field('image_2')['alt']; ?>">
+   <?php endif; ?>
    <h4 class="document">Documents</h4>
    <ul>
       <a href="<?php echo get_sub_field('upload_document')['url']; ?>">

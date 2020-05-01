@@ -49,7 +49,7 @@ $past_event = new WP_Query($args2);
 
 get_header(); ?>
 
-<main role="main">
+<main role="main" class="main">
 	<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 	<!-- banner -->
 		<?php get_template_part('./partials/partials-banner', 'banner-section'); ?>
@@ -62,7 +62,7 @@ get_header(); ?>
 		<article>
 			<div class="row">
 				<div class="col pt-4 d-flex justify-content-center">
-					<h2>Upcoming Events</h2>
+					<h2 class="heading-events">Upcoming Events</h2>
 				</div>
 			</div>
 			<div class="row d-flex justify-content-around">
@@ -80,7 +80,7 @@ get_header(); ?>
 		<article>
 			<div class="row">
 				<div class="col pt-4 d-flex justify-content-center">
-					<h2>Past Events</h2>
+					<h2 class="heading-events">Past Events</h2>
 				</div>
 			</div>
 			<div class="row d-flex justify-content-around">

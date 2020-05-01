@@ -29,7 +29,7 @@
 <body <?php body_class(); ?>>
 
 	<!-- wrapper -->
-	<div class="wrapper container-fluid">
+	<div class="wrapper">
 
 		<!-- header -->
 		<header class="header clear">

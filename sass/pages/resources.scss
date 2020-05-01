@@ -8,10 +8,18 @@
   font-family: Roboto, Helvetica, sans-serif;
   color: #2c2c2c;
 
+  img {
+    display: inline-block;
+    width: 100%;
+    max-height: 130px;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+  }
   i {
     display: inline-block;
     text-align: center;
     width: 100%;
+    color: #FFFFFF;
   }
   ul {
     display: block;
@@ -66,13 +74,13 @@
     text-align: center;
   }
   .brochure {
-    background-color: #F26B3A;
+    background-color: $color-gold;
   }
   .document {
-    background-color: #FFC151;
+    background-color: $color-orange;
   }
   .link {
-    background-color: #5565A6;
+    background-color: $color-limeGreen;
   }
   & > ul > li:first-child > h4 {
     border-radius: 15px 15px 0 0;
@@ -147,8 +155,18 @@
   }
   .cssmenu {
     & > ul > li:first-child > h4 {
-      border-radius: 15px;
+      border-radius: 0 0 15px 15px;
     }
     
+  }
+}
+@media only screen and (min-width: 992px) {
+  .cssmenu img {
+    max-height: 200px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .cssmenu img {
+    max-height: 230px;
   }
 }

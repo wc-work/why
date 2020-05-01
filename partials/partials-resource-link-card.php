@@ -1,4 +1,7 @@
 <li class="active has-sub">
+   <?php if(get_field('image_1')): ?>
+      <img src="<?php echo get_field('image_1')['url']; ?>" alt="<?php echo get_field('image_1')['alt']; ?>">
+   <?php endif; ?>
    <h4 class="link">Resource Links</h4>
    <ul>
       <?php
