@@ -20,25 +20,25 @@ get_header(); ?>
   <section class="container grid-container-1 py-5">
     <?php if(get_field('top_left_heading')): ?>
     <div class="heading-top-1">
-      <h2><?php echo get_field('top_left_heading') ?></h1>
+      <h2><?php echo get_field('top_left_heading'); ?></h1>
     </div>
     <?php endif; ?>
     <?php if(get_field('top_left_image')): ?>
-    <div class="grid-img events">
+    <a href="<?php echo get_field('top_left_link')['url']; ?>"><div class="grid-img events">
       <h3 class="heading-space pt-2">Events</h3>
-      <img src="<?php echo get_field('top_left_image')['url'] ?>" alt="<?php echo get_field('top_left_image')['alt'] ?>">
-    </div>
+      <img src="<?php echo get_field('top_left_image')['url']; ?>" alt="<?php echo get_field('top_left_image')['alt']; ?>">
+    </div></a>
     <?php endif; ?>
     <?php if(get_field('top_right_heading')): ?>
     <div class="heading-top-2">
-      <h2><?php echo get_field('top_right_heading') ?></h1>
+      <h2><?php echo get_field('top_right_heading'); ?></h1>
     </div>
     <?php endif; ?>
     <?php if(get_field('top_right_image')): ?>
-    <div class="grid-img resources">
+    <a href="<?php echo get_field('top_right_link')['url']; ?>"><div class="grid-img resources">
       <h3 class="heading-space pt-2">Resources</h3>
-      <img src="<?php echo get_field('top_right_image')['url'] ?>" alt="<?php echo get_field('top_right_image')['alt'] ?>">
-    </div>
+      <img src="<?php echo get_field('top_right_image')['url']; ?>" alt="<?php echo get_field('top_right_image')['alt']; ?>">
+    </div></a>
     <?php endif; ?>
   </section>
   <!-------------------------- Main Section Content ------------------------------------>
