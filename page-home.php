@@ -24,10 +24,10 @@ get_header(); ?>
     </div>
     <?php endif; ?>
     <?php if(get_field('top_left_image')): ?>
-    <a href="<?php echo get_field('top_left_link')['url']; ?>"><div class="grid-img events">
-      <h3 class="heading-space pt-2">Events</h3>
-      <img src="<?php echo get_field('top_left_image')['url']; ?>" alt="<?php echo get_field('top_left_image')['alt']; ?>">
-    </div></a>
+    <div class="grid-img events">
+      <a href="<?php echo get_field('top_left_link')['url']; ?>"><h3 class="heading-space pt-2">Events</h3>
+      <img src="<?php echo get_field('top_left_image')['url']; ?>" alt="<?php echo get_field('top_left_image')['alt']; ?>"></a>
+    </div>
     <?php endif; ?>
     <?php if(get_field('top_right_heading')): ?>
     <div class="heading-top-2">
@@ -35,10 +35,10 @@ get_header(); ?>
     </div>
     <?php endif; ?>
     <?php if(get_field('top_right_image')): ?>
-    <a href="<?php echo get_field('top_right_link')['url']; ?>"><div class="grid-img resources">
-      <h3 class="heading-space pt-2">Resources</h3>
-      <img src="<?php echo get_field('top_right_image')['url']; ?>" alt="<?php echo get_field('top_right_image')['alt']; ?>">
-    </div></a>
+    <div class="grid-img resources">
+      <a href="<?php echo get_field('top_right_link')['url']; ?>"><h3 class="heading-space pt-2">Resources</h3>
+      <img src="<?php echo get_field('top_right_image')['url']; ?>" alt="<?php echo get_field('top_right_image')['alt']; ?>"></a>
+    </div>
     <?php endif; ?>
   </section>
   <!-------------------------- Main Section Content ------------------------------------>
@@ -71,7 +71,7 @@ get_header(); ?>
       <h2 class="box-heading"><?php the_field('box_4_header'); ?></h2>
       <p><?php the_field('box_4_text'); ?></p>
       <?php if(get_field('box_4_button')): ?>
-      <a href=""><button class="donate-button">Donate</button></a>
+      <a href="<?php echo get_field('box_4_button')['url'] ?>" target="_blank"><button class="donate-button">Donate</button></a>
       <?php endif; ?>
     </div>
     <?php endif; ?>

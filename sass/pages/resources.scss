@@ -32,20 +32,29 @@
   ul li {
     position: relative;
     display: block;
-    // margin-bottom: 5px;
   }
   ul li > h4 {
     display: block;
     text-decoration: none;
     position: relative;
     margin: 0;
+    &:hover {
+      transition: ease .3s;
+      transform: scale(1.05);
+    }
   }
+  ul > li > ul > li > ul:hover {
+    transition: ease .3s;
+    transform: scale(1.02);
+  } 
   ul li > ul > li:last-child > h4 {
     border-radius: 0 0 15px 15px;
   }
   ul a {
     text-decoration: none;
     color: #2c2c2c;
+    z-index: 1;
+    position: relative;
   }
   ul li ul li ul:nth-child(even) {
     background-color: #dadada;
@@ -107,9 +116,6 @@
     padding: 12px 0px 5px 25px;
     transition: all 0.3s ease-out;
     font-size: 18px;
-  }
-  ul ul li.active1 > h4 {
-    background-color: #f2f2f2;
   }
   ul ul li.has-sub > h4::after {
     content: '';

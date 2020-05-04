@@ -6,8 +6,8 @@
     <?php if( !empty($image)): ?>
     <div class="card card-past-event" style="background-image: url('<?php echo esc_url($image['url']); ?>');"  alt="<?php echo esc_attr($image['alt']); ?>">
        <a href="<?php the_permalink(); ?>"><div class="card-body card-past-body">
-            <h2 class="link"><?php the_title(); ?></h2>
-            <h4 class="link"><?php echo $eventDate->format('n/j/Y'); ?></h4>
+            <h2><?php the_title(); ?></h2>
+            <h4><?php echo $eventDate->format('n/j/Y'); ?></h4>
         </div></a>
     </div>
     <?php endif; ?>
