@@ -494,6 +494,52 @@ function namespace_login_style() {
     echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('template_url') . '/login/custom-login-style.scss"/>';
 }
 
+
+/*------------------------------------*\
+	Custom Post Types
+\*------------------------------------*/
+
+function event_custom_post_type()
+{
+    register_taxonomy_for_object_type('category', 'events'); // Register Taxonomies for Category
+    register_post_type('events', // Register Custom Post Type
+        array(
+        'labels' => array(
+            'name' => __('Events', 'events'), // Rename these to suit
+            'singular_name' => __('Event', 'events'),
+            'add_new' => __('Add Event', 'events'),
+            'add_new_item' => __('Add New Event', 'events'),
+            'edit_item' => __('Edit Event', 'events'),
+            'new_item' => __('New Event', 'events'),
+            'all_items'=> __('All Events', 'events'),
+            'view' => __('New Item', 'events'),
+            'view_item' => __('View Item', 'events'),
+            'search_items' => __('Search Events', 'events'),
+            'not_found' => __('No items found', 'events'),
+            'not_found_in_trash' => __('No items found in trash', 'events')
+        ),
+        'public' => true,
+        'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
+        'has_archive' => false,
+        'rewrite' => true,
+        'menu_icon' => 'dashicons-calendar-alt',
+        'supports' => array(
+            'title',
+            'revisions',
+            'custom-fields',
+            'thumbnail'
+        ), // Go to Dashboard Custom HTML5 Blank post for supports
+        'can_export' => true, // Allows export in Tools > Export
+        'taxonomies' => array(
+            'post_tag',
+            'category'
+        ), // Add Category and Post Tags support
+        'menu_position' => 5
+    ));
+}
+
+
+
 /*------------------------------------*\
 	Actions + Filters + ShortCodes
 \*------------------------------------*/
@@ -509,6 +555,7 @@ add_action('init', 'register_navwalker_menu'); // Add Navwalker for Bootstrap Me
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('init', 'html5wp_pagination'); // Add our HTML5 Pagination
 add_action( 'login_head', 'namespace_login_style' ); // Adds customization for login screen
+add_action('init', 'event_custom_post_type'); // Adds event custom post type to wp-admin
 
 // Remove Actions
 // remove_action('wp_head', 'feed_links_extra', 3); // Display the links to the extra feeds such as category feeds
