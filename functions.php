@@ -499,8 +499,7 @@ function namespace_login_style() {
 	Custom Post Types
 \*------------------------------------*/
 
-function event_custom_post_type()
-{
+function event_custom_post_type() {
     register_taxonomy_for_object_type('category', 'events'); // Register Taxonomies for Category
     register_post_type('events', // Register Custom Post Type
         array(
