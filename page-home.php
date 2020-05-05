@@ -8,63 +8,42 @@ get_header(); ?>
 
 <main class="page-home">
   
-  <!----------------------------------- Carousel Background (Optional) ----------------------------------------->
+  <!----------------------------------- Carousel ----------------------------------------->
   <section>  
-    <div id="carouselWeHearYou" class="carousel slide" data-keyboard="true" data-touch="true">
-      <div class="carousel-inner">
-        <div class="content-wrapper d-flex align-items-center flex-column">
-          <!-- Logo -->
-          <img class="logo-title pt-5" src="<?php echo get_field('main_logo')['url']; ?>" alt="<?php echo get_field('main_logo')['alt']; ?>">
-          <!-- Carousel Heading -->
-          <div class="carousel-heading pt-4">
-            <h2><?php the_field('carousel_heading'); ?></h2>
-          </div>
-        </div>
-        <?php if (have_posts($post) ) : 
-            while ( have_posts($post) ) : the_post($post); ?>
-              <div class="overlay"></div>
-              <div class="mov">
-                <?php the_content(); ?>
-              </div>
-              <div class="placeholder">
-                <?php echo get_the_post_thumbnail(); ?>
-              </div>
-        <?php endwhile; 
-              wp_reset_postdata(); ?>	
-        
-        <div class="carousel-item active">
-          <div class="overlay"></div>
-          <?php elseif (get_field('carousel_image_starter')): ?>
-            <img src="<?php echo get_field('carousel_image_starter')['url']; ?>" class="d-block w-100" alt="<?php echo get_field('carousel_image_starter')['alt']; ?>">
-          <?php endif; ?>	
-          <div class="carousel-caption d-block">
-            <p><?php the_field('carousel_text_starter'); ?></p>
-          </div>
-        </div>
-        <?php 
-          if(have_posts() ) : 
-            while ( have_posts() ) : the_post(); ?>
-              <?php get_template_part('./partials/partials-carousel', 'carousel-section'); ?>
-        <?php 
-            endwhile; 
-              wp_reset_postdata();
-          endif; ?>	
-      </div>
-      <a class="carousel-control-prev" href="#carouselWeHearYou" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselWeHearYou" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
+    <?php if (have_posts($post) ) : while ( have_posts($post) ) : the_post($post);  
+          the_content();
+        endwhile; 
+          wp_reset_postdata(); 
+    endif;?>	
   </section>
-  <!------------------------------ End Carousel Background ------------------------------------>
-
+  <!-------------------------- Top Section Content ------------------------------------>
+  <section class="container grid-container-1 py-5">
+    <?php if(get_field('top_left_heading')): ?>
+    <div class="heading-top-1">
+      <h2><?php echo get_field('top_left_heading'); ?></h1>
+    </div>
+    <?php endif; ?>
+    <?php if(get_field('top_left_image')): ?>
+    <div class="grid-img events">
+      <a href="<?php echo get_field('top_left_link')['url']; ?>"><h3 class="heading-space pt-2">Events</h3>
+      <img src="<?php echo get_field('top_left_image')['url']; ?>" alt="<?php echo get_field('top_left_image')['alt']; ?>"></a>
+    </div>
+    <?php endif; ?>
+    <?php if(get_field('top_right_heading')): ?>
+    <div class="heading-top-2">
+      <h2><?php echo get_field('top_right_heading'); ?></h1>
+    </div>
+    <?php endif; ?>
+    <?php if(get_field('top_right_image')): ?>
+    <div class="grid-img resources">
+      <a href="<?php echo get_field('top_right_link')['url']; ?>"><h3 class="heading-space pt-2">Resources</h3>
+      <img src="<?php echo get_field('top_right_image')['url']; ?>" alt="<?php echo get_field('top_right_image')['alt']; ?>"></a>
+    </div>
+    <?php endif; ?>
+  </section>
   <!-------------------------- Main Section Content ------------------------------------>
-  <section class="container grid-container my-5">
-    <div class="heading">
+  <section class="container grid-container-2 py-5">
+    <div class="heading-main">
       <h1><?php the_field('main_heading') ?></h1>
     </div>
     <!-- Box 1 Image -->
@@ -92,11 +71,25 @@ get_header(); ?>
       <h2 class="box-heading"><?php the_field('box_4_header'); ?></h2>
       <p><?php the_field('box_4_text'); ?></p>
       <?php if(get_field('box_4_button')): ?>
-      <a href=""><button class="donate-button">Donate</button></a>
+      <a href="<?php echo get_field('box_4_button')['url'] ?>" target="_blank"><button class="donate-button">Donate</button></a>
       <?php endif; ?>
     </div>
     <?php endif; ?>
-
+  </section>
+  <!-- Bubble Animation -->
+  <section>
+    <ul class="bg-pulse">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
   </section>
 </main>
 

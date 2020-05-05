@@ -8,10 +8,19 @@
   font-family: Roboto, Helvetica, sans-serif;
   color: #2c2c2c;
 
+  img {
+    display: inline-block;
+    width: 100%;
+    max-height: 130px;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+    margin: 0 0 -12px 0;
+  }
   i {
     display: inline-block;
     text-align: center;
     width: 100%;
+    color: #FFFFFF;
   }
   ul {
     display: block;
@@ -23,20 +32,29 @@
   ul li {
     position: relative;
     display: block;
-    // margin-bottom: 5px;
   }
   ul li > h4 {
     display: block;
     text-decoration: none;
     position: relative;
     margin: 0;
+    &:hover {
+      transition: ease .3s;
+      transform: scale(1.05);
+    }
   }
+  ul > li > ul > li > ul:hover {
+    transition: ease .3s;
+    transform: scale(1.02);
+  } 
   ul li > ul > li:last-child > h4 {
     border-radius: 0 0 15px 15px;
   }
   ul a {
     text-decoration: none;
     color: #2c2c2c;
+    z-index: 1;
+    position: relative;
   }
   ul li ul li ul:nth-child(even) {
     background-color: #dadada;
@@ -52,7 +70,6 @@
 
   & > ul {
     border-radius: 15px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.45);
     background-color: #FFFFFF;
   }
 
@@ -67,19 +84,20 @@
     text-align: center;
   }
   .brochure {
-    background-color: #F26B3A;
+    background-color: $color-gold;
   }
   .document {
-    background-color: #FFC151;
+    background-color: $color-orange;
   }
   .link {
-    background-color: #5565A6;
+    background-color: $color-limeGreen;
   }
   & > ul > li:first-child > h4 {
     border-radius: 15px 15px 0 0;
     color: #ffffff;
     font-weight: bold;
     text-shadow: 2px 1px 5px #2c2c2c;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.45);
   }
   & > ul > li:nth-child(2) > h4 {
     color: #ffffff;
@@ -98,9 +116,6 @@
     padding: 12px 0px 5px 25px;
     transition: all 0.3s ease-out;
     font-size: 18px;
-  }
-  ul ul li.active1 > h4 {
-    background-color: #f2f2f2;
   }
   ul ul li.has-sub > h4::after {
     content: '';
@@ -150,5 +165,15 @@
       border-radius: 15px;
     }
     
+  }
+}
+@media only screen and (min-width: 992px) {
+  .cssmenu img {
+    max-height: 200px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .cssmenu img {
+    max-height: 230px;
   }
 }

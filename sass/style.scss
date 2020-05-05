@@ -9,8 +9,15 @@
 }
 body {
   color: #2C2C2C !important;
-  background-color: #E2E2E2 !important;
 }
+.main {
+    background-color: #5565A6;
+}
+a:hover {
+  transform: scale(1.10);
+  transition: transform .1s ease-in-out;
+}
+
 // Modules
 @import "modules/variables";
 @import "modules/mixins";

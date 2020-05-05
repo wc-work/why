@@ -10,7 +10,6 @@ if( $images ): ?>
 				<img class="img-fluid" src="<?php echo esc_url($image['sizes']['medium']); ?>"
 					alt="<?php echo esc_attr($image['alt']); ?>" />
 			</a>
-			<p><?php echo esc_html($image['caption']); ?></p>
 		</li>
 		<?php endforeach; ?>
 	</ul>
