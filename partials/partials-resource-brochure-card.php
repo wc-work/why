@@ -5,6 +5,9 @@ if ( have_rows('brochures') ):
 
 ?>
 <li class="active has-sub">
+   <?php if(get_field('image_3')): ?>
+      <img src="<?php echo get_field('image_3')['url']; ?>" alt="<?php echo get_field('image_3')['alt']; ?>">
+   <?php endif; ?>
    <h4 id="toggle" class="curves brochure">Brochures</h4>
    <ul>
       <a href="<?php echo get_sub_field('upload_brochure')['url']; ?>">

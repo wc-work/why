@@ -10,7 +10,7 @@
         <div class="card-body">
             <h2><?php the_title(); ?></h2>
             <h4><?php echo $eventDate->format('n/j/Y'); ?></h4>
-            <a href="<?php echo get_field('location_link') ?>"><h5><?php echo get_field('event_location') ?></h5></a>
+            <a target="_blank" href="<?php echo get_field('location_link') ?>"><h5><?php echo get_field('event_location') ?></h5></a>
             <p class="card-text"><?php echo get_field('description') ?></p>
         </div>
     </div>
