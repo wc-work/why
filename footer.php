@@ -1,4 +1,4 @@
-			<?php
+<?php
 			/*
 			* Bootstrap Modal
 			 */
@@ -18,7 +18,7 @@
 						<?php 
 						endwhile;
 						endif;
-						wp_reset_postdata();?>		
+						wp_reset_postdata();?>	
 					</div>
 					<div class="row footer-info">
 						<div class="center pb-3">
@@ -48,7 +48,15 @@
 								wp_reset_postdata();
 							?>
 					<div class="row copyright">
-						&copy; <?php echo date('Y'); ?> All Rights Reserved.
+						<div class="center">
+							<a href="<?php echo get_field('terms_and_conditions', 'option')['url']; ?>"><p><?php echo get_field('terms_and_conditions', 'option')['title']; ?></p></a>
+						</div>
+						<div class="center">
+							<a class="center" href="<?php echo get_field('privacy_policy', 'option')['url']; ?>"><p><?php echo get_field('privacy_policy', 'option')['title']; ?></p></a>
+						</div>
+						<div class="center">
+							<p class="center" >&copy; <?php echo date('Y'); ?> All Rights Reserved.</p>
+						</div>
 					</div>
 					<!-- /copyright -->
 				</div>
