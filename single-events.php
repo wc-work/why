@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-	<main role="main">
+	<main class="main" role="main">
 	<!-- section -->
 	<section>
 		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
@@ -16,11 +16,12 @@
 		<!-- article -->
 		<article class="gallery container">
 			<!-- post title -->
-			<h1 class="gallery--title pt-4">The Gallery</h1>
+			<h1 class="gallery-title pt-4">The Gallery</h1>
 			<!-- /post title -->
 
 			<!-- post gallery -->
-				<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+				<?php the_content();
+				if (have_posts()): while (have_posts()) : the_post(); ?>
 
 					<?php get_template_part('./partials/partials-gallery-image', 'gallery-section'); ?>
 
