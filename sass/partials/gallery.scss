@@ -9,15 +9,38 @@
    color: #FFFFFF;
    text-align: center;
 }
-.list-photo {
-   list-style-type: none;
+br {
+   display: none;
+}
 
-   img {
-      border-radius: 35px; 
-      display: block;
-      margin: auto;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+.gallery {
+   display: grid;
+   grid-template-columns: 1fr;
+   grid-template-rows: auto;
+   gap: 2rem;
+
+   .gallery-item {
+      width: 100% !important;
+
+      img {
+         width: 100%;
+         height: 250px;
+         object-fit: cover;
+         border: none !important;
+         border-radius: 35px;
+      }
+   }
+}
+
+@media only screen and ( min-width: 600px ) {
+   .gallery {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto;
+   }
+}
+@media only screen and ( min-width: 992px ) {
+   .gallery {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto;
    }
 }

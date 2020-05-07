@@ -524,6 +524,7 @@ function event_custom_post_type() {
         'menu_icon' => 'dashicons-calendar-alt',
         'supports' => array(
             'title',
+            'editor',
             'revisions',
             'custom-fields',
             'thumbnail'
