@@ -71,7 +71,7 @@ get_header(); ?>
       <h2 class="box-heading"><?php the_field('box_4_header'); ?></h2>
       <p><?php the_field('box_4_text'); ?></p>
       <?php if(get_field('box_4_button')): ?>
-      <a href="<?php echo get_field('box_4_button')['url'] ?>" target="_blank"><button class="donate-button">Donate</button></a>
+      <a href="<?php echo get_field('box_4_button')['url'] ?>" target="_blank"><button class="donate-button"><?php echo get_field('box_4_button')['title'] ?></button></a>
       <?php endif; ?>
     </div>
     <?php endif; ?>

@@ -5,6 +5,7 @@
 		'use strict';
 		
 		(function($){
+			
 			$(document).ready(function(){
 			
 				$(function() {
@@ -28,9 +29,7 @@
 								targetParent.children('ul').slideToggle(250);
 							} 
 						})
-
 					}
-
 				});
 			});
 		})(jQuery);	
