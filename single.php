@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-	<main role="main">
+	<main class="container" role="main">
 	<!-- section -->
 	<section>
 
@@ -37,10 +37,6 @@
 
 			<p><?php _e( 'This post was written by ', 'html5blank' ); the_author(); ?></p>
 
-			<?php edit_post_link(); // Always handy to have Edit Post Links available ?>
-
-			<?php comments_template(); ?>
-
 		</article>
 		<!-- /article -->
 
@@ -61,7 +57,5 @@
 	</section>
 	<!-- /section -->
 	</main>
-
-<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

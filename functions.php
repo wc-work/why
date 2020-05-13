@@ -400,6 +400,12 @@ function html5wp_custom_post($length)
     return 40;
 }
 
+// Remove form label on re-captcha to remove ada compliance error
+add_action( 'wp_enqueue_scripts', 'my_custom_script_load' );
+function my_custom_script_load(){
+    wp_enqueue_script('my-custom-script',get_stylesheet_directory_uri().'/js/custom-scripts.js',array('jquery'),false,true);
+}
+
 // Create the Custom Excerpts callback
 function html5wp_excerpt($length_callback = '', $more_callback = '')
 {
