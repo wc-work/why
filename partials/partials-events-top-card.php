@@ -9,8 +9,8 @@
         <?php endif; ?>
         <div class="card-body">
             <h2><?php the_title(); ?></h2>
-            <h4><?php echo $eventDate->format('n/j/Y'); ?></h4>
-            <a target="_blank" href="<?php echo get_field('location_link') ?>"><h5><?php echo get_field('event_location') ?></h5></a>
+            <h3><?php echo $eventDate->format('n/j/Y'); ?></h3>
+            <a target="_blank" href="<?php echo get_field('location_link') ?>"><h4><?php echo get_field('event_location') ?></h4></a>
             <p class="card-text"><?php echo get_field('description') ?></p>
         </div>
     </div>
