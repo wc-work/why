@@ -21,7 +21,6 @@
 						});
 						
 						menu.on('click', function(event) {
-							event.preventDefault();
 
 							var targetParent = $(event.target).parent();
 							if (targetParent.hasClass('has-sub')) {
