@@ -14,7 +14,7 @@
          <?php if ( have_rows('category_links') ):
          while ( have_rows('category_links') ) : the_row(); ?>
          <ul>
-            <a href="<?php echo get_sub_field('add_link')['url']; ?>">
+            <a target="_blank" href="<?php echo get_sub_field('add_link')['url']; ?>">
                <li class="pb-1">
                   <h5><?php echo get_sub_field('add_link')['title']; ?></h5>
                   <p><?php echo get_sub_field('link_description'); ?></p>
