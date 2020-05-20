@@ -141,6 +141,21 @@ function html5blank_header_scripts()
     }
 }
 
+function my_custom_mime_types( $mimes ) {
+ 
+    // New allowed mime types.
+    $mimes['svg'] = 'image/svg+xml';
+    $mimes['mp4'] = 'video/mp4';
+    $mimes['doc'] = 'application/msword';
+    $mimes['docx'] = 'application/msword';
+     
+    // Optional. Remove a mime type.
+    unset( $mimes['exe'] );
+     
+    return $mimes;
+}
+add_filter( 'upload_mimes', 'my_custom_mime_types' );
+
 /*------------------------------------*\
 	     Custom Accordion Menu
 \*------------------------------------*/
